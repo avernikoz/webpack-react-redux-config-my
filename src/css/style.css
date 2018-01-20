@@ -1,5 +1,5 @@
 .contacts {
-  width: 300px;
+  width: 400px;
   margin: 0 auto;
 }
 
@@ -7,6 +7,8 @@
   width: 100%;
   padding: 10px;
   font-size: 16px;
+  border: 1px solid cornflowerblue;
+
 }
 
 .contacts-list {
@@ -17,6 +19,7 @@
 .contact {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   font-family: sans-serif;
   width: 100%;
   padding: 5px;

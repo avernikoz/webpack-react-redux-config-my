@@ -124,12 +124,29 @@ const CONTACTS = [
 }
 
 let ContactsPanel = React.createClass({
+    getInitialState: function () {
+        return { displayedContacts : CONTACTS};
+    },
+    searchFunction: function(event) {
+        let searchQuery = event.target.value.toLowerCase();
+        let displayedContacts = CONTACTS.filter((element) => {
+            let contactsName = element.name.toLowerCase();
+            let contactsPhone = element.phoneNumber;
+
+            return (contactsName.indexOf(searchQuery) !== -1 || contactsPhone.indexOf(searchQuery) !== -1);
+        });
+
+        this.setState({displayedContacts: displayedContacts});
+
+        console.log(displayedContacts);
+    },
     render: function () {
         return (
             <div className="contacts">
+                <input type="text" className="search-field" onChange={this.searchFunction}/>
                 <div className="contacts-list">
                     {
-                        CONTACTS.map((element) => {
+                        this.state.displayedContacts.map((element) => {
                             return <Contact key={element.id} name={element.name} phoneNumber={element.phoneNumber}
                                             image={element.image}/>
                         })
