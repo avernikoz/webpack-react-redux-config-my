@@ -34,11 +34,11 @@ React.createClass = createReactClass;
 // });
 
 let Greeting = React.createClass({
-    render: function() {
+    render: function () {
         return ( <div>
-                    <h1>{this.props.message}</h1>
-                    <p> {this.props.data}</p>
-                </div>
+                <h1>{this.props.message}</h1>
+                <p> {this.props.data}</p>
+            </div>
         )
     }
 });
@@ -58,39 +58,103 @@ let Greeting = React.createClass({
 // },1000);
 
 
-let RandomMessage = React.createClass({
-    getInitialState: () => ( {message : 'Hello, Initial Message!!!!'} ),
+// let RandomMessage = React.createClass({
+//     getInitialState: () => ( {message : 'Hello, Initial Message!!!!'} ),
+//
+//     onClick: function() {
+//         let messages = ['Hello, Friend', 'Hello, Universe', 'Hello, Brother'];
+//         let randomMessage = messages[Math.floor((Math.random() * 3))];
+//
+//         this.setState({message: randomMessage});
+//     },
+//
+//     render: function() {
+//         return (
+//             <div>
+//                 <MessageView message={this.state.message}/>
+//                 <p>
+//                     <input type="button" onClick={this.onClick} value="Change Message"/>
+//                 </p>
+//             </div>
+//         )
+//     }
+// });
+//
+//
+// let MessageView = React.createClass({
+//     render: function () {
+//         return (
+//             <p>{this.props.message}</p>
+//         )
+//     }
+//
+// });
+//
+// ReactDOM.render(
+//     <RandomMessage/>,
+//     document.getElementById('root')
+// );
 
-    onClick: function() {
-        let messages = ['Hello, Friend', 'Hello, Universe', 'Hello, Brother'];
-        let randomMessage = messages[Math.floor((Math.random() * 3))];
 
-        this.setState({message: randomMessage});
-    },
+const CONTACTS = [
+    {
+        id: 1,
+        name: 'Darth Vader',
+        phoneNumber: '+250966666666',
+        image: 'src/img/darth.gif'
+    }, {
+        id: 2,
+        name: 'Princess Leia',
+        phoneNumber: '+250966344466',
+        image: 'src/img/leia.gif'
+    }, {
+        id: 3,
+        name: 'Luke Skywalker',
+        phoneNumber: '+250976654433',
+        image: 'src/img/luke.gif'
+    }, {
+        id: 4,
+        name: 'Chewbacca',
+        phoneNumber: '+250456784935',
+        image: 'src/img/chewbacca.gif'
+    }
+];
 
-    render: function() {
+{/*<Contact name={CONTACTS[1].name} phoneNumber={CONTACTS[1].phoneNumber} image={CONTACTS[1].image}/>*/
+}
+
+let ContactsPanel = React.createClass({
+    render: function () {
         return (
-            <div>
-                <MessageView message={this.state.message}/>
-                <p>
-                    <input type="button" onClick={this.onClick} value="Change Message"/>
-                </p>
+            <div className="contacts">
+                <div className="contacts-list">
+                    {
+                        CONTACTS.map((element) => {
+                            return <Contact key={element.id} name={element.name} phoneNumber={element.phoneNumber}
+                                            image={element.image}/>
+                        })
+                    }
+                </div>
             </div>
         )
     }
 });
 
 
-let MessageView = React.createClass({
+let Contact = React.createClass({
     render: function () {
         return (
-            <p>{this.props.message}</p>
+            <div className="contact">
+                <img className="contact-image" src={this.props.image} height="50px" width="50px"/>
+                <div className="contact-name">{this.props.name}</div>
+                <div className="contact-number">{this.props.phoneNumber}</div>
+            </div>
         )
     }
-
 });
 
+
 ReactDOM.render(
-    <RandomMessage/>,
+    <ContactsPanel/>,
     document.getElementById('root')
 );
