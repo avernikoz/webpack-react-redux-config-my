@@ -130,7 +130,13 @@ const CONTACTS = [
 
 let ContactsPanel = React.createClass({
     getInitialState: function () {
-        return {displayedContacts: CONTACTS};
+        return {
+            displayedContacts: CONTACTS,
+            personWhomWeSayHello: 'stranger'
+                };
+    },
+    chageGreetingText: function (event) {
+        this.setState({personWhomWeSayHello : event.target.value});
     },
     searchFunction: function (event) {
         let searchQuery = event.target.value.toLowerCase();
@@ -157,6 +163,8 @@ let ContactsPanel = React.createClass({
                         })
                     }
                 </div>
+                <input type="text" className="search-field" onChange={this.chageGreetingText}/>
+                <p>Hello,{' '+this.state.personWhomWeSayHello}</p>
             </div>
         )
     }
