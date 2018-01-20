@@ -101,22 +101,27 @@ const CONTACTS = [
         id: 1,
         name: 'Darth Vader',
         phoneNumber: '+250966666666',
-        image: 'src/img/darth.gif'
+        image: 'src/img/darth.gif',
+        email: 'superdarthvader@gmail.com'
     }, {
         id: 2,
         name: 'Princess Leia',
         phoneNumber: '+250966344466',
-        image: 'src/img/leia.gif'
+        image: 'src/img/leia.gif',
+        email: 'PrincessLeia@gmail.com'
+
     }, {
         id: 3,
         name: 'Luke Skywalker',
         phoneNumber: '+250976654433',
-        image: 'src/img/luke.gif'
+        image: 'src/img/luke.gif',
+        email: 'LukeSkywalker@gmail.com'
     }, {
         id: 4,
         name: 'Chewbacca',
         phoneNumber: '+250456784935',
-        image: 'src/img/chewbacca.gif'
+        image: 'src/img/chewbacca.gif',
+        email: 'LukeSkywalker@gmail.com'
     }
 ];
 
@@ -125,9 +130,9 @@ const CONTACTS = [
 
 let ContactsPanel = React.createClass({
     getInitialState: function () {
-        return { displayedContacts : CONTACTS};
+        return {displayedContacts: CONTACTS};
     },
-    searchFunction: function(event) {
+    searchFunction: function (event) {
         let searchQuery = event.target.value.toLowerCase();
         let displayedContacts = CONTACTS.filter((element) => {
             let contactsName = element.name.toLowerCase();
@@ -148,7 +153,7 @@ let ContactsPanel = React.createClass({
                     {
                         this.state.displayedContacts.map((element) => {
                             return <Contact key={element.id} name={element.name} phoneNumber={element.phoneNumber}
-                                            image={element.image}/>
+                                            image={element.image} email={element.email}/>
                         })
                     }
                 </div>
@@ -159,14 +164,35 @@ let ContactsPanel = React.createClass({
 
 
 let Contact = React.createClass({
+    getInitialState: function () {
+        return {expanded: false}
+    },
+    contactExpand: function (event) {
+        this.setState({expanded: (this.state.expanded ? false : true)})
+    },
     render: function () {
-        return (
-            <div className="contact">
-                <img className="contact-image" src={this.props.image} height="50px" width="50px"/>
-                <div className="contact-name">{this.props.name}</div>
-                <div className="contact-number">{this.props.phoneNumber}</div>
-            </div>
-        )
+
+        if (this.state.expanded) {
+            return (
+                <div className="contact expanded" onClick={this.contactExpand}>
+                    <img className="contact-image" src={this.props.image} height="50px" width="50px"/>
+                    <div>
+                        <div className="contact-name">{this.props.name}</div>
+                        <div className="contact-number">{this.props.phoneNumber}</div>
+                        <div className="contact-number">{this.props.email}</div>
+                    </div>
+                </div>
+            )
+        }
+        else {
+            return (
+                <div className="contact" onClick={this.contactExpand}>
+                    <img className="contact-image" src={this.props.image} height="50px" width="50px"/>
+                    <div className="contact-name">{this.props.name}</div>
+                    <div className="contact-number">{this.props.phoneNumber}</div>
+                </div>
+            )
+        }
     }
 });
 
