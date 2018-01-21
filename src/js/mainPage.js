@@ -211,29 +211,40 @@ let Greeting = React.createClass({
 const notes = [
     {
         id: 1,
-        name: 'Darth Vader',
-        phoneNumber: '+250966666666',
-        image: 'src/img/darth.gif',
-        email: 'superdarthvader@gmail.com'
+        name: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate, eos! Adipisci autem harum quos!',
+        color: '#3444FF'
     }, {
         id: 2,
-        name: 'Princess Leia',
-        phoneNumber: '+250966344466',
-        image: 'src/img/leia.gif',
-        email: 'PrincessLeia@gmail.com'
-
+        name: 'veritatis? Eos illum laudantium recusandae repellendus similique. Consequatur dolorem nesciunt numquam possimus soluta! Provident.',
+        color: '#FF113A'
     }, {
         id: 3,
-        name: 'Luke Skywalker',
-        phoneNumber: '+250976654433',
-        image: 'src/img/luke.gif',
-        email: 'LukeSkywalker@gmail.com'
+        name: 'Amet aspernatur autem facilis laborum molestias praesentium reiciendis rerum elit. Excepturi, voluptatum.',
+        color: '#19FF2C'
     }, {
         id: 4,
-        name: 'Chewbacca',
-        phoneNumber: '+250456784935',
-        image: 'src/img/chewbacca.gif',
-        email: 'LukeSkywalker@gmail.com'
+        name: 'dolorem dolores, ea eligendi facilis fuga harum illum in ipsum itaque.',
+        color: '#FFD700'
+    }, {
+        id: 5,
+        name: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi.,
+        color: '#E88AFF'
+    }, {
+        id: 6,
+        name: 'optio perferendis quidem quisquam recusandae repellendus suscipit veniam',
+        color: '#9AFF8F'
+    }, {
+        id: 7,
+        name: 'ducimus eos eum expedita explicabo incidunt inventore iste iure labore minus nostrum nulla,',
+        color: '#FF3BBA'
+    }, {
+        id: 8,
+        name: 'consequuntur culpa cum cupiditate deserunt distinctio,',
+        color: '#B91BFF'
+    }, {
+        id: 9,
+        name: 'unde veritatis vitae voluptates voluptatibus! ',
+        color: '#00FFF9'
     }
 ];
 
@@ -250,8 +261,8 @@ let NotesEditor = React.createClass({
     render: function () {
         return (
             <div className="notes-editor">
-                <textarea name="editor" cols="30" rows="10" placeholder="Текст заметки"/>
-                <input type="button" value="Добавить"/>
+                <textarea className="textarea" name="editor" cols="30" rows="10" placeholder="Текст заметки"/>
+                <input className="add-button" type="button" value="Добавить"/>
             </div>
         )
     }
@@ -285,3 +296,7 @@ ReactDOM.render(
     <NotesApp />,
     document.getElementById('root')
 );
+
+
+
+
