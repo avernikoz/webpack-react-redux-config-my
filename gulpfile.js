@@ -60,6 +60,11 @@ gulp.task('html', function(){
         .pipe(reload({stream:true}));
 });
 
+gulp.task('css-reload', function(){
+    gulp.src('index.html')
+        .pipe(reload({stream:true}));
+});
+
 
 //Browser sync
 gulp.task('browserSync', function() {
@@ -81,5 +86,6 @@ gulp.task('browserSync', function() {
 //Следим за изменениями:
 gulp.task('watch', function () {
     gulp.watch('src/js/**/*.js', ['js-bundle']);
+    gulp.watch('src/css/**/*.css', ['css-reload']);
     gulp.watch('index.html', ['html']);
 });

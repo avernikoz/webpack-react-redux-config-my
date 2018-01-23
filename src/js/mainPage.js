@@ -211,13 +211,19 @@ let Navbar = React.createClass({
     render: function () {
         return (
             <div>
-                <h1 className="app-title">To-do-list</h1>
-                <div className="search-container">
-                    <input id="showDone" type="checkbox"/>
-                    <label htmlFor="showDone">Show done</label>
-                    <div className="input-search-box">
-                        <input type="text" placeholder="Search..."/>
-                        <span className="clear-icon-search">X</span>
+                <div className="upper-header">
+                    <h1 className="app-title">To-do-list</h1>
+                    <div className="search-container">
+                        <div className="checkbox-search-box">
+                            <input id="showDone" type="checkbox" className="search-checkbox"/>
+                            <label htmlFor="showDone">
+                                Show done
+                            </label>
+                        </div>
+                        <div className="input-search-box">
+                            <input type="text" placeholder="Search..." className="search-field"/>
+                            <span className="clear-icon-search-field">X</span>
+                        </div>
                     </div>
                 </div>
                 <div className="progress-bar">
