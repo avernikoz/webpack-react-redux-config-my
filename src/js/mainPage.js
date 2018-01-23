@@ -147,7 +147,7 @@ let NotesContainer = React.createClass({
 
 let NotesApp = React.createClass({
     getInitialState: function () {
-        return ({notes: []})
+        return ({notes: notes})
     },
     componentDidMount: function () {
         let notesFromLocalStorage = JSON.parse(localStorage.getItem('notes'));
