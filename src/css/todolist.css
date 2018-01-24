@@ -156,4 +156,12 @@ h1{
 }
 .icon{
     margin: 10px;
+    cursor: pointer;
+}
+.clear-icon-search-field {
+    cursor: pointer;
+}
+
+.add-button{
+    cursor: pointer;
 }

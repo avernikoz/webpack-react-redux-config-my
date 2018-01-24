@@ -242,7 +242,7 @@ let CategorysBox = React.createClass({
             <div className="category-box">
                 <div className="category-add-container">
                     <input className="category-add-input" type="text" placeholder="Enter category title"/>
-                    <input type="button" value="Add"/>
+                    <input className="add-button" type="button" value="Add"/>
                 </div>
                 <CategoryList/>
             </div>
@@ -287,7 +287,7 @@ let TasksBox = React.createClass({
             <div className="tasks-box">
                 <div className="tasks-add-container">
                     <input className="task-add-input" type="text" placeholder="Enter task title"/>
-                    <input type="button" value="Add"/>
+                    <input className="add-button" type="button" value="Add"/>
                 </div>
                 <TasksList/>
             </div>
