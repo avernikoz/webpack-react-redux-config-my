@@ -237,14 +237,36 @@ let Navbar = React.createClass({
 });
 
 let CategorysBox = React.createClass({
+    getInitialState: function () {
+        return {
+            categoryInputText: '',
+            categories: []
+        }
+    },
+    setCategoryText: function (event) {
+        this.setState({categoryInputText: event.target.value})
+    },
+    addCategory: function () {
+        let newCategory = {
+            id: Date.now(),
+            name: this.state.categoryInputText
+        };
+
+        let allCategories = this.state.categories;
+        allCategories.unshift(newCategory);
+
+        this.setState({categories: allCategories});
+        this.setState({categoryInputText: ''});
+
+    },
     render: function () {
         return (
             <div className="category-box">
                 <div className="category-add-container">
-                    <input className="category-add-input" type="text" placeholder="Enter category title"/>
-                    <input className="add-button" type="button" value="Add"/>
+                    <input className="category-add-input" type="text" placeholder="Enter category title" value={this.state.categoryInputText} onChange={this.setCategoryText}/>
+                    <input className="add-button" type="button" value="Add" onClick={this.addCategory}/>
                 </div>
-                <CategoryList/>
+                <CategoryList categories={this.state.categories}/>
             </div>
         )
     }
@@ -257,6 +279,9 @@ let CategoryList = React.createClass({
                 <Category categoryName={'Category 1'}/>
                 <Category categoryName={'Category 2'}/>
                 <Category categoryName={'Category 3'}/>
+                {this.props.categories.map((elem) => {
+                    return <Category key={elem.id} categoryName={elem.name}/>
+                })}
             </div>
 
         )
@@ -282,14 +307,36 @@ let Category = React.createClass({
 
 
 let TasksBox = React.createClass({
+    getInitialState: function () {
+        return {
+            taskInputText: '',
+            tasks: []
+        }
+    },
+    setTaskText: function (event) {
+        this.setState({taskInputText: event.target.value})
+    },
+    addTask: function () {
+        let newTask = {
+            id: Date.now(),
+            name: this.state.taskInputText
+        };
+
+        let allTasks = this.state.tasks;
+        allTasks.unshift(newTask);
+
+        this.setState({tasks: allTasks});
+        this.setState({taskInputText: ''});
+
+    },
     render: function () {
         return (
             <div className="tasks-box">
                 <div className="tasks-add-container">
-                    <input className="task-add-input" type="text" placeholder="Enter task title"/>
-                    <input className="add-button" type="button" value="Add"/>
+                    <input className="task-add-input" type="text" placeholder="Enter task title" value={this.state.taskInputText} onChange={this.setTaskText}/>
+                    <input className="add-button" type="button" value="Add" onClick={this.addTask}/>
                 </div>
-                <TasksList/>
+                <TasksList tasks={this.state.tasks}/>
             </div>
         )
     }
@@ -302,6 +349,11 @@ let TasksList = React.createClass({
                 <Task taskName={'Task 1'}/>
                 <Task taskName={'Task 2'}/>
                 <Task taskName={'Task 3'}/>
+                {
+                    this.props.tasks.map((elem) => {
+                        return  <Task key={elem.id} taskName={elem.name}/>
+                    })
+                }
             </div>
 
         )
@@ -327,3 +379,6 @@ ReactDOM.render(
     <ToDoListApp/>,
     document.getElementById('root')
 );
+
+
+
