@@ -69,3 +69,91 @@ h1{
     right: 7%;
     font-size: 1.6rem;
 }
+
+
+/*categories*/
+
+.category-box, .tasks-box{
+    width: 50%;
+}
+
+.category-name{
+    margin: 10px;
+}
+
+.category-name-container{
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.category-list{
+    height: 500px;
+    overflow-y: scroll;
+    background-color: white;
+}
+
+.main-box{
+    display: flex;
+    margin-top: 60px;
+}
+.category{
+    background-color: darkseagreen;
+}
+.category, .task {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    padding: 5px;
+
+}
+.category, .task{
+    font-size: 1.6rem;
+}
+.category-icons-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+}
+.category-add-container, .tasks-add-container {
+    margin-bottom: 30px;
+}
+
+
+
+/*tasks*/
+
+.task{
+    display: flex;
+    justify-content: space-between;
+    background-color: bisque;
+}
+.task-checkbox-container{
+    display: flex;
+    align-items: center;
+}
+
+.task-checkbox{
+    margin: 10px;
+}
+.tasks-list{
+    height: 500px;
+    overflow-y: scroll;
+    background-color: white;
+}
+
+.category-add-input, .task-add-input {
+    width: 280px;
+    padding: 5px;
+    font-size: 1.6rem;
+}
+
+.category-add-container, .tasks-add-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.icon{
+    margin: 10px;
+}

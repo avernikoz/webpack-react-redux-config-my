@@ -199,8 +199,10 @@ let ToDoListApp = React.createClass({
         return (
             <div className="todo-list-app">
                 <Navbar/>
-                <CategorysBox/>
-                <TasksBox/>
+                <div className="main-box">
+                    <CategorysBox/>
+                    <TasksBox/>
+                </div>
             </div>
         )
     }
@@ -237,10 +239,10 @@ let Navbar = React.createClass({
 let CategorysBox = React.createClass({
     render: function () {
         return (
-            <div>
+            <div className="category-box">
                 <div className="category-add-container">
-                    <input type="text" placeholder="Enter category title"/>
-                    <input type="button"/>
+                    <input className="category-add-input" type="text" placeholder="Enter category title"/>
+                    <input type="button" value="Add"/>
                 </div>
                 <CategoryList/>
             </div>
@@ -265,10 +267,14 @@ let Category = React.createClass({
     render: function () {
         return (
             <div className="category">
-                {this.props.categoryName}
-                <span className="category-edit-icon"/>
-                <span className="category-delete-icon"/>
-                <span className="category-add-new-task-icon"/>
+                <div className="category-name-container">
+                    <div className="category-name">{this.props.categoryName}</div>
+                    <i className="fas fa-edit fa-sm icon"/>
+                </div>
+                <div className="category-icons-container">
+                        <i className="fas fa-trash-alt fa-sm icon"/>
+                        <i className="fas fa-plus fa-sm icon"/>
+                </div>
             </div>
         )
     }
@@ -278,10 +284,10 @@ let Category = React.createClass({
 let TasksBox = React.createClass({
     render: function () {
         return (
-            <div>
+            <div className="tasks-box">
                 <div className="tasks-add-container">
-                    <input type="text" placeholder="Enter task title"/>
-                    <input type="button"/>
+                    <input className="task-add-input" type="text" placeholder="Enter task title"/>
+                    <input type="button" value="Add"/>
                 </div>
                 <TasksList/>
             </div>
@@ -293,9 +299,9 @@ let TasksList = React.createClass({
     render: function () {
         return (
             <div className="tasks-list">
-                <Task taskName={'Category 1'}/>
-                <Task taskName={'Category 2'}/>
-                <Task taskName={'Category 3'}/>
+                <Task taskName={'Task 1'}/>
+                <Task taskName={'Task 2'}/>
+                <Task taskName={'Task 3'}/>
             </div>
 
         )
@@ -306,9 +312,11 @@ let Task = React.createClass({
     render: function () {
         return (
             <div className="task">
-                <input type="checkbox"/>
-                {this.props.taskName}
-                <span className="task-edit-icon"/>
+                <div className="task-checkbox-container">
+                    <input className="task-checkbox" type="checkbox"/>
+                    {this.props.taskName}
+                </div>
+                <i className="fas fa-edit fa-sm icon"/>
             </div>
         )
     }
