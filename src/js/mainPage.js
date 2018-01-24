@@ -279,7 +279,7 @@ let ToDoListApp = React.createClass({
             <div className="todo-list-app">
                 <Navbar/>
                 <div className="main-box">
-                    <CategorysBox selectCurrentCategory={this.selectCurrentCategory}/>
+                    <CategorysBox selectCurrentCategory={this.selectCurrentCategory} selectedCategory={this.state.selectedCategory}/>
                     <TasksBox selectedCategory={this.state.selectedCategory}/>
                 </div>
             </div>
@@ -346,7 +346,7 @@ let CategorysBox = React.createClass({
                     <input className="category-add-input" type="text" placeholder="Enter category title" value={this.state.categoryInputText} onChange={this.setCategoryText}/>
                     <input className="add-button" type="button" value="Add" onClick={this.addCategory}/>
                 </div>
-                <CategoryList categories={this.state.categories} selectCurrentCategory={this.props.selectCurrentCategory}/>
+                <CategoryList categories={this.state.categories} selectCurrentCategory={this.props.selectCurrentCategory} selectedCategory={this.props.selectedCategory}/>
             </div>
         )
     }
@@ -357,7 +357,7 @@ let CategoryList = React.createClass({
         return (
             <div className="category-list">
                 {this.props.categories.map((elem) => {
-                    return <Category id={elem.id} key={elem.id} categoryName={elem.name} selectCurrentCategory={this.props.selectCurrentCategory}/>
+                    return <Category id={elem.id} key={elem.id} categoryName={elem.name} selectCurrentCategory={this.props.selectCurrentCategory} selectedCategory={this.props.selectedCategory}/>
                 })}
             </div>
 
@@ -370,8 +370,10 @@ let Category = React.createClass({
         this.props.selectCurrentCategory(this.props.id);
     },
     render: function () {
+        let categoryClassName = this.props.selectedCategory === this.props.id ? 'category selected-category' : 'category';
+
         return (
-            <div className="category" onClick={this.onClickCurrentCategory}>
+            <div className={categoryClassName} onClick={this.onClickCurrentCategory}>
                 <div className="category-name-container">
                     <div className="category-name">{this.props.categoryName}</div>
                 </div>
@@ -410,8 +412,9 @@ let TasksBox = React.createClass({
 
     },
     render: function () {
+        let tasksAddContainerClassName = this.props.selectedCategory === '' ? 'tasks-box disabled' : 'tasks-box';
         return (
-            <div className="tasks-box">
+            <div className={tasksAddContainerClassName}>
                 <div className="tasks-add-container">
                     <input className="task-add-input" type="text" placeholder="Enter task title" value={this.state.taskInputText} onChange={this.setTaskText}/>
                     <input className="add-button" type="button" value="Add" onClick={this.addTask}/>
