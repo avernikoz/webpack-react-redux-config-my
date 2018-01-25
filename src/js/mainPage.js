@@ -276,78 +276,11 @@ const notes = [
 //     <ContactsPanel/>,
 //     document.getElementById('root')
 // );
+//
 
+import {exampleCategories,exampleTasks} from './defaultValues';
+import Navbar from './Navbar';
 
-let exampleCategories = [
-    {
-        id: 1,
-        parent: null,
-        name: 'Category 1'
-    },
-    {
-        id: 2,
-        parent: null,
-        name: 'Category 2'
-    },
-    {
-        id: 3,
-        parent: null,
-        name: 'Category 3'
-    }
-];
-
-let exampleTasks = [
-    {
-        id: 1,
-        catid: 1,
-        name: 'Task 1'
-    },
-    {
-        id: 2,
-        catid: 1,
-        name: 'Task 2'
-    },
-    {
-        id: 3,
-        catid: 2,
-        name: 'Task 1'
-    },
-    {
-        id: 4,
-        catid: 2,
-        name: 'Task 2'
-    },
-    {
-        id: 5,
-        catid: 2,
-        name: 'Task 3'
-    },
-    {
-        id: 6,
-        catid: 3,
-        name: 'Task 1'
-    },
-    {
-        id: 7,
-        catid: 3,
-        name: 'Task 2'
-    },
-    {
-        id: 8,
-        catid: 3,
-        name: 'Task 3'
-    },
-    {
-        id: 9,
-        catid: 3,
-        name: 'Task 4'
-    },
-    {
-        id: 10,
-        catid: 3,
-        name: 'Task 5'
-    },
-];
 
 
 let ToDoListApp = React.createClass({
@@ -436,66 +369,6 @@ let ToDoListApp = React.createClass({
                                          modalWindowOpened={this.state.modalWindowOpened}
                                          selectedCategory={this.state.selectedCategory}
                                          selectedCategoryText={this.state.selectedCategoryText}/>
-            </div>
-        )
-    }
-});
-
-// Как будет правильно - создать все свойства в компоненте, который находится на самом верхнем уровне,
-// или объявить их в том компоненте, в котором они меняются, и передавать их с помощью-какого-нибудь метода
-
-let Navbar = React.createClass({
-    getInitialState: function () {
-        return ({
-            searchInputText: '',
-            showCompletedTasks: false
-        })
-    },
-    updateFilterValues: function () {
-        this.props.updateFilter(this.state.searchInputText, this.state.showCompletedTasks)
-    },
-    searchInTasks: function (event) {
-        this.setState({searchInputText: event.target.value}, this.updateFilterValues);
-    },
-    showTasksOption: function (event) {
-        if (event.target.checked) {
-            this.setState({showCompletedTasks: true}, this.updateFilterValues);
-        }
-        else {
-            this.setState({showCompletedTasks: false}, this.updateFilterValues);
-        }
-
-    },
-    clearSearchInput: function () {
-        this.setState({searchInputText: ''}, this.updateFilterValues);
-    },
-
-    render: function () {
-        let SearchBoxActivity = this.props.selectedCategory === '';
-
-        return (
-            <div>
-                <div className="upper-header">
-                    <h1 className="app-title">To-do-list</h1>
-                    <div className="search-container">
-                        <div className="checkbox-search-box">
-                            <input id="showDone" type="checkbox" onChange={this.showTasksOption}
-                                   className="search-checkbox"/>
-                            <label htmlFor="showDone">
-                                Show done
-                            </label>
-                        </div>
-                        <div className="input-search-box">
-                            <input type="text" placeholder="Search..." className="search-field"
-                                   value={this.state.searchInputText} onChange={this.searchInTasks}
-                                   disabled={SearchBoxActivity}/>
-                            <i className="fas fa-times sm clear-icon-search-field" onClick={this.clearSearchInput}/>
-                        </div>
-                    </div>
-                </div>
-                <div className="progress-bar">
-                    Progress-bar
-                </div>
             </div>
         )
     }
