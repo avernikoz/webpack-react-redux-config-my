@@ -92,7 +92,7 @@ let ToDoListApp = React.createClass({
     },
     editCategory: function (categoryId, categoryName) {
 
-    }
+    },
     addTask: function (taskName) {
         let newTask = {
             id: Date.now(),
