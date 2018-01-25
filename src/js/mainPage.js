@@ -277,7 +277,7 @@ let ToDoListApp = React.createClass({
     render: function () {
         return (
             <div className="todo-list-app">
-                <Navbar/>
+                <Navbar selectedCategory={this.state.selectedCategory}/>
                 <div className="main-box">
                     <CategorysBox selectCurrentCategory={this.selectCurrentCategory} selectedCategory={this.state.selectedCategory}/>
                     <TasksBox selectedCategory={this.state.selectedCategory}/>
@@ -289,6 +289,23 @@ let ToDoListApp = React.createClass({
 
 
 let Navbar = React.createClass({
+    getInitialState: function () {
+        return ({
+            searchInputText: '',
+            showCompletedTasks: false
+        })
+    },
+    searchInTasks: function (event) {
+        this.setState({searchInputText: event.target.value});
+    },
+    showTasksOption: function (event) {
+        if (event.target.checked){
+            this.setState({showCompletedTasks: true});
+        }
+        else {
+            this.setState({showCompletedTasks: false});
+        }
+    },
     render: function () {
         return (
             <div>
@@ -296,13 +313,13 @@ let Navbar = React.createClass({
                     <h1 className="app-title">To-do-list</h1>
                     <div className="search-container">
                         <div className="checkbox-search-box">
-                            <input id="showDone" type="checkbox" className="search-checkbox"/>
+                            <input id="showDone" type="checkbox" onChange={this.showTasksOption} className="search-checkbox"/>
                             <label htmlFor="showDone">
                                 Show done
                             </label>
                         </div>
                         <div className="input-search-box">
-                            <input type="text" placeholder="Search..." className="search-field"/>
+                            <input type="text" placeholder="Search..." className="search-field" value={this.state.searchInputText} onChange={this.searchInTasks}/>
                             <span className="clear-icon-search-field">X</span>
                         </div>
                     </div>
