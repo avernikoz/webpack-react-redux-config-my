@@ -281,14 +281,17 @@ const notes = [
 let exampleCategories = [
     {
         id: 1,
+        parent: null,
         name: 'Category 1'
     },
     {
         id: 2,
+        parent: null,
         name: 'Category 2'
     },
     {
         id: 3,
+        parent: null,
         name: 'Category 3'
     }
 ];
@@ -347,38 +350,93 @@ let exampleTasks = [
 ];
 
 
-
 let ToDoListApp = React.createClass({
     getInitialState: function () {
-      return {
-          selectedCategory : '',
-          filter: {
-              filterText: '',
-              showCompletedTasks: false
-          }
-      }
+        return {
+            selectedCategory: '',
+            selectedCategoryText: '',
+            filter: {
+                filterText: '',
+                showCompletedTasks: false
+            },
+            modalWindowOpened: false,
+            modalWindowAddOpened: false,
+            modalWindowEditOpened: false
+        }
     },
-    selectCurrentCategory: function (idSelectedCategory) {
+    selectCurrentCategory: function (idSelectedCategory, textSelectedCategory) {
         this.setState({
-            selectedCategory: idSelectedCategory
+            selectedCategory: idSelectedCategory,
+            selectedCategoryText: textSelectedCategory
         });
     },
     updateFilter: function (filterText, showCompleted) {
-          this.setState({
-              filter: {
-                  filterText: filterText,
-                  showCompletedTasks: showCompleted
-              }
-          })
+        this.setState({
+            filter: {
+                filterText: filterText,
+                showCompletedTasks: showCompleted
+            }
+        })
+    },
+    showModal: function (modalWindow) {
+        switch (modalWindow) {
+            case 'addCategory':
+                this.setState({
+                    modalWindowOpened: true,
+                    modalWindowAddOpened: true
+                });
+                break;
+
+            case 'editCategory':
+                this.setState({
+                    modalWindowOpened: true,
+                    modalWindowEditOpened: true
+                });
+                break;
+        }
+    },
+    closeModal: function (modalWindow) {
+        switch (modalWindow) {
+            case 'addCategory':
+                this.setState({
+                    modalWindowOpened: false,
+                    modalWindowAddOpened: false
+                });
+                break;
+
+            case 'editCategory':
+                this.setState({
+                    modalWindowOpened: false,
+                    modalWindowEditOpened: false
+                });
+                break;
+        }
     },
     render: function () {
+
+        let mainContentWrapperClassName = this.state.modalWindowOpened === false ? 'main-content-wrapper' : 'main-content-wrapper blurred';
+
         return (
             <div className="todo-list-app">
-                <Navbar updateFilter={this.updateFilter}/>
-                <div className="main-box">
-                    <CategorysBox selectCurrentCategory={this.selectCurrentCategory} selectedCategory={this.state.selectedCategory}/>
-                    <TasksBox selectedCategory={this.state.selectedCategory} filterOptions={this.state.filter}/>
+                <div className={mainContentWrapperClassName}>
+                    <Navbar updateFilter={this.updateFilter} selectedCategory={this.state.selectedCategory}/>
+                    <div className="main-box">
+                        <CategorysBox selectCurrentCategory={this.selectCurrentCategory}
+                                      selectedCategory={this.state.selectedCategory}
+                                      showModal={this.showModal}/>
+                        <TasksBox selectedCategory={this.state.selectedCategory} filterOptions={this.state.filter}/>
+                    </div>
                 </div>
+                <Counter initialCount={7} />
+                <ModalWindowCategoryAdd closeModal={this.closeModal}
+                                        modalWindowAddOpened={this.state.modalWindowAddOpened}
+                                        modalWindowOpened={this.state.modalWindowOpened}
+                                        selectedCategory={this.state.selectedCategory}/>
+                <ModalWindowCategoryEdit closeModal={this.closeModal}
+                                         modalWindowEditOpened={this.state.modalWindowEditOpened}
+                                         modalWindowOpened={this.state.modalWindowOpened}
+                                         selectedCategory={this.state.selectedCategory}
+                                         selectedCategoryText={this.state.selectedCategoryText}/>
             </div>
         )
     }
@@ -401,11 +459,11 @@ let Navbar = React.createClass({
         this.setState({searchInputText: event.target.value}, this.updateFilterValues);
     },
     showTasksOption: function (event) {
-        if (event.target.checked){
+        if (event.target.checked) {
             this.setState({showCompletedTasks: true}, this.updateFilterValues);
         }
         else {
-            this.setState({showCompletedTasks: false},this.updateFilterValues);
+            this.setState({showCompletedTasks: false}, this.updateFilterValues);
         }
 
     },
@@ -414,20 +472,25 @@ let Navbar = React.createClass({
     },
 
     render: function () {
+        let SearchBoxActivity = this.props.selectedCategory === '';
+
         return (
             <div>
                 <div className="upper-header">
                     <h1 className="app-title">To-do-list</h1>
                     <div className="search-container">
                         <div className="checkbox-search-box">
-                            <input id="showDone" type="checkbox" onChange={this.showTasksOption} className="search-checkbox"/>
+                            <input id="showDone" type="checkbox" onChange={this.showTasksOption}
+                                   className="search-checkbox"/>
                             <label htmlFor="showDone">
                                 Show done
                             </label>
                         </div>
                         <div className="input-search-box">
-                            <input type="text" placeholder="Search..." className="search-field" value={this.state.searchInputText} onChange={this.searchInTasks}/>
-                            <i className="fas fa-times sm clear-icon-search-field" onClick={this.clearSearchInput} />
+                            <input type="text" placeholder="Search..." className="search-field"
+                                   value={this.state.searchInputText} onChange={this.searchInTasks}
+                                   disabled={SearchBoxActivity}/>
+                            <i className="fas fa-times sm clear-icon-search-field" onClick={this.clearSearchInput}/>
                         </div>
                     </div>
                 </div>
@@ -463,14 +526,24 @@ let CategorysBox = React.createClass({
         this.setState({categoryInputText: ''});
 
     },
+    _handleKeyPress: function (e) {
+        if (e.key === 'Enter') {
+            this.addCategory();
+        }
+    },
     render: function () {
         return (
             <div className="category-box">
                 <div className="category-add-container">
-                    <input className="category-add-input" type="text" placeholder="Enter category title" value={this.state.categoryInputText} onChange={this.setCategoryText}/>
+                    <input className="category-add-input" type="text" placeholder="Enter category title"
+                           value={this.state.categoryInputText} onChange={this.setCategoryText}
+                           onKeyPress={this._handleKeyPress}/>
                     <input className="add-button" type="button" value="Add" onClick={this.addCategory}/>
                 </div>
-                <CategoryList categories={this.state.categories} selectCurrentCategory={this.props.selectCurrentCategory} selectedCategory={this.props.selectedCategory}/>
+                <CategoryList categories={this.state.categories}
+                              selectCurrentCategory={this.props.selectCurrentCategory}
+                              selectedCategory={this.props.selectedCategory}
+                              showModal={this.props.showModal}/>
             </div>
         )
     }
@@ -481,7 +554,10 @@ let CategoryList = React.createClass({
         return (
             <div className="category-list">
                 {this.props.categories.map((elem) => {
-                    return <Category id={elem.id} key={elem.id} categoryName={elem.name} selectCurrentCategory={this.props.selectCurrentCategory} selectedCategory={this.props.selectedCategory}/>
+                    return <Category id={elem.id} key={elem.id} categoryName={elem.name}
+                                     selectCurrentCategory={this.props.selectCurrentCategory}
+                                     selectedCategory={this.props.selectedCategory}
+                                     showModal={this.props.showModal}/>
                 })}
             </div>
 
@@ -491,7 +567,13 @@ let CategoryList = React.createClass({
 
 let Category = React.createClass({
     onClickCurrentCategory: function () {
-        this.props.selectCurrentCategory(this.props.id);
+        this.props.selectCurrentCategory(this.props.id, this.props.categoryName);
+    },
+    showAddCategoryModal: function () {
+        this.props.showModal('addCategory');
+    },
+    showEditCategoryModal: function () {
+        this.props.showModal('editCategory');
     },
     render: function () {
         let categoryClassName = this.props.selectedCategory === this.props.id ? 'category selected-category' : 'category';
@@ -500,11 +582,11 @@ let Category = React.createClass({
             <div className={categoryClassName} onClick={this.onClickCurrentCategory}>
                 <div className="category-name-container">
                     <div className="category-name">{this.props.categoryName}</div>
-                    <i className="fas fa-edit fa-sm icon"/>
+                    <i className="fas fa-edit fa-sm icon" onClick={this.showEditCategoryModal}/>
                 </div>
                 <div className="category-icons-container">
-                        <i className="fas fa-trash-alt fa-sm icon"/>
-                        <i className="fas fa-plus fa-sm icon"/>
+                    <i className="fas fa-trash-alt fa-sm icon"/>
+                    <i className="fas fa-plus fa-sm icon" onClick={this.showAddCategoryModal}/>
                 </div>
             </div>
         )
@@ -536,15 +618,24 @@ let TasksBox = React.createClass({
         this.setState({taskInputText: ''});
 
     },
+    _handleKeyPress: function (e) {
+        if (e.key === 'Enter') {
+            this.addTask()
+        }
+    },
     render: function () {
+
         let tasksAddContainerClassName = this.props.selectedCategory === '' ? 'tasks-box disabled' : 'tasks-box';
         return (
             <div className={tasksAddContainerClassName}>
                 <div className="tasks-add-container">
-                    <input className="task-add-input" type="text" placeholder="Enter task title" value={this.state.taskInputText} onChange={this.setTaskText}/>
+                    <input className="task-add-input" type="text" placeholder="Enter task title"
+                           value={this.state.taskInputText} onChange={this.setTaskText}
+                           onKeyPress={this._handleKeyPress}/>
                     <input className="add-button" type="button" value="Add" onClick={this.addTask}/>
                 </div>
-                <TasksList tasks={this.state.tasks} selectedCategory={this.props.selectedCategory} filterOptions={this.props.filterOptions}/>
+                <TasksList tasks={this.state.tasks} selectedCategory={this.props.selectedCategory}
+                           filterOptions={this.props.filterOptions}/>
             </div>
         )
     }
@@ -556,16 +647,6 @@ let TasksBox = React.createClass({
 let TasksList = React.createClass({
     render: function () {
         let filterOptions = this.props.filterOptions;
-
-
-        //     searchFunction: function (event) {
-//         let searchQuery = event.target.value.toLowerCase();
-//         let displayedContacts = CONTACTS.filter((element) => {
-//             let contactsName = element.name.toLowerCase();
-//             let contactsPhone = element.phoneNumber;
-//
-//             return (contactsName.indexOf(searchQuery) !== -1 || contactsPhone.indexOf(searchQuery) !== -1);
-//         });
 
         return (
             <div className="tasks-list">
@@ -581,8 +662,8 @@ let TasksList = React.createClass({
                     })
                 }
             </div>
-
         )
+
     }
 });
 
@@ -600,6 +681,82 @@ let Task = React.createClass({
     }
 });
 
+
+let ModalWindowCategoryAdd = React.createClass({
+    closeCurrentModal: function () {
+        this.props.closeModal('addCategory');
+    },
+    render: function () {
+        let modalWindowWrapperClassName = (this.props.modalWindowOpened && this.props.modalWindowAddOpened) ? 'modal-window-wrapper' : 'modal-window-wrapper disabled';
+        return (
+            <div className={modalWindowWrapperClassName}>
+                <div className="modal-window">
+                    <div className="modal-buttons-container">
+                        <input className="category-add-input" type="text" placeholder="Enter category title"/>
+                        <input className="add-button" type="button" value="Add"/>
+                        <input className="close-button" type="button" value="Close" onClick={this.closeCurrentModal}/>
+
+                    </div>
+                </div>
+            </div>
+        )
+    }
+});
+
+let ModalWindowCategoryEdit = React.createClass({
+    getInitialState: function () {
+        let oldCategoryText = this.props.selectedCategoryText;
+        console.log(oldCategoryText);
+
+        return ({categoryEditedText: oldCategoryText});
+    },
+    onChangeCategoryEditedText: function (event) {
+      this.setState({categoryEditedText: event.target.value})
+    },
+    closeCurrentModal: function () {
+        this.props.closeModal('editCategory');
+    },
+    display: function () {
+        console.log(this.props.selectedCategoryText);
+
+    },
+    render: function () {
+        let modalWindowWrapperClassName = (this.props.modalWindowOpened && this.props.modalWindowEditOpened) ? 'modal-window-wrapper' : 'modal-window-wrapper disabled';
+        return (
+            <div className={modalWindowWrapperClassName}>
+                <div className="modal-window">
+                    <div className="modal-buttons-container">
+                        <input className="category-add-input" type="text" placeholder="Enter category title" value={this.state.categoryEditedText} onChange={this.onChangeCategoryEditedText}/>
+                        <input className="add-button" type="button" value="Save" onClick={this.display}/>
+                        <input className="close-button" type="button" value="Close" onClick={this.closeCurrentModal}/>
+
+                    </div>
+                </div>
+            </div>
+        )
+    }
+});
+
+
+
+// !!!УДОЛИ МЕНЯ!!!
+var Counter = React.createClass({
+    getInitialState: function() {
+        // naming it initialX clearly indicates that the only purpose
+        // of the passed down prop is to initialize something internally
+        console.log(this.props.initialCount);
+
+        return {count: this.props.initialCount};
+    },
+
+    handleClick: function() {
+        this.setState({count: this.state.count + 1});
+    },
+
+    render: function() {
+        return <div onClick={this.handleClick}>{this.state.count}</div>;
+    }
+});
 
 ReactDOM.render(
     <ToDoListApp/>,
