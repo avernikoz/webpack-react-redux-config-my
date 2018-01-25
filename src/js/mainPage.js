@@ -427,7 +427,6 @@ let ToDoListApp = React.createClass({
                         <TasksBox selectedCategory={this.state.selectedCategory} filterOptions={this.state.filter}/>
                     </div>
                 </div>
-                <Counter initialCount={7} />
                 <ModalWindowCategoryAdd closeModal={this.closeModal}
                                         modalWindowAddOpened={this.state.modalWindowAddOpened}
                                         modalWindowOpened={this.state.modalWindowOpened}
@@ -741,24 +740,6 @@ let ModalWindowCategoryEdit = React.createClass({
 
 
 
-// !!!УДОЛИ МЕНЯ!!!
-var Counter = React.createClass({
-    getInitialState: function() {
-        // naming it initialX clearly indicates that the only purpose
-        // of the passed down prop is to initialize something internally
-        console.log(this.props.initialCount);
-
-        return {count: this.props.initialCount};
-    },
-
-    handleClick: function() {
-        this.setState({count: this.state.count + 1});
-    },
-
-    render: function() {
-        return <div onClick={this.handleClick}>{this.state.count}</div>;
-    }
-});
 
 ReactDOM.render(
     <ToDoListApp/>,
