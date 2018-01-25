@@ -193,6 +193,91 @@ const notes = [
 // );
 //
 
+
+//
+// let ContactsPanel = React.createClass({
+//     getInitialState: function () {
+//         return {
+//             displayedContacts: CONTACTS,
+//             personWhomWeSayHello: 'stranger'
+//         };
+//     },
+//     chageGreetingText: function (event) {
+//         this.setState({personWhomWeSayHello : event.target.value});
+//     },
+//     searchFunction: function (event) {
+//         let searchQuery = event.target.value.toLowerCase();
+//         let displayedContacts = CONTACTS.filter((element) => {
+//             let contactsName = element.name.toLowerCase();
+//             let contactsPhone = element.phoneNumber;
+//
+//             return (contactsName.indexOf(searchQuery) !== -1 || contactsPhone.indexOf(searchQuery) !== -1);
+//         });
+//
+//         this.setState({displayedContacts: displayedContacts});
+//
+//         console.log(displayedContacts);
+//     },
+//     render: function () {
+//         return (
+//             <div className="contacts">
+//                 <input type="text" className="search-field" onChange={this.searchFunction}/>
+//                 <div className="contacts-list">
+//                     {
+//                         this.state.displayedContacts.map((element) => {
+//                             return <Contact key={element.id} name={element.name} phoneNumber={element.phoneNumber}
+//                                             image={element.image} email={element.email}/>
+//                         })
+//                     }
+//                 </div>
+//                 <input type="text" className="search-field" onChange={this.chageGreetingText}/>
+//                 <p>Hello,{' '+this.state.personWhomWeSayHello}</p>
+//             </div>
+//         )
+//     }
+// });
+//
+//
+// let Contact = React.createClass({
+//     getInitialState: function () {
+//         return {expanded: false}
+//     },
+//     contactExpand: function (event) {
+//         this.setState({expanded: (this.state.expanded ? false : true)})
+//     },
+//     render: function () {
+//
+//         if (this.state.expanded) {
+//             return (
+//                 <div className="contact expanded" onClick={this.contactExpand}>
+//                     <img className="contact-image" src={this.props.image} height="50px" width="50px"/>
+//                     <div>
+//                         <div className="contact-name">{this.props.name}</div>
+//                         <div className="contact-number">{this.props.phoneNumber}</div>
+//                         <div className="contact-number">{this.props.email}</div>
+//                     </div>
+//                 </div>
+//             )
+//         }
+//         else {
+//             return (
+//                 <div className="contact" onClick={this.contactExpand}>
+//                     <img className="contact-image" src={this.props.image} height="50px" width="50px"/>
+//                     <div className="contact-name">{this.props.name}</div>
+//                     <div className="contact-number">{this.props.phoneNumber}</div>
+//                 </div>
+//             )
+//         }
+//     }
+// });
+//
+//
+// ReactDOM.render(
+//     <ContactsPanel/>,
+//     document.getElementById('root')
+// );
+
+
 let exampleCategories = [
     {
         id: 1,
@@ -266,7 +351,11 @@ let exampleTasks = [
 let ToDoListApp = React.createClass({
     getInitialState: function () {
       return {
-          selectedCategory : ''
+          selectedCategory : '',
+          filter: {
+              filterText: '',
+              showCompletedTasks: false
+          }
       }
     },
     selectCurrentCategory: function (idSelectedCategory) {
@@ -274,19 +363,29 @@ let ToDoListApp = React.createClass({
             selectedCategory: idSelectedCategory
         });
     },
+    updateFilter: function (filterText, showCompleted) {
+          this.setState({
+              filter: {
+                  filterText: filterText,
+                  showCompletedTasks: showCompleted
+              }
+          })
+    },
     render: function () {
         return (
             <div className="todo-list-app">
-                <Navbar selectedCategory={this.state.selectedCategory}/>
+                <Navbar updateFilter={this.updateFilter}/>
                 <div className="main-box">
                     <CategorysBox selectCurrentCategory={this.selectCurrentCategory} selectedCategory={this.state.selectedCategory}/>
-                    <TasksBox selectedCategory={this.state.selectedCategory}/>
+                    <TasksBox selectedCategory={this.state.selectedCategory} filterOptions={this.state.filter}/>
                 </div>
             </div>
         )
     }
 });
 
+// Как будет правильно - создать все свойства в компоненте, который находится на самом верхнем уровне,
+// или объявить их в том компоненте, в котором они меняются, и передавать их с помощью-какого-нибудь метода
 
 let Navbar = React.createClass({
     getInitialState: function () {
@@ -295,17 +394,25 @@ let Navbar = React.createClass({
             showCompletedTasks: false
         })
     },
+    updateFilterValues: function () {
+        this.props.updateFilter(this.state.searchInputText, this.state.showCompletedTasks)
+    },
     searchInTasks: function (event) {
-        this.setState({searchInputText: event.target.value});
+        this.setState({searchInputText: event.target.value}, this.updateFilterValues);
     },
     showTasksOption: function (event) {
         if (event.target.checked){
-            this.setState({showCompletedTasks: true});
+            this.setState({showCompletedTasks: true}, this.updateFilterValues);
         }
         else {
-            this.setState({showCompletedTasks: false});
+            this.setState({showCompletedTasks: false},this.updateFilterValues);
         }
+
     },
+    clearSearchInput: function () {
+        this.setState({searchInputText: ''}, this.updateFilterValues);
+    },
+
     render: function () {
         return (
             <div>
@@ -320,7 +427,7 @@ let Navbar = React.createClass({
                         </div>
                         <div className="input-search-box">
                             <input type="text" placeholder="Search..." className="search-field" value={this.state.searchInputText} onChange={this.searchInTasks}/>
-                            <span className="clear-icon-search-field">X</span>
+                            <i className="fas fa-times sm clear-icon-search-field" onClick={this.clearSearchInput} />
                         </div>
                     </div>
                 </div>
@@ -393,6 +500,7 @@ let Category = React.createClass({
             <div className={categoryClassName} onClick={this.onClickCurrentCategory}>
                 <div className="category-name-container">
                     <div className="category-name">{this.props.categoryName}</div>
+                    <i className="fas fa-edit fa-sm icon"/>
                 </div>
                 <div className="category-icons-container">
                         <i className="fas fa-trash-alt fa-sm icon"/>
@@ -436,19 +544,38 @@ let TasksBox = React.createClass({
                     <input className="task-add-input" type="text" placeholder="Enter task title" value={this.state.taskInputText} onChange={this.setTaskText}/>
                     <input className="add-button" type="button" value="Add" onClick={this.addTask}/>
                 </div>
-                <TasksList tasks={this.state.tasks} selectedCategory={this.props.selectedCategory}/>
+                <TasksList tasks={this.state.tasks} selectedCategory={this.props.selectedCategory} filterOptions={this.props.filterOptions}/>
             </div>
         )
     }
 });
 
+// Вот тут мне кажется можно проще
+// Мб componentWillReceiveProps ???
+
 let TasksList = React.createClass({
     render: function () {
+        let filterOptions = this.props.filterOptions;
+
+
+        //     searchFunction: function (event) {
+//         let searchQuery = event.target.value.toLowerCase();
+//         let displayedContacts = CONTACTS.filter((element) => {
+//             let contactsName = element.name.toLowerCase();
+//             let contactsPhone = element.phoneNumber;
+//
+//             return (contactsName.indexOf(searchQuery) !== -1 || contactsPhone.indexOf(searchQuery) !== -1);
+//         });
+
         return (
             <div className="tasks-list">
                 {
                     this.props.tasks.map((elem) => {
-                        if (elem.catid === this.props.selectedCategory) {
+                        let ourTaskInOurCategory = (elem.catid === this.props.selectedCategory);
+                        let outTaskInSearchQuery = (elem.name.toLowerCase().indexOf(filterOptions.filterText) !== -1);
+
+
+                        if (ourTaskInOurCategory && outTaskInSearchQuery) {
                             return <Task key={elem.id} taskName={elem.name}/>
                         }
                     })
