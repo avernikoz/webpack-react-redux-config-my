@@ -705,10 +705,12 @@ let ModalWindowCategoryAdd = React.createClass({
 
 let ModalWindowCategoryEdit = React.createClass({
     getInitialState: function () {
-        let oldCategoryText = this.props.selectedCategoryText;
-        console.log(oldCategoryText);
-
-        return ({categoryEditedText: oldCategoryText});
+        return ({categoryEditedText: this.props.selectedCategoryText});
+    },
+    componentWillReceiveProps: function (nextProps) {
+        this.setState({
+            categoryEditedText: nextProps.selectedCategoryText
+        })
     },
     onChangeCategoryEditedText: function (event) {
       this.setState({categoryEditedText: event.target.value})
