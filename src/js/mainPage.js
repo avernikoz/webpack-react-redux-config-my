@@ -22,6 +22,8 @@ let ToDoListApp = React.createClass({
             tasks: exampleTasks,
             selectedCategoryId: '',
             selectedCategoryText: '',
+            selectedTaskId: '',
+            selectedTaskText: '',
             filter: {
                 filterText: '',
                 showCompletedTasks: false
@@ -29,13 +31,20 @@ let ToDoListApp = React.createClass({
             modalWindowOpened: false,
             modalWindowAddOpened: false,
             modalWindowEditOpened: false,
-            modalWindowDeleteOpened: false
+            modalWindowDeleteOpened: false,
+            modalWindowTaskEditDescriptionOpened: false
         }
     },
     setSelectedCurrentCategory: function (idSelectedCategory, textSelectedCategory) {
         this.setState({
             selectedCategoryId: idSelectedCategory,
             selectedCategoryText: textSelectedCategory
+        });
+    },
+    setSelectedCurrentTask: function (idSelectedTask, textSelectedTask) {
+        this.setState({
+            selectedTaskId: idSelectedTask,
+            selectedTaskText: textSelectedTask
         });
     },
     updateFilter: function (filterText, showCompleted) {
@@ -67,6 +76,12 @@ let ToDoListApp = React.createClass({
                     modalWindowDeleteOpened: true
                 });
                 break;
+            case 'editTaskDescription':
+                this.setState({
+                    modalWindowOpened: true,
+                    modalWindowTaskEditDescriptionOpened: true
+                });
+                break;
         }
 
     },
@@ -89,6 +104,12 @@ let ToDoListApp = React.createClass({
                 this.setState({
                     modalWindowOpened: false,
                     modalWindowDeleteOpened: false
+                });
+                break;
+            case 'editTaskDescription':
+                this.setState({
+                    modalWindowOpened: false,
+                    modalWindowTaskEditDescriptionOpened: false
                 });
                 break;
         }
@@ -152,7 +173,7 @@ let ToDoListApp = React.createClass({
 
         deepDeleteCategories(categoriesToSearch);
 
-        function deepDeleteCategories (categoriesToSearch) {
+        function deepDeleteCategories(categoriesToSearch) {
 
             let categoriesNeedToDelete = allCategories.reduce((childCategories, elem) => {
 
@@ -166,20 +187,20 @@ let ToDoListApp = React.createClass({
             }, []);
 
 
-
             allCategories = allCategories.filter((elem) => {
                 return !categoriesNeedToDelete.includes(elem.id);
             });
 
-            allCategories = allCategories.filter((elem) =>{
+            allCategories = allCategories.filter((elem) => {
                 return !categoriesToSearch.includes(elem.id);
             });
 
-            if (categoriesNeedToDelete.length !== 0){
+            if (categoriesNeedToDelete.length !== 0) {
                 deepDeleteCategories(categoriesNeedToDelete)
             }
 
         }
+
         //Apply result after recursion
 
         this.setState({categories: allCategories});
@@ -197,8 +218,19 @@ let ToDoListApp = React.createClass({
 
         this.setState({tasks: allTasks});
     },
+    editTaskDescription: function (taskId,taskDesc) {
+        let allTasks = this.state.tasks;
 
+        allTasks.forEach((elem) => {
+            if (elem.id === taskId) {
+                elem.name = taskDesc;
+            }
+        });
 
+        this.setState({tasks: allTasks});
+
+        console.log(taskId,taskDesc);
+    },
     render: function () {
 
         let mainContentWrapperClassName = this.state.modalWindowOpened === false ? 'main-content-wrapper' : 'main-content-wrapper blurred';
@@ -219,6 +251,8 @@ let ToDoListApp = React.createClass({
                                   filterOptions={this.state.filter}
                                   tasks={this.state.tasks}
                                   addTask={this.addTask}
+                                  showModal={this.showModal}
+                                  setSelectedCurrentTask={this.setSelectedCurrentTask}
                         />
                     </div>
                 </div>
@@ -242,6 +276,14 @@ let ToDoListApp = React.createClass({
                                            selectedCategoryId={this.state.selectedCategoryId}
                                            selectedCategoryText={this.state.selectedCategoryText}
                                            deleteCategory={this.deleteCategory}
+
+                />
+                <ModalWindowEditTaskDescription closeModal={this.closeModal}
+                                                modalWindowTaskEditDescriptionOpened={this.state.modalWindowTaskEditDescriptionOpened}
+                                                modalWindowOpened={this.state.modalWindowOpened}
+                                                selectedTaskId={this.state.selectedTaskId}
+                                                selectedTaskText={this.state.selectedTaskText}
+                                                editTaskDescription={this.editTaskDescription}
 
                 />
             </div>
@@ -370,7 +412,11 @@ let TasksBox = React.createClass({
                     <input className="add-button" type="button" value="Add" onClick={this.addTaskHandler}/>
                 </div>
                 <TasksList tasks={this.props.tasks} selectedCategoryId={this.props.selectedCategoryId}
-                           filterOptions={this.props.filterOptions}/>
+                           filterOptions={this.props.filterOptions}
+                           setSelectedCurrentTask={this.props.setSelectedCurrentTask}
+                           showModal={this.props.showModal}
+                />
+
             </div>
         )
     }
@@ -392,7 +438,12 @@ let TasksList = React.createClass({
 
 
                         if (ourTaskInOurCategory && outTaskInSearchQuery) {
-                            return <Task key={elem.id} taskName={elem.name}/>
+                            return <Task id={elem.id}
+                                         key={elem.id}
+                                         taskName={elem.name}
+                                         setSelectedCurrentTask={this.props.setSelectedCurrentTask}
+                                         showModal={this.props.showModal}
+                            />
                         }
                     })
                 }
@@ -403,14 +454,20 @@ let TasksList = React.createClass({
 });
 
 let Task = React.createClass({
+    onClickCurrentTask: function () {
+        this.props.setSelectedCurrentTask(this.props.id, this.props.taskName);
+    },
+    onEditTaskDescriptionHandler: function () {
+        this.props.showModal('editTaskDescription');
+    },
     render: function () {
         return (
-            <div className="task">
+            <div className="task" onClick={this.onClickCurrentTask}>
                 <div className="task-checkbox-container">
                     <input className="task-checkbox" type="checkbox"/>
                     {this.props.taskName}
                 </div>
-                <i className="fas fa-edit fa-sm icon"/>
+                <i className="fas fa-edit fa-sm icon" onClick={this.onEditTaskDescriptionHandler}/>
             </div>
         )
     }
@@ -435,7 +492,7 @@ let ModalWindowCategoryAdd = React.createClass({
     },
     _handleKeyPress: function (e) {
         if (e.key === 'Enter') {
-            this.addCategoryHandler()
+            this.addCategoryHandler();
         }
     },
     clearTextInput: function () {
@@ -558,6 +615,63 @@ let ModalWindowCategoryDelete = React.createClass({
                         <input className="add-button" type="button" value="Delete"
                                onClick={this.deleteCategoryHandler}/>
                         <input className="close-button" type="button" value="Close" onClick={this.closeCurrentModal}/>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+});
+
+
+let ModalWindowEditTaskDescription = React.createClass({
+    getInitialState: function () {
+        return ({inputText: ''});
+    },
+    componentDidUpdate: function() {
+        this.nameInput.focus();
+    },
+    inputChangeHandler: function (event) {
+        this.setState({inputText: event.target.value});
+    },
+    editTaskDescriptionHandler: function () {
+        this.props.editTaskDescription(this.state.inputText, this.props.selectedTaskId);
+
+        this.clearTextInput();
+        this.closeCurrentModal();
+    },
+    _handleKeyPress: function (e) {
+        if (e.key === 'Enter') {
+            this.editTaskDescriptionHandler()
+        }
+    },
+    clearTextInput: function () {
+        this.setState({inputText: ''});
+    },
+    closeCurrentModal: function () {
+        this.clearTextInput();
+        this.props.closeModal('editTaskDescription');
+    },
+    render: function () {
+        let modalWindowWrapperClassName = (this.props.modalWindowOpened && this.props.modalWindowTaskEditDescriptionOpened) ? 'modal-window-wrapper' : 'modal-window-wrapper disabled';
+        let addButtonCondition = this.state.inputText === '';
+
+        return (
+            <div className={modalWindowWrapperClassName}>
+                <div className="modal-window-large">
+                    <div className="modal-buttons-container large">
+                        <h1>{this.props.selectedTaskText}</h1>
+                        <textarea className="task-textarea"
+                                  placeholder="Enter task description..."
+                                  value={this.state.inputText}
+                                  onChange={this.inputChangeHandler} onKeyPress={this._handleKeyPress}
+                                  ref={(input) => this.nameInput = input}
+                        />
+                        <div className="modal-action-buttons-container">
+                        <input className="add-button" type="button" value="Save"
+                               onClick={this.editTaskDescriptionHandler}
+                               disabled={addButtonCondition}/>
+                        <input className="close-button" type="button" value="Close" onClick={this.closeCurrentModal}/>
+                        </div>
                     </div>
                 </div>
             </div>

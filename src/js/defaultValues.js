@@ -50,52 +50,62 @@ let exampleTasks = [
     {
         id: 1,
         catid: 1,
-        name: 'Task 1'
+        name: 'Task 1',
+        description: ''
     },
     {
         id: 2,
         catid: 1,
-        name: 'Task 2'
+        name: 'Task 2',
+        description: ''
     },
     {
         id: 3,
         catid: 2,
-        name: 'Task 1'
+        name: 'Task 1',
+        description: ''
     },
     {
         id: 4,
         catid: 2,
-        name: 'Task 2'
+        name: 'Task 2',
+        description: ''
     },
     {
         id: 5,
         catid: 2,
-        name: 'Task 3'
+        name: 'Task 3',
+        description: ''
     },
     {
         id: 6,
         catid: 3,
-        name: 'Task 1'
+        name: 'Task 1',
+        description: ''
     },
     {
         id: 7,
         catid: 3,
-        name: 'Task 2'
+        name: 'Task 2',
+        description: ''
     },
     {
         id: 8,
         catid: 3,
-        name: 'Task 3'
+        name: 'Task 3',
+        description: ''
     },
     {
         id: 9,
         catid: 3,
-        name: 'Task 4'
+        name: 'Task 4',
+        description: ''
     },
     {
         id: 10,
         catid: 3,
-        name: 'Task 5'
+        name: 'Task 5',
+        description: ''
     },
 ];
 
