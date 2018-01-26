@@ -8,6 +8,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import createReactClass from 'create-react-class';
+
 React.createClass = createReactClass;
 
 import {exampleCategories, exampleTasks} from './defaultValues';
@@ -27,7 +28,8 @@ let ToDoListApp = React.createClass({
             },
             modalWindowOpened: false,
             modalWindowAddOpened: false,
-            modalWindowEditOpened: false
+            modalWindowEditOpened: false,
+            modalWindowDeleteOpened: false
         }
     },
     setSelectedCurrentCategory: function (idSelectedCategory, textSelectedCategory) {
@@ -59,7 +61,14 @@ let ToDoListApp = React.createClass({
                     modalWindowEditOpened: true
                 });
                 break;
+            case 'deleteCategory':
+                this.setState({
+                    modalWindowOpened: true,
+                    modalWindowDeleteOpened: true
+                });
+                break;
         }
+
     },
     closeModal: function (modalWindow) {
         switch (modalWindow) {
@@ -74,6 +83,12 @@ let ToDoListApp = React.createClass({
                 this.setState({
                     modalWindowOpened: false,
                     modalWindowEditOpened: false
+                });
+                break;
+            case 'deleteCategory':
+                this.setState({
+                    modalWindowOpened: false,
+                    modalWindowDeleteOpened: false
                 });
                 break;
         }
@@ -98,11 +113,11 @@ let ToDoListApp = React.createClass({
         };
 
         let allCategories = this.state.categories;
-        let parentCategoryIndexInAllCategories = allCategories.findIndex( (elem) =>{
+        let parentCategoryIndexInAllCategories = allCategories.findIndex((elem) => {
             return elem.id === parentCategoryId;
         });
 
-        let nestedCategoriesCountInCurrentCategory = allCategories.reduce( (sum, currElem) => {
+        let nestedCategoriesCountInCurrentCategory = allCategories.reduce((sum, currElem) => {
 
             if (currElem.parent === parentCategoryId) {
                 sum++;
@@ -123,6 +138,49 @@ let ToDoListApp = React.createClass({
                 elem.name = categoryName;
             }
         });
+
+        this.setState({categories: allCategories});
+
+    },
+    deleteCategory: function (categoryId) {
+        let allCategories = this.state.categories;
+
+
+        let categoriesToSearch = [];
+        categoriesToSearch.push(categoryId);
+
+
+        deepDeleteCategories(categoriesToSearch);
+
+        function deepDeleteCategories (categoriesToSearch) {
+
+            let categoriesNeedToDelete = allCategories.reduce((childCategories, elem) => {
+
+                categoriesToSearch.forEach((categoryId) => {
+                    if (categoryId === elem.parent) {
+                        childCategories.push(elem.id)
+                    }
+                });
+
+                return childCategories;
+            }, []);
+
+
+
+            allCategories = allCategories.filter((elem) => {
+                return !categoriesNeedToDelete.includes(elem.id);
+            });
+
+            allCategories = allCategories.filter((elem) =>{
+                return !categoriesToSearch.includes(elem.id);
+            });
+
+            if (categoriesNeedToDelete.length !== 0){
+                deepDeleteCategories(categoriesNeedToDelete)
+            }
+
+        }
+        //Apply result after recursion
 
         this.setState({categories: allCategories});
 
@@ -155,6 +213,7 @@ let ToDoListApp = React.createClass({
                                       showModal={this.showModal}
                                       categories={this.state.categories}
                                       addCategory={this.addCategory}
+
                         />
                         <TasksBox selectedCategoryId={this.state.selectedCategoryId}
                                   filterOptions={this.state.filter}
@@ -168,13 +227,21 @@ let ToDoListApp = React.createClass({
                                         modalWindowOpened={this.state.modalWindowOpened}
                                         selectedCategoryId={this.state.selectedCategoryId}
                                         addNestedCategory={this.addNestedCategory}
-                                        />
+                />
                 <ModalWindowCategoryEdit closeModal={this.closeModal}
                                          modalWindowEditOpened={this.state.modalWindowEditOpened}
                                          modalWindowOpened={this.state.modalWindowOpened}
                                          selectedCategoryId={this.state.selectedCategoryId}
                                          selectedCategoryText={this.state.selectedCategoryText}
                                          editCategory={this.editCategory}
+
+                />
+                <ModalWindowCategoryDelete closeModal={this.closeModal}
+                                           modalWindowDeleteOpened={this.state.modalWindowDeleteOpened}
+                                           modalWindowOpened={this.state.modalWindowOpened}
+                                           selectedCategoryId={this.state.selectedCategoryId}
+                                           selectedCategoryText={this.state.selectedCategoryText}
+                                           deleteCategory={this.deleteCategory}
 
                 />
             </div>
@@ -247,6 +314,9 @@ let Category = React.createClass({
     showEditCategoryModal: function () {
         this.props.showModal('editCategory');
     },
+    showDeleteCategoryModal: function () {
+        this.props.showModal('deleteCategory');
+    },
     render: function () {
         let categoryClassName = this.props.selectedCategoryId === this.props.id ? 'category selected-category' : 'category';
         let nested = this.props.parentCategory === null ? '' : ' nested';
@@ -258,7 +328,7 @@ let Category = React.createClass({
                     <i className="fas fa-edit fa-sm icon" onClick={this.showEditCategoryModal}/>
                 </div>
                 <div className="category-icons-container">
-                    <i className="fas fa-trash-alt fa-sm icon"/>
+                    <i className="fas fa-trash-alt fa-sm icon" onClick={this.showDeleteCategoryModal}/>
                     <i className="fas fa-plus fa-sm icon" onClick={this.showAddCategoryModal}/>
                 </div>
             </div>
@@ -351,7 +421,7 @@ let ModalWindowCategoryAdd = React.createClass({
     getInitialState: function () {
         return ({inputText: ''});
     },
-    componentDidUpdate(){
+    componentDidUpdate() {
         this.nameInput.focus();
     },
     inputChangeHandler: function (event) {
@@ -387,9 +457,12 @@ let ModalWindowCategoryAdd = React.createClass({
                                type="text" placeholder="Enter new subcategory title..."
                                value={this.state.inputText}
                                onChange={this.inputChangeHandler} onKeyPress={this._handleKeyPress}
-                               ref={(input) => { this.nameInput = input; }}
+                               ref={(input) => {
+                                   this.nameInput = input;
+                               }}
                         />
-                        <input className="add-button" type="button" value="Add" onClick={this.addCategoryHandler} disabled={addButtonCondition}/>
+                        <input className="add-button" type="button" value="Add" onClick={this.addCategoryHandler}
+                               disabled={addButtonCondition}/>
                         <input className="close-button" type="button" value="Close" onClick={this.closeCurrentModal}/>
                     </div>
                 </div>
@@ -402,7 +475,7 @@ let ModalWindowCategoryEdit = React.createClass({
     getInitialState: function () {
         return ({categoryEditedText: this.props.selectedCategoryText});
     },
-    componentDidUpdate(){
+    componentDidUpdate() {
         this.nameInput.focus();
     },
     // componentWillReceiveProps: function (nextProps) {
@@ -419,7 +492,7 @@ let ModalWindowCategoryEdit = React.createClass({
     },
     saveCategoryChangesHandler: function () {
         let newCategoryText = this.state.categoryEditedText;
-        this.props.editCategory(this.props.selectedCategoryId,newCategoryText);
+        this.props.editCategory(this.props.selectedCategoryId, newCategoryText);
 
         this.clearSearchInput();
         this.closeCurrentModal();
@@ -443,12 +516,48 @@ let ModalWindowCategoryEdit = React.createClass({
                         <input className="category-add-input" type="text" placeholder={this.props.selectedCategoryText}
                                value={this.state.categoryEditedText}
                                onChange={this.onChangeCategoryEditedText} onKeyPress={this._handleKeyPress}
-                               ref={(input) => { this.nameInput = input; }}
+                               ref={(input) => {
+                                   this.nameInput = input;
+                               }}
 
                         />
-                        <input className="add-button" type="button" value="Save" onClick={this.saveCategoryChangesHandler} disabled={saveButtonCondition}/>
+                        <input className="add-button" type="button" value="Save"
+                               onClick={this.saveCategoryChangesHandler} disabled={saveButtonCondition}/>
                         <input className="close-button" type="button" value="Close" onClick={this.closeCurrentModal}/>
 
+                    </div>
+                </div>
+            </div>
+        )
+    }
+});
+
+
+let ModalWindowCategoryDelete = React.createClass({
+    getInitialState: function () {
+        return ({categoryName: ''});
+    },
+    deleteCategoryHandler: function () {
+        this.props.deleteCategory(this.props.selectedCategoryId);
+
+        this.closeCurrentModal();
+    },
+    closeCurrentModal: function () {
+        this.props.closeModal('deleteCategory');
+    },
+    render: function () {
+        let modalWindowWrapperClassName = (this.props.modalWindowOpened && this.props.modalWindowDeleteOpened) ? 'modal-window-wrapper' : 'modal-window-wrapper disabled';
+
+        return (
+            <div className={modalWindowWrapperClassName}>
+                <div className="modal-window">
+                    <div className="modal-buttons-container">
+                        <div className="category-delete-text-container">Delete
+                            category {this.props.selectedCategoryText} and all nested?
+                        </div>
+                        <input className="add-button" type="button" value="Delete"
+                               onClick={this.deleteCategoryHandler}/>
+                        <input className="close-button" type="button" value="Close" onClick={this.closeCurrentModal}/>
                     </div>
                 </div>
             </div>

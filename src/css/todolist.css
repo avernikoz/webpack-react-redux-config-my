@@ -138,12 +138,12 @@ h1{
     width: 90%;
     align-self: flex-end;
 }
-.nested +.nested{
-    width: 80%;
-}
-.nested + .nested + .nested{
-    width: 70%;
-}
+/*.nested +.nested{*/
+    /*width: 80%;*/
+/*}*/
+/*.nested + .nested + .nested{*/
+    /*width: 70%;*/
+/*}*/
 
 
 /*tasks*/
@@ -210,7 +210,10 @@ h1{
     border: 2px solid black;
 }
 
-
+.category-delete-text-container{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
 
 
 /*MODAL WINDOW*/
@@ -247,6 +250,7 @@ h1{
 .modal-buttons-container{
     width: 100%;
     display: flex;
+    flex-flow: wrap;
     justify-content: space-between;
     align-items: center;
 

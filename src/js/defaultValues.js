@@ -13,7 +13,37 @@ let exampleCategories = [
         id: 3,
         parent: null,
         name: 'Category 3'
-    }
+    },
+    {
+        id: 123213,
+        parent: 3,
+        name: 'Category 12323'
+    },
+    {
+        id: 9932,
+        parent: 3,
+        name: 'Category 39932'
+    },
+    {
+        id: 842,
+        parent: 3,
+        name: 'Category 842'
+    },
+    {
+        id: 66,
+        parent: 842,
+        name: 'Category 68'
+    },
+    {
+        id: 68,
+        parent: 842,
+        name: 'Category 69'
+    },
+    {
+        id: 111,
+        parent: 68,
+        name: 'Category 001'
+    },
 ];
 
 let exampleTasks = [
