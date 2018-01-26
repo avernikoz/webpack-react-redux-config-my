@@ -99,21 +99,27 @@ h1{
     height: 500px;
     overflow-y: scroll;
     background-color: white;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .main-box{
     display: flex;
     margin-top: 60px;
 }
+.category:first-child {
+    margin-top: 10px;
+}
 .category{
     background-color: darkseagreen;
+    margin: 5px 10px;
 }
 .category, .task {
     display: flex;
     height: 40px;
     align-items: center;
     padding: 5px;
-    margin: 10px 10px;
 }
 .category, .task{
     font-size: 1.6rem;
@@ -128,6 +134,16 @@ h1{
     margin-bottom: 30px;
 }
 
+.nested {
+    width: 90%;
+    align-self: flex-end;
+}
+.nested +.nested{
+    width: 80%;
+}
+.nested + .nested + .nested{
+    width: 70%;
+}
 
 
 /*tasks*/
@@ -136,6 +152,8 @@ h1{
     display: flex;
     justify-content: space-between;
     background-color: bisque;
+    margin: 10px 10px;
+
 }
 .tasks-box{
     transition:opacity 0.5s linear;

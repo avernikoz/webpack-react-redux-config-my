@@ -226,7 +226,7 @@ let CategoryList = React.createClass({
         return (
             <div className="category-list">
                 {this.props.categories.map((elem) => {
-                    return <Category id={elem.id} key={elem.id} categoryName={elem.name}
+                    return <Category id={elem.id} key={elem.id} categoryName={elem.name} parentCategory={elem.parent}
                                      setSelectedCurrentCategory={this.props.setSelectedCurrentCategory}
                                      selectedCategoryId={this.props.selectedCategoryId}
                                      showModal={this.props.showModal}/>
@@ -249,9 +249,10 @@ let Category = React.createClass({
     },
     render: function () {
         let categoryClassName = this.props.selectedCategoryId === this.props.id ? 'category selected-category' : 'category';
+        let nested = this.props.parentCategory === null ? '' : ' nested';
 
         return (
-            <div className={categoryClassName} onClick={this.onClickCurrentCategory}>
+            <div className={categoryClassName + nested} onClick={this.onClickCurrentCategory}>
                 <div className="category-name-container">
                     <div className="category-name">{this.props.categoryName}</div>
                     <i className="fas fa-edit fa-sm icon" onClick={this.showEditCategoryModal}/>
