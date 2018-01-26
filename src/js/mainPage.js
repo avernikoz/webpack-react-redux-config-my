@@ -351,6 +351,9 @@ let ModalWindowCategoryAdd = React.createClass({
     getInitialState: function () {
         return ({inputText: ''});
     },
+    componentDidUpdate(){
+        this.nameInput.focus();
+    },
     inputChangeHandler: function (event) {
         this.setState({inputText: event.target.value});
     },
@@ -359,6 +362,11 @@ let ModalWindowCategoryAdd = React.createClass({
 
         this.clearTextInput();
         this.closeCurrentModal();
+    },
+    _handleKeyPress: function (e) {
+        if (e.key === 'Enter') {
+            this.addCategoryHandler()
+        }
     },
     clearTextInput: function () {
         this.setState({inputText: ''});
@@ -375,10 +383,14 @@ let ModalWindowCategoryAdd = React.createClass({
             <div className={modalWindowWrapperClassName}>
                 <div className="modal-window">
                     <div className="modal-buttons-container">
-                        <input className="category-add-input" type="text" placeholder="Enter new subcategory title..." value={this.state.inputText} onChange={this.inputChangeHandler}/>
+                        <input className="category-add-input"
+                               type="text" placeholder="Enter new subcategory title..."
+                               value={this.state.inputText}
+                               onChange={this.inputChangeHandler} onKeyPress={this._handleKeyPress}
+                               ref={(input) => { this.nameInput = input; }}
+                        />
                         <input className="add-button" type="button" value="Add" onClick={this.addCategoryHandler} disabled={addButtonCondition}/>
                         <input className="close-button" type="button" value="Close" onClick={this.closeCurrentModal}/>
-
                     </div>
                 </div>
             </div>
@@ -389,6 +401,9 @@ let ModalWindowCategoryAdd = React.createClass({
 let ModalWindowCategoryEdit = React.createClass({
     getInitialState: function () {
         return ({categoryEditedText: this.props.selectedCategoryText});
+    },
+    componentDidUpdate(){
+        this.nameInput.focus();
     },
     // componentWillReceiveProps: function (nextProps) {
     //     this.setState({
@@ -409,6 +424,11 @@ let ModalWindowCategoryEdit = React.createClass({
         this.clearSearchInput();
         this.closeCurrentModal();
     },
+    _handleKeyPress: function (e) {
+        if (e.key === 'Enter') {
+            this.saveCategoryChangesHandler()
+        }
+    },
     clearSearchInput: function () {
         this.setState({categoryEditedText: ''});
     },
@@ -421,7 +441,11 @@ let ModalWindowCategoryEdit = React.createClass({
                 <div className="modal-window">
                     <div className="modal-buttons-container">
                         <input className="category-add-input" type="text" placeholder={this.props.selectedCategoryText}
-                               value={this.state.categoryEditedText} onChange={this.onChangeCategoryEditedText}/>
+                               value={this.state.categoryEditedText}
+                               onChange={this.onChangeCategoryEditedText} onKeyPress={this._handleKeyPress}
+                               ref={(input) => { this.nameInput = input; }}
+
+                        />
                         <input className="add-button" type="button" value="Save" onClick={this.saveCategoryChangesHandler} disabled={saveButtonCondition}/>
                         <input className="close-button" type="button" value="Close" onClick={this.closeCurrentModal}/>
 
