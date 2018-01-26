@@ -14,7 +14,7 @@ React.createClass = createReactClass;
 import {exampleCategories, exampleTasks} from './defaultValues';
 import Navbar from './Navbar';
 
-
+//App
 let ToDoListApp = React.createClass({
     getInitialState: function () {
         return {
