@@ -247,6 +247,16 @@ let ToDoListApp = React.createClass({
         this.setState({numberOfAllTasks: currentTaskCount + 1});
 
     },
+    componentWillMount: function () {
+        let allTasks = this.state.tasks;
+
+        let tasksCount = allTasks.reduce( (sumTasks)=> {
+            return sumTasks = sumTasks + 1 ;
+        },0);
+
+        this.setState({numberOfAllTasks: tasksCount});
+
+    },
     editTaskDescription: function (taskId,taskDesc) {
         let allTasks = this.state.tasks;
 
