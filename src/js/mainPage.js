@@ -241,13 +241,14 @@ let ToDoListApp = React.createClass({
 
     },
     countAllTasks: function () {
-
+        //Нужна ли эта функция???
         let currentTaskCount = this.state.numberOfAllTasks;
 
         this.setState({numberOfAllTasks: currentTaskCount + 1});
 
     },
     componentWillMount: function () {
+        //Нужна ли эта функция???
         let allTasks = this.state.tasks;
 
         let tasksCount = allTasks.reduce( (sumTasks)=> {
@@ -256,6 +257,36 @@ let ToDoListApp = React.createClass({
 
         this.setState({numberOfAllTasks: tasksCount});
 
+    },
+    setTaskProgress: function (checked) {
+
+        let allCategories = this.state.categories;
+
+        let categoryIndex = allCategories.findIndex((elem) => {
+            return elem.id === this.state.selectedCategoryId
+        });
+
+        if (checked) {
+            allCategories[categoryIndex].numberOfCompletedTasks = allCategories[categoryIndex].numberOfCompletedTasks + 1;
+        }
+        else {
+            allCategories[categoryIndex].numberOfCompletedTasks = allCategories[categoryIndex].numberOfCompletedTasks - 1;
+        }
+
+        this.setState({categories: allCategories},this.checkCategoryProgress);
+
+    },
+    checkCategoryProgress: function () {
+
+        let allCategories = this.state.categories;
+
+        let categoryIndex = allCategories.findIndex((elem) => {
+            return elem.id === this.state.selectedCategoryId
+        });
+
+        if (allCategories[categoryIndex].numberOfCompletedTasks === allCategories[categoryIndex].numberOfTasks){
+            console.log(`All tasks in current category ${this.state.selectedCategoryId} is completed`);
+        }
     },
     editTaskDescription: function (taskId,taskDesc) {
         let allTasks = this.state.tasks;
@@ -292,6 +323,7 @@ let ToDoListApp = React.createClass({
                                   addTask={this.addTask}
                                   showModal={this.showModal}
                                   setSelectedCurrentTask={this.setSelectedCurrentTask}
+                                  setTaskProgress={this.setTaskProgress}
                         />
                     </div>
                 </div>
@@ -454,6 +486,7 @@ let TasksBox = React.createClass({
                            filterOptions={this.props.filterOptions}
                            setSelectedCurrentTask={this.props.setSelectedCurrentTask}
                            showModal={this.props.showModal}
+                           setTaskProgress={this.props.setTaskProgress}
                 />
 
             </div>
@@ -482,6 +515,7 @@ let TasksList = React.createClass({
                                          taskName={elem.name}
                                          setSelectedCurrentTask={this.props.setSelectedCurrentTask}
                                          showModal={this.props.showModal}
+                                         setTaskProgress={this.props.setTaskProgress}
                             />
                         }
                     })
@@ -499,11 +533,19 @@ let Task = React.createClass({
     onEditTaskDescriptionHandler: function () {
         this.props.showModal('editTaskDescription');
     },
+    onTaskCompleteHandler: function (event) {
+        if (event.target.checked){
+            this.props.setTaskProgress(true);
+        }
+        else {
+            this.props.setTaskProgress(false);
+        }
+    },
     render: function () {
         return (
             <div className="task" onClick={this.onClickCurrentTask}>
                 <div className="task-checkbox-container">
-                    <input className="task-checkbox" type="checkbox"/>
+                    <input className="task-checkbox" type="checkbox" onChange={this.onTaskCompleteHandler}/>
                     {this.props.taskName}
                 </div>
                 <i className="fas fa-edit fa-sm icon" onClick={this.onEditTaskDescriptionHandler}/>

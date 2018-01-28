@@ -3,55 +3,64 @@ let exampleCategories = [
         id: 1,
         parent: null,
         name: 'Category 1',
-        numberOfTasks: 2
+        numberOfTasks: 2,
+        numberOfCompletedTasks: null
     },
     {
         id: 2,
         parent: null,
         name: 'Category 2',
-        numberOfTasks: 3
+        numberOfTasks: 3,
+        numberOfCompletedTasks: null
     },
     {
         id: 3,
         parent: null,
         name: 'Category 3',
-        numberOfTasks: 5
+        numberOfTasks: 5,
+        numberOfCompletedTasks: null
     },
     {
         id: 123213,
         parent: 3,
         name: 'Category 12323',
-        numberOfTasks: null
+        numberOfTasks: null,
+        numberOfCompletedTasks: null
     },
     {
         id: 9932,
         parent: 3,
         name: 'Category 39932',
-        numberOfTasks: null
+        numberOfTasks: null,
+        numberOfCompletedTasks: null
     },
     {
         id: 842,
         parent: 3,
         name: 'Category 842',
-        numberOfTasks: null
+        numberOfTasks: null,
+        numberOfCompletedTasks: null
     },
     {
         id: 66,
         parent: 842,
         name: 'Category 68',
-        numberOfTasks: null
+        numberOfTasks: null,
+        numberOfCompletedTasks: null
     },
     {
         id: 68,
         parent: 842,
         name: 'Category 69',
-        numberOfTasks: null
+        numberOfTasks: null,
+        numberOfCompletedTasks: null
     },
     {
         id: 111,
         parent: 68,
         name: 'Category 001',
-        numberOfTasks: null
+        numberOfTasks: null,
+        numberOfCompletedTasks: null
     },
 ];
 
