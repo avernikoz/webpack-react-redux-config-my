@@ -55,8 +55,8 @@ let Navbar = React.createClass({
                         </div>
                     </div>
                 </div>
-                <div className="progress-bar">
-                    Progress-bar
+                <div className="progress-bar-container">
+                    <div className="progress-bar"/>
                 </div>
             </div>
         )
