@@ -177,6 +177,9 @@ let ToDoListApp = React.createClass({
         this.setState({categories: allCategories});
 
     },
+
+    // TODO: Fix progress bar when category will be deleted
+
     deleteCategory: function (categoryId) {
         let allCategories = this.state.categories;
 

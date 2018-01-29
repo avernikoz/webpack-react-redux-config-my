@@ -46,9 +46,12 @@ let ModalWindowCategoryAdd = React.createClass({
                                    this.nameInput = input;
                                }}
                         />
-                        <input className="add-button" type="button" value="Add" onClick={this.addCategoryHandler}
-                               disabled={addButtonCondition}/>
-                        <input className="close-button" type="button" value="Close" onClick={this.closeCurrentModal}/>
+                        <div className="modal-action-buttons-container">
+                            <input className="add-button" type="button" value="Add" onClick={this.addCategoryHandler}
+                                   disabled={addButtonCondition}/>
+                            <input className="close-button" type="button" value="Close"
+                                   onClick={this.closeCurrentModal}/>
+                        </div>
                     </div>
                 </div>
             </div>

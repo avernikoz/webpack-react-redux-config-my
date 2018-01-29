@@ -52,9 +52,12 @@ let ModalWindowCategoryEdit = React.createClass({
                                }}
 
                         />
-                        <input className="add-button" type="button" value="Save"
-                               onClick={this.saveCategoryChangesHandler} disabled={saveButtonCondition}/>
-                        <input className="close-button" type="button" value="Close" onClick={this.closeCurrentModal}/>
+                        <div className="modal-action-buttons-container">
+                            <input className="add-button" type="button" value="Save"
+                                   onClick={this.saveCategoryChangesHandler} disabled={saveButtonCondition}/>
+                            <input className="close-button" type="button" value="Close"
+                                   onClick={this.closeCurrentModal}/>
+                        </div>
 
                     </div>
                 </div>

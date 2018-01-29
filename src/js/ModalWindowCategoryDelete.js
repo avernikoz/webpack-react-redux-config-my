@@ -24,9 +24,12 @@ let ModalWindowCategoryDelete = React.createClass({
                         <div className="category-delete-text-container">Delete
                             category {this.props.selectedCategoryText} and all nested?
                         </div>
-                        <input className="add-button" type="button" value="Delete"
-                               onClick={this.deleteCategoryHandler}/>
-                        <input className="close-button" type="button" value="Close" onClick={this.closeCurrentModal}/>
+                        <div className="modal-action-buttons-container">
+                            <input className="add-button" type="button" value="Delete"
+                                   onClick={this.deleteCategoryHandler}/>
+                            <input className="close-button" type="button" value="Close"
+                                   onClick={this.closeCurrentModal}/>
+                        </div>
                     </div>
                 </div>
             </div>
