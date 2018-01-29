@@ -1,5 +1,6 @@
 import React from 'react';
 import createReactClass from 'create-react-class';
+import {Link} from 'react-router-dom';
 
 
 let ModalWindowCategoryDelete = React.createClass({
@@ -25,8 +26,10 @@ let ModalWindowCategoryDelete = React.createClass({
                             category {this.props.selectedCategoryText} and all nested?
                         </div>
                         <div className="modal-action-buttons-container">
+                            <Link to={'/'}>
                             <input className="add-button" type="button" value="Delete"
                                    onClick={this.deleteCategoryHandler}/>
+                            </Link>
                             <input className="close-button" type="button" value="Close"
                                    onClick={this.closeCurrentModal}/>
                         </div>

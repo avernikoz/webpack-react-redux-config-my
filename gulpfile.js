@@ -7,6 +7,8 @@ const sourcemaps = require('gulp-sourcemaps');
 const csslint = require('gulp-csslint'); // Проверяем на валидность
 const concatCss = require('gulp-concat-css'); // Сливаем все стили в 1 файл
 const cleanCSS = require('gulp-clean-css'); // Минифицируем
+const rename = require('gulp-rename');
+
 
 // JS
 const concat = require('gulp-concat');
@@ -40,6 +42,21 @@ gulp.task('apply-prod-environment', function() {
 gulp.task('default', ['js-bundle', 'watch', 'browserSync']);
 
 
+// Собираем все стили в один, минифицируем, добавляем префиксы и переименовываем
+gulp.task('css-bundle', function() {
+    return gulp.src([
+        'src/css/**/*.css',
+    ])
+        .pipe(csslint({ "order-alphabetical": false }))
+        .pipe(concatCss("bundle.css", { rebaseUrls: false }))
+        .pipe(gulp.dest('build/css/'))
+        .pipe(cleanCSS({ compatibility: 'ie8', level: 2 }))
+        .pipe(rename('bundle.min.css'))
+        .pipe(gulp.dest('build/css/'))
+        .pipe(reload({stream:true}));
+});
+
+
 gulp.task('js-bundle', () => {
     let testFiles = glob.sync('./src/js/**/*.js');
     const b = browserify({
@@ -62,10 +79,10 @@ gulp.task('html', function(){
         .pipe(reload({stream:true}));
 });
 
-gulp.task('css-reload', function(){
-    gulp.src('index.html')
-        .pipe(reload({stream:true}));
-});
+// gulp.task('css-reload', function(){
+//     gulp.src('index.html')
+//         .pipe(reload({stream:true}));
+// });
 
 
 //Browser sync
@@ -117,6 +134,6 @@ gulp.task('browserSync',['nodemon'], function() {
 //Следим за изменениями:
 gulp.task('watch', function () {
     gulp.watch('src/js/**/*.js', ['js-bundle']);
-    gulp.watch('src/css/**/*.css', ['css-reload']);
+    gulp.watch('src/css/**/*.css', ['css-bundle']);
     gulp.watch('index.html', ['html']);
 });

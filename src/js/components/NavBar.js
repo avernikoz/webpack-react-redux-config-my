@@ -2,7 +2,7 @@ import React from 'react';
 import createReactClass from 'create-react-class';
 
 React.createClass = createReactClass;
-import {withRouter} from 'react-router-dom'
+import {withRouter, Link} from 'react-router-dom'
 
 
 // Как будет правильно - создать все свойства в компоненте, который находится на самом верхнем уровне,
@@ -10,7 +10,7 @@ import {withRouter} from 'react-router-dom'
 
 // Как правильно - проверять search input text через роутинг и location.search, или через state?
 
-let Navbar = React.createClass({
+let NavBar = React.createClass({
     getInitialState: function () {
         return ({
             searchInputText: '',
@@ -77,7 +77,9 @@ let Navbar = React.createClass({
         return (
             <div>
                 <div className="upper-header">
-                    <h1 className="app-title">To do list app</h1>
+                    <Link className='header-link' to={'/'}>
+                        <h1 className="app-title">To do list app</h1>
+                    </Link>
                     <div className="search-container">
                         <div className="checkbox-search-box">
                             <input id="showDone" type="checkbox" onChange={this.showTasksOption}
@@ -103,4 +105,4 @@ let Navbar = React.createClass({
     }
 });
 
-export default withRouter(Navbar);
+export default withRouter(NavBar);

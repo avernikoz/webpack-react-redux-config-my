@@ -2,6 +2,7 @@ let exampleCategories = [
     {
         id: 1,
         parent: null,
+        nestedLevel: null,
         name: 'Category 1',
         numberOfTasks: 2,
         numberOfCompletedTasks: null
@@ -9,6 +10,7 @@ let exampleCategories = [
     {
         id: 2,
         parent: null,
+        nestedLevel: null,
         name: 'Category 2',
         numberOfTasks: 3,
         numberOfCompletedTasks: 2
@@ -16,6 +18,7 @@ let exampleCategories = [
     {
         id: 3,
         parent: null,
+        nestedLevel: null,
         name: 'Category 3',
         numberOfTasks: 5,
         numberOfCompletedTasks: 2
@@ -23,6 +26,7 @@ let exampleCategories = [
     {
         id: 123213,
         parent: 3,
+        nestedLevel: 1,
         name: 'Category 12323',
         numberOfTasks: null,
         numberOfCompletedTasks: null
@@ -30,6 +34,7 @@ let exampleCategories = [
     {
         id: 9932,
         parent: 3,
+        nestedLevel: 1,
         name: 'Category 39932',
         numberOfTasks: null,
         numberOfCompletedTasks: null
@@ -37,6 +42,7 @@ let exampleCategories = [
     {
         id: 842,
         parent: 3,
+        nestedLevel: 1,
         name: 'Category 842',
         numberOfTasks: null,
         numberOfCompletedTasks: null
@@ -44,6 +50,7 @@ let exampleCategories = [
     {
         id: 66,
         parent: 842,
+        nestedLevel: 2,
         name: 'Category 68',
         numberOfTasks: null,
         numberOfCompletedTasks: null
@@ -51,6 +58,7 @@ let exampleCategories = [
     {
         id: 68,
         parent: 842,
+        nestedLevel: 2,
         name: 'Category 69',
         numberOfTasks: null,
         numberOfCompletedTasks: null
@@ -58,6 +66,7 @@ let exampleCategories = [
     {
         id: 111,
         parent: 68,
+        nestedLevel: 3,
         name: 'Category 001',
         numberOfTasks: null,
         numberOfCompletedTasks: null
