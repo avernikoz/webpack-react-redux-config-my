@@ -31,6 +31,7 @@ let ToDoListApp = React.createClass({
             selectedTaskId: '',
             selectedTaskText: '',
             numberOfAllTasks: null,
+            numberOfAllCompletedCategories: null,
             filter: {
                 filterText: '',
                 showCompletedTasks: false
@@ -266,17 +267,25 @@ let ToDoListApp = React.createClass({
             return elem.id === this.state.selectedCategoryId
         });
 
+        let operationTypeBefore;
+
         if (checked) {
             allCategories[categoryIndex].numberOfCompletedTasks = allCategories[categoryIndex].numberOfCompletedTasks + 1;
+            operationTypeBefore = 'adding';
         }
         else {
             allCategories[categoryIndex].numberOfCompletedTasks = allCategories[categoryIndex].numberOfCompletedTasks - 1;
+            operationTypeBefore = 'deducting';
         }
 
-        this.setState({categories: allCategories},this.checkCategoryProgress);
+        this.setState({categories: allCategories},this.checkCategoryProgress(operationTypeBefore));
 
     },
-    checkCategoryProgress: function () {
+    //Нужна новая переменная
+    checkCategoryProgress: function (operationTypeBefore) {
+
+        console.log(operationTypeBefore);
+
 
         let allCategories = this.state.categories;
 
@@ -284,11 +293,26 @@ let ToDoListApp = React.createClass({
             return elem.id === this.state.selectedCategoryId
         });
 
-        if (allCategories[categoryIndex].numberOfCompletedTasks === allCategories[categoryIndex].numberOfTasks){
+        if (allCategories[categoryIndex].numberOfCompletedTasks === allCategories[categoryIndex].numberOfTasks && operationTypeBefore === 'adding'){
             console.log(`All tasks in current category ${this.state.selectedCategoryId} is completed`);
+            this.countCompletedCategories('add');
+        }
+        else if (allCategories[categoryIndex].numberOfCompletedTasks === allCategories[categoryIndex].numberOfTasks - 1 && operationTypeBefore === 'deducting') {
+            this.countCompletedCategories('deduct');
         }
     },
+    countCompletedCategories: function (operation) {
+          if (operation === 'add'){
+              this.setState({numberOfAllCompletedCategories: this.state.numberOfAllCompletedCategories + 1})
+          }
+          else {
+              this.setState({numberOfAllCompletedCategories: this.state.numberOfAllCompletedCategories - 1})
+          }
+    },
+
+
     editTaskDescription: function (taskId,taskDesc) {
+        //Need to delete/refactor/change
         let allTasks = this.state.tasks;
 
         allTasks.forEach((elem) => {
