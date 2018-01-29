@@ -17,6 +17,8 @@ import ModalWindowCategoryAdd from './ModalWindowCategoryAdd';
 import ModalWindowCategoryEdit from './ModalWindowCategoryEdit';
 import ModalWindowCategoryDelete from './ModalWindowCategoryDelete';
 
+import {TasksBox, TasksList, Task} from './Tasks';
+
 
 
 
@@ -220,7 +222,8 @@ let ToDoListApp = React.createClass({
         let newTask = {
             id: Date.now(),
             name: taskName,
-            catid: this.state.selectedCategoryId
+            catid: this.state.selectedCategoryId,
+            completed: false
         };
 
         let allTasks = this.state.tasks;
@@ -259,8 +262,21 @@ let ToDoListApp = React.createClass({
         this.setState({numberOfAllTasks: tasksCount});
 
     },
-    setTaskProgress: function (checked) {
+    setTaskProgress: function (checked, taskId) {
 
+
+        let allTasks = this.state.tasks;
+
+        let taskIndex = allTasks.findIndex((elem) => {
+            return elem.id === taskId
+        });
+
+        allTasks[taskIndex].completed = checked;
+
+        this.setState({tasks: allTasks}, this.setCategoryProgress(checked));
+    },
+    //These 3 functions after need to refactor
+    setCategoryProgress: function(checked) {
         let allCategories = this.state.categories;
 
         let categoryIndex = allCategories.findIndex((elem) => {
@@ -270,6 +286,7 @@ let ToDoListApp = React.createClass({
         let operationTypeBefore;
 
         if (checked) {
+
             allCategories[categoryIndex].numberOfCompletedTasks = allCategories[categoryIndex].numberOfCompletedTasks + 1;
             operationTypeBefore = 'adding';
         }
@@ -281,10 +298,7 @@ let ToDoListApp = React.createClass({
         this.setState({categories: allCategories},this.checkCategoryProgress(operationTypeBefore));
 
     },
-    //Нужна новая переменная
     checkCategoryProgress: function (operationTypeBefore) {
-
-        console.log(operationTypeBefore);
 
 
         let allCategories = this.state.categories;
@@ -309,8 +323,6 @@ let ToDoListApp = React.createClass({
               this.setState({numberOfAllCompletedCategories: this.state.numberOfAllCompletedCategories - 1})
           }
     },
-
-
     editTaskDescription: function (taskId,taskDesc) {
         //Need to delete/refactor/change
         let allTasks = this.state.tasks;
@@ -472,112 +484,6 @@ let Category = React.createClass({
         )
     }
 });
-
-
-let TasksBox = React.createClass({
-    getInitialState: function () {
-        return {
-            taskInputText: ''
-        }
-    },
-    setTaskText: function (event) {
-        this.setState({taskInputText: event.target.value})
-    },
-    addTaskHandler: function () {
-        let newTaskText = this.state.taskInputText;
-
-        this.props.addTask(newTaskText);
-        this.setState({taskInputText: ''});
-
-    },
-    _handleKeyPress: function (e) {
-        if (e.key === 'Enter') {
-            this.addTaskHandler()
-        }
-    },
-    render: function () {
-
-        let tasksAddContainerClassName = this.props.selectedCategoryId === '' ? 'tasks-box disabled' : 'tasks-box';
-        return (
-            <div className={tasksAddContainerClassName}>
-                <div className="tasks-add-container">
-                    <input className="task-add-input" type="text" placeholder="Enter task title"
-                           value={this.state.taskInputText} onChange={this.setTaskText}
-                           onKeyPress={this._handleKeyPress}/>
-                    <input className="add-button" type="button" value="Add" onClick={this.addTaskHandler}/>
-                </div>
-                <TasksList tasks={this.props.tasks} selectedCategoryId={this.props.selectedCategoryId}
-                           filterOptions={this.props.filterOptions}
-                           setSelectedCurrentTask={this.props.setSelectedCurrentTask}
-                           showModal={this.props.showModal}
-                           setTaskProgress={this.props.setTaskProgress}
-                />
-
-            </div>
-        )
-    }
-});
-
-// Вот тут мне кажется можно проще
-// Мб componentWillReceiveProps ???
-
-let TasksList = React.createClass({
-    render: function () {
-        let filterOptions = this.props.filterOptions;
-
-        return (
-            <div className="tasks-list">
-                {
-                    this.props.tasks.map((elem) => {
-                        let ourTaskInOurCategory = (elem.catid === this.props.selectedCategoryId);
-                        let outTaskInSearchQuery = (elem.name.toLowerCase().indexOf(filterOptions.filterText) !== -1);
-
-
-                        if (ourTaskInOurCategory && outTaskInSearchQuery) {
-                            return <Task id={elem.id}
-                                         key={elem.id}
-                                         taskName={elem.name}
-                                         setSelectedCurrentTask={this.props.setSelectedCurrentTask}
-                                         showModal={this.props.showModal}
-                                         setTaskProgress={this.props.setTaskProgress}
-                            />
-                        }
-                    })
-                }
-            </div>
-        )
-
-    }
-});
-
-let Task = React.createClass({
-    onClickCurrentTask: function () {
-        this.props.setSelectedCurrentTask(this.props.id, this.props.taskName);
-    },
-    onEditTaskDescriptionHandler: function () {
-        this.props.showModal('editTaskDescription');
-    },
-    onTaskCompleteHandler: function (event) {
-        if (event.target.checked){
-            this.props.setTaskProgress(true);
-        }
-        else {
-            this.props.setTaskProgress(false);
-        }
-    },
-    render: function () {
-        return (
-            <div className="task" onClick={this.onClickCurrentTask}>
-                <div className="task-checkbox-container">
-                    <input className="task-checkbox" type="checkbox" onChange={this.onTaskCompleteHandler}/>
-                    {this.props.taskName}
-                </div>
-                <i className="fas fa-edit fa-sm icon" onClick={this.onEditTaskDescriptionHandler}/>
-            </div>
-        )
-    }
-});
-
 
 
 

@@ -11,14 +11,14 @@ let exampleCategories = [
         parent: null,
         name: 'Category 2',
         numberOfTasks: 3,
-        numberOfCompletedTasks: null
+        numberOfCompletedTasks: 2
     },
     {
         id: 3,
         parent: null,
         name: 'Category 3',
         numberOfTasks: 5,
-        numberOfCompletedTasks: null
+        numberOfCompletedTasks: 2
     },
     {
         id: 123213,
@@ -69,61 +69,71 @@ let exampleTasks = [
         id: 1,
         catid: 1,
         name: 'Task 1',
-        description: ''
+        description: '',
+        completed: false
     },
     {
         id: 2,
         catid: 1,
         name: 'Task 2',
-        description: ''
+        description: '',
+        completed: false
     },
     {
         id: 3,
         catid: 2,
         name: 'Task 1',
-        description: ''
+        description: '',
+        completed: false
     },
     {
         id: 4,
         catid: 2,
         name: 'Task 2',
-        description: ''
+        description: '',
+        completed: true
     },
     {
         id: 5,
         catid: 2,
         name: 'Task 3',
-        description: ''
+        description: '',
+        completed: true
     },
     {
         id: 6,
         catid: 3,
         name: 'Task 1',
-        description: ''
+        description: '',
+        completed: true
     },
     {
         id: 7,
         catid: 3,
         name: 'Task 2',
-        description: ''
+        description: '',
+        completed: true
     },
     {
         id: 8,
         catid: 3,
         name: 'Task 3',
-        description: ''
+        description: '',
+        completed: false
     },
     {
         id: 9,
         catid: 3,
         name: 'Task 4',
-        description: ''
+        description: '',
+        completed: false
     },
     {
         id: 10,
         catid: 3,
         name: 'Task 5',
-        description: ''
+        description: '',
+        completed: false
     },
 ];
 
