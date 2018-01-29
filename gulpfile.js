@@ -28,6 +28,8 @@ const glob = require('glob');
 // const browserSync = require('browser-sync').create();
 const browserSync = require('browser-sync');
 const reload = browserSync.reload;
+const nodemon = require('gulp-nodemon');
+
 
 // Устанавливаем сборку для продакшена
 gulp.task('apply-prod-environment', function() {
@@ -67,19 +69,48 @@ gulp.task('css-reload', function(){
 
 
 //Browser sync
-gulp.task('browserSync', function() {
-    browserSync({
-        server: {
-            baseDir: "./",
-            index: "index.html"
-        },
-        browser: 'Google Chrome Canary',
-        port: 3000,
-        open: true,
-        notify: false
+// gulp.task('browserSync', function() {
+//     browserSync({
+//         server: {
+//             baseDir: "./",
+//             index: "index.html"
+//         },
+//         browser: 'Google Chrome Canary',
+//         port: 3000,
+//         open: true,
+//         notify: false
+//
+//     });
+// });
 
+gulp.task('nodemon', function (cb) {
+
+    let started = false;
+
+    return nodemon({
+        script: 'server.js'
+    }).on('start', function () {
+        // to avoid nodemon being started multiple times
+        // thanks @matthisk
+        if (!started) {
+            cb();
+            started = true;
+        }
     });
 });
+
+gulp.task('browserSync',['nodemon'], function() {
+    browserSync.init(null, {
+        proxy: "http://localhost:3001",
+        browser: "Google Chrome Canary",
+        port: 7000,
+        baseDir: "./",
+        index: "index.html",
+        open: true
+    });
+});
+
+
 
 
 

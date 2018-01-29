@@ -3,11 +3,16 @@
 // Какой скелет для реакта юзаете?
 // Как вызывать функцию только с одним вторым аргументом (modal window без selected category)
 // Как сделать так, чтобы в modal window были норм текст
+// Что-то не так с роутингом (нужно типо ререндерить 2 компонента два раза, неужели нельзя сделать как-то проще?)
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import createReactClass from 'create-react-class';
+
+// import {Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
+
 
 React.createClass = createReactClass;
 
@@ -18,8 +23,14 @@ import ModalWindowCategoryEdit from './ModalWindowCategoryEdit';
 import ModalWindowCategoryDelete from './ModalWindowCategoryDelete';
 
 import {TasksBox, TasksList, Task} from './Tasks';
+import {CategorysBox} from './Categories'
 
 
+//TODO: При добавлении таска в выполненную категорию, она должна становится невыполненной
+//TODO: Добавить старое описание и чекбокс в описание таска
+//TODO: Добавить перемещение таска
+//TODO: Добавить выдвижение вложенных тасков туда-обратно
+//TODO: Добавить стили для вложенных категорий
 
 
 //App
@@ -178,8 +189,6 @@ let ToDoListApp = React.createClass({
 
     },
 
-    // TODO: Fix progress bar when category will be deleted
-
     deleteCategory: function (categoryId) {
         let allCategories = this.state.categories;
 
@@ -188,15 +197,28 @@ let ToDoListApp = React.createClass({
         categoriesToSearch.push(categoryId);
 
 
+        let quantityCategoriesThatHaveTasksAndNeedToDelete = 0;
+        let quantityCompletedCategories = 0;
+
+
         deepDeleteCategories(categoriesToSearch);
 
         function deepDeleteCategories(categoriesToSearch) {
+
 
             let categoriesNeedToDelete = allCategories.reduce((childCategories, elem) => {
 
                 categoriesToSearch.forEach((categoryId) => {
                     if (categoryId === elem.parent) {
-                        childCategories.push(elem.id)
+                        childCategories.push(elem.id);
+                    }
+
+                    if (categoryId === elem.id && elem.numberOfTasks > 0) {
+                        quantityCategoriesThatHaveTasksAndNeedToDelete++;
+
+                        if (elem.numberOfTasks === elem.numberOfCompletedTasks) {
+                            quantityCompletedCategories++;
+                        }
                     }
                 });
 
@@ -205,12 +227,9 @@ let ToDoListApp = React.createClass({
 
 
             allCategories = allCategories.filter((elem) => {
-                return !categoriesNeedToDelete.includes(elem.id);
-            });
-
-            allCategories = allCategories.filter((elem) => {
                 return !categoriesToSearch.includes(elem.id);
             });
+
 
             if (categoriesNeedToDelete.length !== 0) {
                 deepDeleteCategories(categoriesNeedToDelete)
@@ -220,6 +239,8 @@ let ToDoListApp = React.createClass({
 
         //Apply result after recursion
 
+        this.decreaseCompletedCategories(quantityCompletedCategories);
+        this.decreaseQuantityOfCategoriesThatHaveTasks(quantityCategoriesThatHaveTasksAndNeedToDelete);
         this.setState({categories: allCategories});
 
     },
@@ -234,7 +255,7 @@ let ToDoListApp = React.createClass({
         let allTasks = this.state.tasks;
         allTasks.unshift(newTask);
 
-        this.setState({tasks: allTasks},this.countTasksInCategory);
+        this.setState({tasks: allTasks}, this.countTasksInCategory);
     },
     countTasksInCategory: function () {
         let allCategories = this.state.categories;
@@ -243,7 +264,7 @@ let ToDoListApp = React.createClass({
             return elem.id === this.state.selectedCategoryId
         });
 
-        if (allCategories[categoryIndex].numberOfTasks === null || allCategories[categoryIndex].numberOfTasks === 0){
+        if (allCategories[categoryIndex].numberOfTasks === null || allCategories[categoryIndex].numberOfTasks === 0) {
             this.increaseQuantityOfCategoriesThatHaveTasks();
         }
 
@@ -255,17 +276,38 @@ let ToDoListApp = React.createClass({
     },
     increaseQuantityOfCategoriesThatHaveTasks: function () {
         this.setState({numberOfCategoriesThatHaveTasks: this.state.numberOfCategoriesThatHaveTasks + 1});
+        console.log(this.state.numberOfCategoriesThatHaveTasks);
+
+    },
+    decreaseQuantityOfCategoriesThatHaveTasks: function (quantity = 1) {
+        this.setState({numberOfCategoriesThatHaveTasks: this.state.numberOfCategoriesThatHaveTasks - quantity});
+    },
+    decreaseCompletedCategories: function (quantity) {
+        this.setState({numberOfAllCompletedCategories: this.state.numberOfAllCompletedCategories - quantity});
+    },
+    checkCategoryProgressForTaskAdding: function () {
+
+        let allCategories = this.state.categories;
+
+        let categoryIndex = allCategories.findIndex((elem) => {
+            return elem.id === this.state.selectedCategoryId
+        });
+
+        if (allCategories[categoryIndex].numberOfCompletedTasks === allCategories[categoryIndex].numberOfTasks) {
+        }
+        else if (allCategories[categoryIndex].numberOfCompletedTasks === allCategories[categoryIndex].numberOfTasks - 1 && operationTypeBefore === 'deducting') {
+        }
     },
     componentWillMount: function () {
         let allCategories = this.state.categories;
 
-        let quantityOfCategoriesWithTasks = allCategories.reduce( (sumTasks, category) => {
+        let quantityOfCategoriesWithTasks = allCategories.reduce((sumTasks, category) => {
 
             if (category.numberOfTasks > 0) {
-                sumTasks = sumTasks + 1 ;
+                sumTasks = sumTasks + 1;
             }
             return sumTasks;
-        },0);
+        }, 0);
 
 
         this.setState({numberOfCategoriesThatHaveTasks: quantityOfCategoriesWithTasks});
@@ -285,7 +327,7 @@ let ToDoListApp = React.createClass({
         this.setState({tasks: allTasks}, this.setCategoryProgress(checked));
     },
     //These 3 functions after need to refactor
-    setCategoryProgress: function(checked) {
+    setCategoryProgress: function (checked) {
         let allCategories = this.state.categories;
 
         let categoryIndex = allCategories.findIndex((elem) => {
@@ -295,7 +337,6 @@ let ToDoListApp = React.createClass({
         let operationTypeBefore;
 
         if (checked) {
-
             allCategories[categoryIndex].numberOfCompletedTasks = allCategories[categoryIndex].numberOfCompletedTasks + 1;
             operationTypeBefore = 'adding';
         }
@@ -304,7 +345,7 @@ let ToDoListApp = React.createClass({
             operationTypeBefore = 'deducting';
         }
 
-        this.setState({categories: allCategories},this.checkCategoryProgress(operationTypeBefore));
+        this.setState({categories: allCategories}, this.checkCategoryProgress(operationTypeBefore));
 
     },
     checkCategoryProgress: function (operationTypeBefore) {
@@ -316,7 +357,7 @@ let ToDoListApp = React.createClass({
             return elem.id === this.state.selectedCategoryId
         });
 
-        if (allCategories[categoryIndex].numberOfCompletedTasks === allCategories[categoryIndex].numberOfTasks && operationTypeBefore === 'adding'){
+        if (allCategories[categoryIndex].numberOfCompletedTasks === allCategories[categoryIndex].numberOfTasks && operationTypeBefore === 'adding') {
             console.log(`All tasks in current category ${this.state.selectedCategoryId} is completed`);
             this.countCompletedCategories('add');
         }
@@ -325,14 +366,14 @@ let ToDoListApp = React.createClass({
         }
     },
     countCompletedCategories: function (operation) {
-          if (operation === 'add'){
-              this.setState({numberOfAllCompletedCategories: this.state.numberOfAllCompletedCategories + 1})
-          }
-          else {
-              this.setState({numberOfAllCompletedCategories: this.state.numberOfAllCompletedCategories - 1})
-          }
+        if (operation === 'add') {
+            this.setState({numberOfAllCompletedCategories: this.state.numberOfAllCompletedCategories + 1})
+        }
+        else {
+            this.setState({numberOfAllCompletedCategories: this.state.numberOfAllCompletedCategories - 1})
+        }
     },
-    editTaskDescription: function (taskId,taskDesc) {
+    editTaskDescription: function (taskId, taskDesc) {
         //Need to delete/refactor/change
         let allTasks = this.state.tasks;
 
@@ -344,7 +385,7 @@ let ToDoListApp = React.createClass({
 
         this.setState({tasks: allTasks});
 
-        console.log(taskId,taskDesc);
+        console.log(taskId, taskDesc);
     },
     render: function () {
 
@@ -352,30 +393,63 @@ let ToDoListApp = React.createClass({
 
         return (
             <div className="todo-list-app">
+                <Router>
                 <div className={mainContentWrapperClassName}>
                     <Navbar updateFilter={this.updateFilter}
                             selectedCategoryId={this.state.selectedCategoryId}
                             numberOfCategoriesThatHaveTasks={this.state.numberOfCategoriesThatHaveTasks}
                             numberOfAllCompletedCategories={this.state.numberOfAllCompletedCategories}
                     />
-                    <div className="main-box">
-                        <CategorysBox setSelectedCurrentCategory={this.setSelectedCurrentCategory}
-                                      selectedCategoryId={this.state.selectedCategoryId}
-                                      showModal={this.showModal}
-                                      categories={this.state.categories}
-                                      addCategory={this.addCategory}
+                        <Switch>
+                            <Route exact path='/'
+                                   render={props =>
+                                       <div className="main-box">
+                                           <CategorysBox setSelectedCurrentCategory={this.setSelectedCurrentCategory}
+                                                         selectedCategoryId={this.state.selectedCategoryId}
+                                                         showModal={this.showModal}
+                                                         categories={this.state.categories}
+                                                         addCategory={this.addCategory}
+                                                         {...props}
+                                           />
+                                           <TasksBox selectedCategoryId={this.state.selectedCategoryId}
+                                                     filterOptions={this.state.filter}
+                                                     tasks={this.state.tasks}
+                                                     addTask={this.addTask}
+                                                     showModal={this.showModal}
+                                                     setSelectedCurrentTask={this.setSelectedCurrentTask}
+                                                     setTaskProgress={this.setTaskProgress}
+                                                     {...props}
+                                           />
+                                       </div>
+                                   }
+                            />
+                            <Route path='/categories/:categoryId'
+                                   render={props =>
+                                       <div className="main-box">
+                                           <CategorysBox setSelectedCurrentCategory={this.setSelectedCurrentCategory}
+                                                         selectedCategoryId={this.state.selectedCategoryId}
+                                                         showModal={this.showModal}
+                                                         categories={this.state.categories}
+                                                         addCategory={this.addCategory}
+                                                         {...props}
 
-                        />
-                        <TasksBox selectedCategoryId={this.state.selectedCategoryId}
-                                  filterOptions={this.state.filter}
-                                  tasks={this.state.tasks}
-                                  addTask={this.addTask}
-                                  showModal={this.showModal}
-                                  setSelectedCurrentTask={this.setSelectedCurrentTask}
-                                  setTaskProgress={this.setTaskProgress}
-                        />
-                    </div>
+                                           />
+                                           <TasksBox selectedCategoryId={this.state.selectedCategoryId}
+                                                     filterOptions={this.state.filter}
+                                                     tasks={this.state.tasks}
+                                                     addTask={this.addTask}
+                                                     showModal={this.showModal}
+                                                     setSelectedCurrentTask={this.setSelectedCurrentTask}
+                                                     setTaskProgress={this.setTaskProgress}
+                                                     {...props}
+                                           />
+                                       </div>
+                                   }
+                            />
+                        </Switch>
                 </div>
+                </Router>
+
                 <ModalWindowCategoryAdd closeModal={this.closeModal}
                                         modalWindowAddOpened={this.state.modalWindowAddOpened}
                                         modalWindowOpened={this.state.modalWindowOpened}
@@ -411,105 +485,13 @@ let ToDoListApp = React.createClass({
     }
 });
 
-let CategorysBox = React.createClass({
-    getInitialState: function () {
-        return {
-            categoryInputText: '',
-        }
-    },
-    setCategoryText: function (event) {
-        this.setState({categoryInputText: event.target.value})
-    },
-    addCategoryHandler: function () {
-        let categoryText = this.state.categoryInputText;
-
-        this.props.addCategory(categoryText);
-
-        this.setState({categoryInputText: ''});   // to handler
-    },
-    _handleKeyPress: function (e) {
-        if (e.key === 'Enter') {
-            this.addCategoryHandler();
-        }
-    },
-    render: function () {
-        return (
-            <div className="category-box">
-                <div className="category-add-container">
-                    <input className="category-add-input" type="text" placeholder="Enter category title"
-                           value={this.state.categoryInputText} onChange={this.setCategoryText}
-                           onKeyPress={this._handleKeyPress}/>
-                    <input className="add-button" type="button" value="Add" onClick={this.addCategoryHandler}/>
-                </div>
-                <CategoryList categories={this.props.categories}
-                              setSelectedCurrentCategory={this.props.setSelectedCurrentCategory}
-                              selectedCategoryId={this.props.selectedCategoryId}
-                              showModal={this.props.showModal}/>
-            </div>
-        )
-    }
-});
-
-let CategoryList = React.createClass({
-    render: function () {
-        return (
-            <div className="category-list">
-                {this.props.categories.map((elem) => {
-                    return <Category id={elem.id} key={elem.id} categoryName={elem.name} parentCategory={elem.parent}
-                                     setSelectedCurrentCategory={this.props.setSelectedCurrentCategory}
-                                     selectedCategoryId={this.props.selectedCategoryId}
-                                     showModal={this.props.showModal}/>
-                })}
-            </div>
-
-        )
-    }
-});
-
-let Category = React.createClass({
-    onClickCurrentCategory: function () {
-        this.props.setSelectedCurrentCategory(this.props.id, this.props.categoryName);
-    },
-    showAddCategoryModal: function () {
-        this.props.showModal('addCategory');
-    },
-    showEditCategoryModal: function () {
-        this.props.showModal('editCategory');
-    },
-    showDeleteCategoryModal: function () {
-        this.props.showModal('deleteCategory');
-    },
-    render: function () {
-        let categoryClassName = this.props.selectedCategoryId === this.props.id ? 'category selected-category' : 'category';
-        let nested = this.props.parentCategory === null ? '' : ' nested';
-
-        return (
-            <div className={categoryClassName + nested} onClick={this.onClickCurrentCategory}>
-                <div className="category-name-container">
-                    <div className="category-name">{this.props.categoryName}</div>
-                    <i className="fas fa-edit fa-sm icon" onClick={this.showEditCategoryModal}/>
-                </div>
-                <div className="category-icons-container">
-                    <i className="fas fa-trash-alt fa-sm icon" onClick={this.showDeleteCategoryModal}/>
-                    <i className="fas fa-plus fa-sm icon" onClick={this.showAddCategoryModal}/>
-                </div>
-            </div>
-        )
-    }
-});
-
-
-
-
-
-
 
 
 let ModalWindowEditTaskDescription = React.createClass({
     getInitialState: function () {
         return ({inputText: ''});
     },
-    componentDidUpdate: function() {
+    componentDidUpdate: function () {
         this.nameInput.focus();
     },
     inputChangeHandler: function (event) {
@@ -549,10 +531,11 @@ let ModalWindowEditTaskDescription = React.createClass({
                                   ref={(input) => this.nameInput = input}
                         />
                         <div className="modal-action-buttons-container">
-                        <input className="add-button" type="button" value="Save"
-                               onClick={this.editTaskDescriptionHandler}
-                               disabled={addButtonCondition}/>
-                        <input className="close-button" type="button" value="Close" onClick={this.closeCurrentModal}/>
+                            <input className="add-button" type="button" value="Save"
+                                   onClick={this.editTaskDescriptionHandler}
+                                   disabled={addButtonCondition}/>
+                            <input className="close-button" type="button" value="Close"
+                                   onClick={this.closeCurrentModal}/>
                         </div>
                     </div>
                 </div>
@@ -562,10 +545,6 @@ let ModalWindowEditTaskDescription = React.createClass({
 });
 
 
-ReactDOM.render(
-    <ToDoListApp/>,
-    document.getElementById('root')
-);
-
+export {ToDoListApp};
 
 

@@ -91,6 +91,13 @@ h1 {
 
 /*categories*/
 
+.category-list a, .tasks-list a {
+    color: inherit;
+    text-decoration: inherit;
+    width: 100%;
+    display: flex;
+}
+
 .category-box, .tasks-box {
     width: 50%;
 }
@@ -210,6 +217,7 @@ h1 {
 
 .clear-icon-search-field {
     cursor: pointer;
+    color: gray;
 }
 
 .add-button {

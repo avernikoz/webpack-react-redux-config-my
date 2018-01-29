@@ -1,5 +1,6 @@
 import React from 'react';
 import createReactClass from 'create-react-class';
+React.createClass = createReactClass;
 
 
 let TasksBox = React.createClass({
@@ -24,8 +25,15 @@ let TasksBox = React.createClass({
         }
     },
     render: function () {
+        // It works without router
+        // let tasksAddContainerClassName = this.props.selectedCategoryId === '' ? 'tasks-box disabled' : 'tasks-box';
 
-        let tasksAddContainerClassName = this.props.selectedCategoryId === '' ? 'tasks-box disabled' : 'tasks-box';
+        let tasksAddContainerClassName = this.props.match.params.categoryId === undefined ? 'tasks-box disabled' : 'tasks-box';
+
+        let categoryIdLink = +this.props.match.params.categoryId;
+
+
+
         return (
             <div className={tasksAddContainerClassName}>
                 <div className="tasks-add-container">
@@ -39,6 +47,7 @@ let TasksBox = React.createClass({
                            setSelectedCurrentTask={this.props.setSelectedCurrentTask}
                            showModal={this.props.showModal}
                            setTaskProgress={this.props.setTaskProgress}
+                           categoryIdInLink={categoryIdLink}
                 />
 
             </div>
@@ -53,11 +62,14 @@ let TasksList = React.createClass({
     render: function () {
         let filterOptions = this.props.filterOptions;
 
+        console.log('selectedCategory: ' + this.props.selectedCategoryId,'linkCategory: '+ this.props.categoryIdInLink);
+
+
         return (
             <div className="tasks-list">
                 {
                     this.props.tasks.map((elem) => {
-                        let ourTaskInOurCategory = (elem.catid === this.props.selectedCategoryId);
+                        let ourTaskInOurCategory = (elem.catid === this.props.categoryIdInLink);
                         let outTaskInSearchQuery = (elem.name.toLowerCase().indexOf(filterOptions.filterText) !== -1);
                         let showDone = filterOptions.showCompletedTasks ? (elem.completed === true || elem.completed === false) : elem.completed === false;
 

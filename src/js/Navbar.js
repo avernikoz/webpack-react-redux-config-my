@@ -2,10 +2,13 @@ import React from 'react';
 import createReactClass from 'create-react-class';
 
 React.createClass = createReactClass;
+import {withRouter} from 'react-router-dom'
 
 
 // Как будет правильно - создать все свойства в компоненте, который находится на самом верхнем уровне,
 // или объявить их в том компоненте, в котором они меняются, и передавать их с помощью-какого-нибудь метода
+
+// Как правильно - проверять search input text через роутинг и location.search, или через state?
 
 let Navbar = React.createClass({
     getInitialState: function () {
@@ -14,23 +17,47 @@ let Navbar = React.createClass({
             showCompletedTasks: false
         })
     },
-    updateFilterValues: function () {
-        this.props.updateFilter(this.state.searchInputText, this.state.showCompletedTasks)
+    componentWillMount: function () {
+
+        if (this.props.location.search) {
+            const searchParams = new URLSearchParams(this.props.location.search);
+            let convertedToBooleanValue = (searchParams.get('showdone') === 'true');
+
+            this.setState({
+                    searchInputText: searchParams.get('search'),
+                    showCompletedTasks: convertedToBooleanValue
+                },
+                this.updateFilterValuesOnly);
+        }
+    },
+    searchValuesToUrl: function () {
+        const params = new URLSearchParams();
+
+        params.set('search', this.state.searchInputText);
+        params.set('showdone', this.state.showCompletedTasks);
+
+        this.props.history.push(`?${params}`);
+    },
+    updateFilterValuesAndUrl: function () {
+        this.props.updateFilter(this.state.searchInputText, this.state.showCompletedTasks);
+        this.searchValuesToUrl();
+    },
+    updateFilterValuesOnly: function () {
+        this.props.updateFilter(this.state.searchInputText, this.state.showCompletedTasks);
     },
     searchInTasks: function (event) {
-        this.setState({searchInputText: event.target.value}, this.updateFilterValues);
+        this.setState({searchInputText: event.target.value}, this.updateFilterValuesAndUrl);
     },
     showTasksOption: function (event) {
         if (event.target.checked) {
-            this.setState({showCompletedTasks: true}, this.updateFilterValues);
+            this.setState({showCompletedTasks: true}, this.updateFilterValuesAndUrl);
         }
         else {
-            this.setState({showCompletedTasks: false}, this.updateFilterValues);
+            this.setState({showCompletedTasks: false}, this.updateFilterValuesAndUrl);
         }
-
     },
     clearSearchInput: function () {
-        this.setState({searchInputText: ''}, this.updateFilterValues);
+        this.setState({searchInputText: ''}, this.updateFilterValuesAndUrl);
     },
 
     render: function () {
@@ -42,11 +69,10 @@ let Navbar = React.createClass({
         let progress = (quantityOfCompletedCategories * 100) / quantityOfCategories;
 
 
-
-
         let progressBarStyle = {
             width: progress + '%',
         };
+
 
         return (
             <div>
@@ -77,4 +103,4 @@ let Navbar = React.createClass({
     }
 });
 
-export default Navbar;
+export default withRouter(Navbar);
