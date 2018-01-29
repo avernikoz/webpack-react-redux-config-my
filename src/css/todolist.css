@@ -130,7 +130,7 @@ h1 {
 
 .category, .task {
     display: flex;
-    height: 40px;
+    min-height: 40px;
     align-items: center;
     padding: 5px;
 }
@@ -309,4 +309,30 @@ h1 {
     height: 300px;
     padding: 5px;
     font-size: 1.6rem;
+}
+
+
+/*add*/
+
+
+.add-button {
+    width: 100px;
+    background-color: transparent;
+    border-radius: 28px;
+    border: 2px solid white;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 6px 6px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    box-sizing: border-box;
+}
+
+.add-button:hover {
+    background-color: #9c9c9c;
+}
+
+.add-button:focus {
+    outline: 0;
 }
