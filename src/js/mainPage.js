@@ -129,7 +129,8 @@ let ToDoListApp = React.createClass({
             id: Date.now(),
             name: categoryName,
             parent: null,
-            numberOfTasks: null
+            numberOfTasks: null,
+            numberOfCompletedTasks: null
         };
 
         let allCategories = this.state.categories;
@@ -142,7 +143,8 @@ let ToDoListApp = React.createClass({
             id: Date.now(),
             name: categoryName,
             parent: parentCategoryId,
-            numberOfTasks: null
+            numberOfTasks: null,
+            numberOfCompletedTasks: null
         };
 
         let allCategories = this.state.categories;
