@@ -32,7 +32,7 @@ let ToDoListApp = React.createClass({
             selectedCategoryText: '',
             selectedTaskId: '',
             selectedTaskText: '',
-            numberOfAllTasks: null,
+            numberOfCategoriesThatHaveTasks: null,
             numberOfAllCompletedCategories: null,
             filter: {
                 filterText: '',
@@ -238,28 +238,32 @@ let ToDoListApp = React.createClass({
             return elem.id === this.state.selectedCategoryId
         });
 
+        if (allCategories[categoryIndex].numberOfTasks === null || allCategories[categoryIndex].numberOfTasks === 0){
+            this.increaseQuantityOfCategoriesThatHaveTasks();
+        }
+
         allCategories[categoryIndex].numberOfTasks = allCategories[categoryIndex].numberOfTasks + 1;
 
 
-        this.setState({categories: allCategories},this.countAllTasks);
+        this.setState({categories: allCategories});
 
     },
-    countAllTasks: function () {
-        //Нужна ли эта функция???
-        let currentTaskCount = this.state.numberOfAllTasks;
-
-        this.setState({numberOfAllTasks: currentTaskCount + 1});
-
+    increaseQuantityOfCategoriesThatHaveTasks: function () {
+        this.setState({numberOfCategoriesThatHaveTasks: this.state.numberOfCategoriesThatHaveTasks + 1});
     },
     componentWillMount: function () {
-        //Нужна ли эта функция???
-        let allTasks = this.state.tasks;
+        let allCategories = this.state.categories;
 
-        let tasksCount = allTasks.reduce( (sumTasks)=> {
-            return sumTasks = sumTasks + 1 ;
+        let quantityOfCategoriesWithTasks = allCategories.reduce( (sumTasks, category) => {
+
+            if (category.numberOfTasks > 0) {
+                sumTasks = sumTasks + 1 ;
+            }
+            return sumTasks;
         },0);
 
-        this.setState({numberOfAllTasks: tasksCount});
+
+        this.setState({numberOfCategoriesThatHaveTasks: quantityOfCategoriesWithTasks});
 
     },
     setTaskProgress: function (checked, taskId) {
