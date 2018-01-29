@@ -48,10 +48,8 @@ h1 {
 }
 .progress-bar {
     background-color: tomato;
-    width: 50%;
-    transition: all 0.1s linear;
+    transition: all 0.5s ease;
     border-radius: 10px;
-
 }
 
 .search-container {

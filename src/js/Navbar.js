@@ -1,5 +1,6 @@
 import React from 'react';
 import createReactClass from 'create-react-class';
+
 React.createClass = createReactClass;
 
 
@@ -35,13 +36,26 @@ let Navbar = React.createClass({
     render: function () {
         let SearchBoxActivity = this.props.selectedCategory === '';
 
+        let quantityOfCategories = this.props.numberOfCategoriesThatHaveTasks;
+        let quantityOfCompletedCategories = this.props.numberOfAllCompletedCategories;
+
+        let progress = (quantityOfCompletedCategories * 100) / quantityOfCategories;
+
+
+
+
+        let progressBarStyle = {
+            width: progress + '%',
+        };
+
         return (
             <div>
                 <div className="upper-header">
                     <h1 className="app-title">To-do-list</h1>
                     <div className="search-container">
                         <div className="checkbox-search-box">
-                            <input id="showDone" type="checkbox" onChange={this.showTasksOption} checked={this.state.showCompletedTasks}
+                            <input id="showDone" type="checkbox" onChange={this.showTasksOption}
+                                   checked={this.state.showCompletedTasks}
                                    className="search-checkbox"/>
                             <label htmlFor="showDone">
                                 Show done
@@ -56,7 +70,7 @@ let Navbar = React.createClass({
                     </div>
                 </div>
                 <div className="progress-bar-container">
-                    <div className="progress-bar"/>
+                    <div style={progressBarStyle} className="progress-bar"/>
                 </div>
             </div>
         )

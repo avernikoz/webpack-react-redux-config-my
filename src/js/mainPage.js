@@ -348,7 +348,11 @@ let ToDoListApp = React.createClass({
         return (
             <div className="todo-list-app">
                 <div className={mainContentWrapperClassName}>
-                    <Navbar updateFilter={this.updateFilter} selectedCategoryId={this.state.selectedCategoryId}/>
+                    <Navbar updateFilter={this.updateFilter}
+                            selectedCategoryId={this.state.selectedCategoryId}
+                            numberOfCategoriesThatHaveTasks={this.state.numberOfCategoriesThatHaveTasks}
+                            numberOfAllCompletedCategories={this.state.numberOfAllCompletedCategories}
+                    />
                     <div className="main-box">
                         <CategorysBox setSelectedCurrentCategory={this.setSelectedCurrentCategory}
                                       selectedCategoryId={this.state.selectedCategoryId}
