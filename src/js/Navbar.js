@@ -41,7 +41,7 @@ let Navbar = React.createClass({
                     <h1 className="app-title">To-do-list</h1>
                     <div className="search-container">
                         <div className="checkbox-search-box">
-                            <input id="showDone" type="checkbox" onChange={this.showTasksOption}
+                            <input id="showDone" type="checkbox" onChange={this.showTasksOption} checked={this.state.showCompletedTasks}
                                    className="search-checkbox"/>
                             <label htmlFor="showDone">
                                 Show done

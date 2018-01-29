@@ -58,7 +58,8 @@ let TasksList = React.createClass({
                 {
                     this.props.tasks.map((elem) => {
                         let ourTaskInOurCategory = (elem.catid === this.props.selectedCategoryId);
-                        let outTaskInSearchQuery = (elem.name.toLowerCase().indexOf(filterOptions.filterText) !== -1);
+                        let outTaskInSearchQuery = (elem.name.toLowerCase().indexOf(filterOptions.filterText) !== -1)
+                            && elem.completed === filterOptions.showCompletedTasks;
 
 
                         if (ourTaskInOurCategory && outTaskInSearchQuery) {
