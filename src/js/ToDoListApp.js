@@ -532,7 +532,6 @@ let ToDoListApp = React.createClass({
                                                 selectedTaskCompleted={this.state.selectedTaskCompleted}
                                                 setTaskProgress={this.setTaskProgress}
                                                 taskDescription={this.state.selectedTaskDescription}
-
                 />
             </div>
         )
