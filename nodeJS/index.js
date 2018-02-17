@@ -1,5 +1,6 @@
 // 1. Можео ли вызвать функцию без аргумента по середине? func(a,b[empty],c)
 // 2. Почему если использовать // logWriteStream.end(); то происходят ошибки
+// 3. Можно ли как-то реализовать retry(3) по-другому?
 
 // Google key
 // AIzaSyBJQ8HoYiJAR3PKDxYkl9MGYD0LcJaTgG4
@@ -10,7 +11,7 @@ const fetch = require('node-fetch');
 const googleApiKey = 'AIzaSyBJQ8HoYiJAR3PKDxYkl9MGYD0LcJaTgG4';
 
 // logger
-let logWriteStream = fs.createWriteStream('log.txt', {'flags': 'a', 'encoding': 'utf8'});
+const logWriteStream = fs.createWriteStream('log.txt', {'flags': 'a', 'encoding': 'utf8'});
 
 // logWriteStream.on('finish', (e) => {
 //     console.error('Input file with urls not found!');
@@ -21,7 +22,7 @@ logWriteStream.on('error', () => {
 // logger
 
 
-let commandArgs = process.argv.slice(2);
+const commandArgs = process.argv.slice(2);
 
 
 if (commandArgs < 2) {
@@ -30,17 +31,17 @@ if (commandArgs < 2) {
 }
 // console.log(process.argv);
 
-let inputFilePath = commandArgs[0];
-let outputFilePath = commandArgs[1];
+const inputFilePath = commandArgs[0];
+const outputFilePath = commandArgs[1];
 
 
-let outputWriteStream = fs.createWriteStream(outputFilePath, {'flags': 'a', 'encoding': 'utf8'});
+const outputWriteStream = fs.createWriteStream(outputFilePath, {'flags': 'a', 'encoding': 'utf8'});
 outputWriteStream.on('error', () => {
     console.error('Error in writing to output file!');
 });
 
 
-let inputFile = fs.readFile(inputFilePath, 'utf8', (err, data) => {
+fs.readFile(inputFilePath, 'utf8', (err, data) => {
 
     if (!err) {
         let regexopt = new RegExp(/\n|\r/gi);
@@ -52,9 +53,8 @@ let inputFile = fs.readFile(inputFilePath, 'utf8', (err, data) => {
             console.log(googlePageSpeedUrl);
 
 
-            setTimeout(() =>{
+            setTimeout(() => {
                 fetch(googlePageSpeedUrl, {timeout: 15000})
-                // .then(x => new Promise(resolve => setTimeout(() => resolve(x), 10000)))
                     .then(res => res.text())
                     .then(res => {
                         outputWriteStream.write(`${res} \n`);
@@ -67,8 +67,20 @@ let inputFile = fs.readFile(inputFilePath, 'utf8', (err, data) => {
                     })
                     .catch(err => {
                         console.error(err);
+                        if (err.code === 'ENOTFOUND'){
+                            console.log(`Can't connect to the current API, maybe internet connection was lost.`);
+                            logWriteStream.write(`[ ${new Date().toString()} ] Url NOT PROCESSED!: ${currentUrl}    ERROR: ENOTFOUND: Can't connect to the current API, maybe internet connection was lost  \n`);
+                        }
+                        else if (err.type === 'request-timeout'){
+                            console.log(`Timeout error. Slow internet connection OR API server have fall down.`);
+                            logWriteStream.write(`[ ${new Date().toString()} ] Url NOT PROCESSED!: ${currentUrl}    ERROR: request-timeout: Timeout error. Slow internet connection OR API server have fallen down.  \n`);
+                        }
+                        else {
+                            console.log(err.message);
+                            logWriteStream.write(`[ ${new Date().toString()} ] Url NOT PROCESSED!: ${currentUrl}    ERROR: ${err.message}  \n`);
+                        }
                     });
-            }, currentUrlIndex * 3000);
+            }, currentUrlIndex * 1);
 
 
         });
@@ -85,8 +97,4 @@ let inputFile = fs.readFile(inputFilePath, 'utf8', (err, data) => {
 });
 
 
-function sleeper(ms) {
-    return function(x) {
-        return new Promise(resolve => setTimeout(() => resolve(x), ms));
-    };
-}
+
