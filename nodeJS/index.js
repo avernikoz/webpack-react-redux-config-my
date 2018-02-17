@@ -55,9 +55,18 @@ fs.readFile(inputFilePath, 'utf8', (err, data) => {
 
             setTimeout(() => {
                 fetch(googlePageSpeedUrl, {timeout: 15000})
-                    .then(res => res.text())
+                    .then(res => res.json())
                     .then(res => {
-                        outputWriteStream.write(`${res} \n`);
+                            if (res.hasOwnProperty('error')) {
+                                return Promise.reject(new Error(`${res.error.message}`));
+                            }
+                            else {
+                                return res;
+                            }
+                        }
+                    )
+                    .then(res => {
+                        outputWriteStream.write(`${JSON.stringify(res, null, '\t')} \n`);
                         // outputWriteStream.end();
                     })
                     // .then(body => console.log(body))
@@ -66,12 +75,12 @@ fs.readFile(inputFilePath, 'utf8', (err, data) => {
                         // logWriteStream.end();
                     })
                     .catch(err => {
-                        console.error(err);
-                        if (err.code === 'ENOTFOUND'){
+                        // console.error(err);
+                        if (err.code === 'ENOTFOUND') {
                             console.log(`Can't connect to the current API, maybe internet connection was lost.`);
                             logWriteStream.write(`[ ${new Date().toString()} ] Url NOT PROCESSED!: ${currentUrl}    ERROR: ENOTFOUND: Can't connect to the current API, maybe internet connection was lost  \n`);
                         }
-                        else if (err.type === 'request-timeout'){
+                        else if (err.type === 'request-timeout') {
                             console.log(`Timeout error. Slow internet connection OR API server have fall down.`);
                             logWriteStream.write(`[ ${new Date().toString()} ] Url NOT PROCESSED!: ${currentUrl}    ERROR: request-timeout: Timeout error. Slow internet connection OR API server have fallen down.  \n`);
                         }
@@ -87,6 +96,7 @@ fs.readFile(inputFilePath, 'utf8', (err, data) => {
 
 
     }
+    // Need to refactor to ENOENT
     else {
         logWriteStream.write(`[ ${new Date().toString()} ] File not found at current path: '${inputFilePath}'\n`, 'utf-8', () => {
             console.error('Input file with urls not found!');

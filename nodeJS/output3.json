@@ -1,0 +1,4320 @@
+{
+  "captchaResult": "CAPTCHA_NOT_NEEDED",
+  "kind": "pagespeedonline#result",
+  "id": "https://www.jfairchildlaw.com/",
+  "responseCode": 404,
+  "title": "404 Not Found",
+  "ruleGroups": {
+    "SPEED": {
+      "score": 99
+    }
+  },
+  "loadingExperience": {
+    "initial_url": "https://www.jfairchildlaw.com/"
+  },
+  "pageStats": {
+    "numberResources": 2,
+    "numberHosts": 1,
+    "totalRequestBytes": "241",
+    "overTheWireResponseBytes": "478",
+    "otherResponseBytes": "1014",
+    "numTotalRoundTrips": 9,
+    "numRenderBlockingRoundTrips": 0
+  },
+  "formattedResults": {
+    "locale": "en_US",
+    "ruleResults": {
+      "AvoidLandingPageRedirects": {
+        "localizedRuleName": "Avoid landing page redirects",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your page has no redirects. Learn more about {{BEGIN_LINK}}avoiding landing page redirects{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/AvoidRedirects"
+            }
+          ]
+        }
+      },
+      "EnableGzipCompression": {
+        "localizedRuleName": "Enable compression",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have compression enabled. Learn more about {{BEGIN_LINK}}enabling compression{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/EnableCompression"
+            }
+          ]
+        }
+      },
+      "LeverageBrowserCaching": {
+        "localizedRuleName": "Leverage browser caching",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have enabled browser caching. Learn more about {{BEGIN_LINK}}browser caching recommendations{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/LeverageBrowserCaching"
+            }
+          ]
+        }
+      },
+      "MainResourceServerResponseTime": {
+        "localizedRuleName": "Reduce server response time",
+        "ruleImpact": 0.33899999999999997,
+        "groups": [
+          "SPEED"
+        ],
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "In our test, your server responded in {{RESPONSE_TIME}}. There are many factors that can slow down your server response time. {{BEGIN_LINK}}Please read our recommendations{{END_LINK}} to learn how you can monitor and measure where your server is spending the most time.",
+              "args": [
+                {
+                  "type": "DURATION",
+                  "key": "RESPONSE_TIME",
+                  "value": "0.54 seconds"
+                },
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/Server"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "MinifyCss": {
+        "localizedRuleName": "Minify CSS",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your CSS is minified. Learn more about {{BEGIN_LINK}}minifying CSS{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinifyHTML": {
+        "localizedRuleName": "Minify HTML",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your HTML is minified. Learn more about {{BEGIN_LINK}}minifying HTML{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinifyJavaScript": {
+        "localizedRuleName": "Minify JavaScript",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your JavaScript content is minified. Learn more about {{BEGIN_LINK}}minifying JavaScript{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinimizeRenderBlockingResources": {
+        "localizedRuleName": "Eliminate render-blocking JavaScript and CSS in above-the-fold content",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have no render-blocking resources. Learn more about {{BEGIN_LINK}}removing render-blocking resources{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/BlockingJS"
+            }
+          ]
+        }
+      },
+      "OptimizeImages": {
+        "localizedRuleName": "Optimize images",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your images are optimized. Learn more about {{BEGIN_LINK}}optimizing images{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/OptimizeImages"
+            }
+          ]
+        }
+      },
+      "PrioritizeVisibleContent": {
+        "localizedRuleName": "Prioritize visible content",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have the above-the-fold content properly prioritized. Learn more about {{BEGIN_LINK}}prioritizing visible content{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "version": {
+    "major": 1,
+    "minor": 15
+  }
+},
+{
+  "captchaResult": "CAPTCHA_NOT_NEEDED",
+  "kind": "pagespeedonline#result",
+  "id": "http://www.eugenefranklin.com/",
+  "responseCode": 404,
+  "title": "404 Not Found",
+  "ruleGroups": {
+    "SPEED": {
+      "score": 99
+    }
+  },
+  "loadingExperience": {
+    "initial_url": "http://www.eugenefranklin.com/"
+  },
+  "pageStats": {
+    "numberResources": 1,
+    "numberHosts": 1,
+    "totalRequestBytes": "44",
+    "overTheWireResponseBytes": "227",
+    "otherResponseBytes": "465",
+    "numTotalRoundTrips": 6,
+    "numRenderBlockingRoundTrips": 0
+  },
+  "formattedResults": {
+    "locale": "en_US",
+    "ruleResults": {
+      "AvoidLandingPageRedirects": {
+        "localizedRuleName": "Avoid landing page redirects",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your page has no redirects. Learn more about {{BEGIN_LINK}}avoiding landing page redirects{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/AvoidRedirects"
+            }
+          ]
+        }
+      },
+      "EnableGzipCompression": {
+        "localizedRuleName": "Enable compression",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have compression enabled. Learn more about {{BEGIN_LINK}}enabling compression{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/EnableCompression"
+            }
+          ]
+        }
+      },
+      "LeverageBrowserCaching": {
+        "localizedRuleName": "Leverage browser caching",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have enabled browser caching. Learn more about {{BEGIN_LINK}}browser caching recommendations{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/LeverageBrowserCaching"
+            }
+          ]
+        }
+      },
+      "MainResourceServerResponseTime": {
+        "localizedRuleName": "Reduce server response time",
+        "ruleImpact": 0.12100000000000001,
+        "groups": [
+          "SPEED"
+        ],
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "In our test, your server responded in {{RESPONSE_TIME}}. There are many factors that can slow down your server response time. {{BEGIN_LINK}}Please read our recommendations{{END_LINK}} to learn how you can monitor and measure where your server is spending the most time.",
+              "args": [
+                {
+                  "type": "DURATION",
+                  "key": "RESPONSE_TIME",
+                  "value": "0.32 seconds"
+                },
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/Server"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "MinifyCss": {
+        "localizedRuleName": "Minify CSS",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your CSS is minified. Learn more about {{BEGIN_LINK}}minifying CSS{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinifyHTML": {
+        "localizedRuleName": "Minify HTML",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your HTML is minified. Learn more about {{BEGIN_LINK}}minifying HTML{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinifyJavaScript": {
+        "localizedRuleName": "Minify JavaScript",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your JavaScript content is minified. Learn more about {{BEGIN_LINK}}minifying JavaScript{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinimizeRenderBlockingResources": {
+        "localizedRuleName": "Eliminate render-blocking JavaScript and CSS in above-the-fold content",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have no render-blocking resources. Learn more about {{BEGIN_LINK}}removing render-blocking resources{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/BlockingJS"
+            }
+          ]
+        }
+      },
+      "OptimizeImages": {
+        "localizedRuleName": "Optimize images",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your images are optimized. Learn more about {{BEGIN_LINK}}optimizing images{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/OptimizeImages"
+            }
+          ]
+        }
+      },
+      "PrioritizeVisibleContent": {
+        "localizedRuleName": "Prioritize visible content",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have the above-the-fold content properly prioritized. Learn more about {{BEGIN_LINK}}prioritizing visible content{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "version": {
+    "major": 1,
+    "minor": 15
+  }
+},
+{
+  "captchaResult": "CAPTCHA_NOT_NEEDED",
+  "kind": "pagespeedonline#result",
+  "id": "http://www.challonerlaw.com/",
+  "responseCode": 200,
+  "title": "Family Law Attorney Santa Rosa CA | Challoner Law | Sonoma County",
+  "ruleGroups": {
+    "SPEED": {
+      "score": 95
+    }
+  },
+  "loadingExperience": {
+    "initial_url": "http://www.challonerlaw.com/"
+  },
+  "pageStats": {
+    "numberResources": 39,
+    "numberHosts": 20,
+    "totalRequestBytes": "9435",
+    "numberStaticResources": 16,
+    "htmlResponseBytes": "102093",
+    "overTheWireResponseBytes": "494181",
+    "cssResponseBytes": "20914",
+    "imageResponseBytes": "196541",
+    "javascriptResponseBytes": "571760",
+    "otherResponseBytes": "21734",
+    "numberJsResources": 15,
+    "numberCssResources": 3,
+    "numTotalRoundTrips": 12,
+    "numRenderBlockingRoundTrips": 0
+  },
+  "formattedResults": {
+    "locale": "en_US",
+    "ruleResults": {
+      "AvoidLandingPageRedirects": {
+        "localizedRuleName": "Avoid landing page redirects",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your page has no redirects. Learn more about {{BEGIN_LINK}}avoiding landing page redirects{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/AvoidRedirects"
+            }
+          ]
+        }
+      },
+      "EnableGzipCompression": {
+        "localizedRuleName": "Enable compression",
+        "ruleImpact": 0.020300000000000002,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Compressing resources with gzip or deflate can reduce the number of bytes sent over the network."
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Enable compression{{END_LINK}} for the following resources to reduce their transfer size by {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/EnableCompression"
+                },
+                {
+                  "type": "BYTES",
+                  "key": "SIZE_IN_BYTES",
+                  "value": "203B"
+                },
+                {
+                  "type": "PERCENTAGE",
+                  "key": "PERCENTAGE",
+                  "value": "42%"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://attorney.findlaw.com/b/ss/findlaw-18189,findlaw-global-v1,findlawfirmstaging/10/JS-2.1.0-D7QN/s2957052949815?AQB=1&ndh=1&pf=1&callback=s_c_il[3].doPostbacks&et=1&t=19%2F1%2F2018%205%3A52%3A3%201%20480&d.&nsid=0&jsonv=1&.d&D=D%3D&mid=39579943574919285771166159467427975410&aamlh=9&ce=UTF-8&ns=findlaw&pageName=www.challonerlaw.com&g=http%3A%2F%2Fwww.challonerlaw.com%2F&c.&mcid.&pageDomain=www.challonerlaw.com&version=2.1.0&icsmcvid=server%20side%20mid&mcidcto=successful%20response&aidcto=successful%20response&mcorgid=D%3Dmcorgid&.mcid&.c&cc=USD&ch=www.challonerlaw.com&server=Firmsite&events=event1%2Cevent41%3A1519048323337-60242&aamb=RKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y&c1=D%3Dv1&v1=www.challonerlaw.com&l1=7073045237%2C8669308642%2C7075428585&c2=D%3Dv2&v2=www.challonerlaw.com&c3=D%3Dv3&v3=www.challonerlaw.com&c4=D%3Dv4&v4=www.challonerlaw.com&v5=D%3DpageName&c13=D%3Dv13&v13=4178732&c18=D%3Dv18&v18=60242&c20=D%3Dv20&v20=2706883&c21=D%3Dv21&v21=New&c23=D%3Dv23&v23=http%3A%2F%2Fwww.challonerlaw.com%2F&c25=D%3Dv25&v25=1&c26=D%3Dv26&v26=First%20page%20view%20or%20cookies%20not%20supported&c27=D%3Dv27&c28=D%3Dv28&v28=Firmsite%3Ahome&c29=4%3A30AM&v29=4%3A30AM&c30=Monday&v30=Monday&c50=findlaw-18189&c59=D%3Dv59&v59=home&c64=lr%2Cfb&v68=39579943574919285771166159467427975410&c74=VisitorAPI%20Present&s=1366x768&c=24&j=1.6&v=N&k=Y&bw=1366&bh=768&mcorgid=5C64123F5245AF950A490D45%40AdobeOrg&AQE=1"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "203B"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "42%"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "LeverageBrowserCaching": {
+        "localizedRuleName": "Leverage browser caching",
+        "ruleImpact": 3.638888888888889,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Setting an expiry date or a maximum age in the HTTP headers for static resources instructs the browser to load previously downloaded resources from local disk rather than over the network."
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Leverage browser caching{{END_LINK}} for the following cacheable resources:",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/LeverageBrowserCaching"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://connect.facebook.net/en_US/fbevents.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "20 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://connect.facebook.net/signals/config/442563859276995?v=2.8.12&r=stable"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "20 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/s-code-contents-5bc22ef684bd578a517eb06b7e33bec31529e21c.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/satelliteLib-5ac9f7d6c64aaca0ea4f2c891947b1261d9c0e6e.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/scripts/satellite-599200fd64746d77de001d4a.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://platform.reviewmgr.com/widgets.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://js-agent.newrelic.com/nr-1071.min.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "2 hours"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://www.google-analytics.com/analytics.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "2 hours"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "MainResourceServerResponseTime": {
+        "localizedRuleName": "Reduce server response time",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your server responded quickly. Learn more about {{BEGIN_LINK}}server response time optimization{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/Server"
+            }
+          ]
+        }
+      },
+      "MinifyCss": {
+        "localizedRuleName": "Minify CSS",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your CSS is minified. Learn more about {{BEGIN_LINK}}minifying CSS{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinifyHTML": {
+        "localizedRuleName": "Minify HTML",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your HTML is minified. Learn more about {{BEGIN_LINK}}minifying HTML{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinifyJavaScript": {
+        "localizedRuleName": "Minify JavaScript",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your JavaScript content is minified. Learn more about {{BEGIN_LINK}}minifying JavaScript{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinimizeRenderBlockingResources": {
+        "localizedRuleName": "Eliminate render-blocking JavaScript and CSS in above-the-fold content",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have no render-blocking resources. Learn more about {{BEGIN_LINK}}removing render-blocking resources{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/BlockingJS"
+            }
+          ]
+        }
+      },
+      "OptimizeImages": {
+        "localizedRuleName": "Optimize images",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your images are optimized. Learn more about {{BEGIN_LINK}}optimizing images{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/OptimizeImages"
+            }
+          ]
+        }
+      },
+      "PrioritizeVisibleContent": {
+        "localizedRuleName": "Prioritize visible content",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have the above-the-fold content properly prioritized. Learn more about {{BEGIN_LINK}}prioritizing visible content{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "version": {
+    "major": 1,
+    "minor": 15
+  }
+}
+{
+  "captchaResult": "CAPTCHA_NOT_NEEDED",
+  "kind": "pagespeedonline#result",
+  "id": "http://www.taylorlawfirmok.com/",
+  "responseCode": 200,
+  "title": "Oklahoma City Family Law Attorneys | Estate Planning Lawyers",
+  "ruleGroups": {
+    "SPEED": {
+      "score": 94
+    }
+  },
+  "loadingExperience": {
+    "initial_url": "http://www.taylorlawfirmok.com/"
+  },
+  "pageStats": {
+    "numberResources": 39,
+    "numberHosts": 19,
+    "totalRequestBytes": "8754",
+    "numberStaticResources": 17,
+    "htmlResponseBytes": "43367",
+    "overTheWireResponseBytes": "520422",
+    "cssResponseBytes": "105010",
+    "imageResponseBytes": "236439",
+    "javascriptResponseBytes": "534756",
+    "otherResponseBytes": "21336",
+    "numberJsResources": 14,
+    "numberCssResources": 4,
+    "numTotalRoundTrips": 11,
+    "numRenderBlockingRoundTrips": 1
+  },
+  "formattedResults": {
+    "locale": "en_US",
+    "ruleResults": {
+      "AvoidLandingPageRedirects": {
+        "localizedRuleName": "Avoid landing page redirects",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your page has no redirects. Learn more about {{BEGIN_LINK}}avoiding landing page redirects{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/AvoidRedirects"
+            }
+          ]
+        }
+      },
+      "EnableGzipCompression": {
+        "localizedRuleName": "Enable compression",
+        "ruleImpact": 0.0205,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Compressing resources with gzip or deflate can reduce the number of bytes sent over the network."
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Enable compression{{END_LINK}} for the following resources to reduce their transfer size by {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/EnableCompression"
+                },
+                {
+                  "type": "BYTES",
+                  "key": "SIZE_IN_BYTES",
+                  "value": "205B"
+                },
+                {
+                  "type": "PERCENTAGE",
+                  "key": "PERCENTAGE",
+                  "value": "42%"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://attorney.findlaw.com/b/ss/findlaw-17541,findlaw-global-v1,findlawfirmstaging/10/JS-2.1.0-D7QN/s23428791153710?AQB=1&ndh=1&pf=1&callback=s_c_il[3].doPostbacks&et=1&t=19%2F1%2F2018%205%3A52%3A3%201%20480&d.&nsid=0&jsonv=1&.d&D=D%3D&mid=69572382483620512484498188852511700170&aamlh=9&ce=UTF-8&ns=findlaw&pageName=www.taylorlawfirmok.com&g=http%3A%2F%2Fwww.taylorlawfirmok.com%2F&c.&mcid.&pageDomain=www.taylorlawfirmok.com&version=2.1.0&icsmcvid=server%20side%20mid&mcidcto=successful%20response&aidcto=successful%20response&mcorgid=D%3Dmcorgid&.mcid&.c&cc=USD&ch=www.taylorlawfirmok.com&server=Firmsite&events=event1%2Cevent41%3A1519048323615-60356&aamb=RKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y&c1=D%3Dv1&v1=www.taylorlawfirmok.com&l1=4055252232%2C4055252250&c2=D%3Dv2&v2=www.taylorlawfirmok.com&c3=D%3Dv3&v3=www.taylorlawfirmok.com&c4=D%3Dv4&v4=www.taylorlawfirmok.com&v5=D%3DpageName&c13=D%3Dv13&v13=2509433&c18=D%3Dv18&v18=60356&c20=D%3Dv20&v20=2713748&c21=D%3Dv21&v21=New&c23=D%3Dv23&v23=http%3A%2F%2Fwww.taylorlawfirmok.com%2F&c25=D%3Dv25&v25=1&c26=D%3Dv26&v26=First%20page%20view%20or%20cookies%20not%20supported&c27=D%3Dv27&c28=D%3Dv28&v28=Firmsite%3Ahome&c29=4%3A30AM&v29=4%3A30AM&c30=Monday&v30=Monday&c50=findlaw-17541&c59=D%3Dv59&v59=home&c64=lr%2Cfb&v68=69572382483620512484498188852511700170&c74=VisitorAPI%20Present&s=1366x768&c=24&j=1.6&v=N&k=Y&bw=1366&bh=768&mcorgid=5C64123F5245AF950A490D45%40AdobeOrg&AQE=1"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "205B"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "42%"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "LeverageBrowserCaching": {
+        "localizedRuleName": "Leverage browser caching",
+        "ruleImpact": 3.222222222222222,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Setting an expiry date or a maximum age in the HTTP headers for static resources instructs the browser to load previously downloaded resources from local disk rather than over the network."
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Leverage browser caching{{END_LINK}} for the following cacheable resources:",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/LeverageBrowserCaching"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://connect.facebook.net/en_US/fbevents.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "20 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://connect.facebook.net/signals/config/442563859276995?v=2.8.12&r=stable"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "20 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/s-code-contents-5bc22ef684bd578a517eb06b7e33bec31529e21c.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/satelliteLib-5ac9f7d6c64aaca0ea4f2c891947b1261d9c0e6e.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/scripts/satellite-599200fd64746d77de001d4a.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://platform.grade.us/widgets.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://js-agent.newrelic.com/nr-1071.min.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "2 hours"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "MainResourceServerResponseTime": {
+        "localizedRuleName": "Reduce server response time",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your server responded quickly. Learn more about {{BEGIN_LINK}}server response time optimization{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/Server"
+            }
+          ]
+        }
+      },
+      "MinifyCss": {
+        "localizedRuleName": "Minify CSS",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your CSS is minified. Learn more about {{BEGIN_LINK}}minifying CSS{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinifyHTML": {
+        "localizedRuleName": "Minify HTML",
+        "ruleImpact": 0.0755,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Compacting HTML code, including any inline JavaScript and CSS contained in it, can save many bytes of data and speed up download and parse times."
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Minify HTML{{END_LINK}} for the following resources to reduce their size by {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+                },
+                {
+                  "type": "BYTES",
+                  "key": "SIZE_IN_BYTES",
+                  "value": "755B"
+                },
+                {
+                  "type": "PERCENTAGE",
+                  "key": "PERCENTAGE",
+                  "value": "11%"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "Minifying {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction) after compression.",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://www.taylorlawfirmok.com/"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "755B"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "11%"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "MinifyJavaScript": {
+        "localizedRuleName": "Minify JavaScript",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your JavaScript content is minified. Learn more about {{BEGIN_LINK}}minifying JavaScript{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinimizeRenderBlockingResources": {
+        "localizedRuleName": "Eliminate render-blocking JavaScript and CSS in above-the-fold content",
+        "ruleImpact": 2,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your page has {{NUM_CSS}} blocking CSS resources. This causes a delay in rendering your page.",
+          "args": [
+            {
+              "type": "INT_LITERAL",
+              "key": "NUM_CSS",
+              "value": "1"
+            }
+          ]
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "None of the above-the-fold content on your page could be rendered without waiting for the following resources to load. Try to defer or asynchronously load blocking resources, or inline the critical portions of those resources directly in the HTML."
+            }
+          },
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Optimize CSS Delivery{{END_LINK}} of the following:",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "{{URL}}",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://www.taylorlawfirmok.com/design/css/grey-gold.css"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "OptimizeImages": {
+        "localizedRuleName": "Optimize images",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your images are optimized. Learn more about {{BEGIN_LINK}}optimizing images{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/OptimizeImages"
+            }
+          ]
+        }
+      },
+      "PrioritizeVisibleContent": {
+        "localizedRuleName": "Prioritize visible content",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have the above-the-fold content properly prioritized. Learn more about {{BEGIN_LINK}}prioritizing visible content{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "version": {
+    "major": 1,
+    "minor": 15
+  }
+}
+{
+  "captchaResult": "CAPTCHA_NOT_NEEDED",
+  "kind": "pagespeedonline#result",
+  "id": "http://www.attorneywalt.com/",
+  "responseCode": 200,
+  "title": "Milwaukee Business Law Attorney | Milwaukee County Estate Planning Lawyer",
+  "ruleGroups": {
+    "SPEED": {
+      "score": 10
+    }
+  },
+  "loadingExperience": {
+    "initial_url": "http://www.attorneywalt.com/"
+  },
+  "pageStats": {
+    "numberResources": 27,
+    "numberHosts": 11,
+    "totalRequestBytes": "6002",
+    "numberStaticResources": 10,
+    "htmlResponseBytes": "35354",
+    "overTheWireResponseBytes": "6295306",
+    "cssResponseBytes": "68017",
+    "imageResponseBytes": "5955036",
+    "javascriptResponseBytes": "363864",
+    "otherResponseBytes": "79088",
+    "numberJsResources": 7,
+    "numberCssResources": 2,
+    "numTotalRoundTrips": 13,
+    "numRenderBlockingRoundTrips": 4
+  },
+  "formattedResults": {
+    "locale": "en_US",
+    "ruleResults": {
+      "AvoidLandingPageRedirects": {
+        "localizedRuleName": "Avoid landing page redirects",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your page has no redirects. Learn more about {{BEGIN_LINK}}avoiding landing page redirects{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/AvoidRedirects"
+            }
+          ]
+        }
+      },
+      "EnableGzipCompression": {
+        "localizedRuleName": "Enable compression",
+        "ruleImpact": 0.020300000000000002,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Compressing resources with gzip or deflate can reduce the number of bytes sent over the network."
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Enable compression{{END_LINK}} for the following resources to reduce their transfer size by {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/EnableCompression"
+                },
+                {
+                  "type": "BYTES",
+                  "key": "SIZE_IN_BYTES",
+                  "value": "203B"
+                },
+                {
+                  "type": "PERCENTAGE",
+                  "key": "PERCENTAGE",
+                  "value": "42%"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://attorney.findlaw.com/b/ss/findlaw-36651,findlaw-global-v1,findlawfirmstaging/10/JS-2.1.0-D7QN/s29500259624328?AQB=1&ndh=1&pf=1&callback=s_c_il[3].doPostbacks&et=1&t=19%2F1%2F2018%205%3A52%3A3%201%20480&d.&nsid=0&jsonv=1&.d&D=D%3D&mid=59229272674008141082308931643071758524&aamlh=9&ce=UTF-8&ns=findlaw&pageName=www.attorneywalt.com&g=http%3A%2F%2Fwww.attorneywalt.com%2F&c.&mcid.&pageDomain=www.attorneywalt.com&version=2.1.0&icsmcvid=server%20side%20mid&mcidcto=successful%20response&aidcto=successful%20response&mcorgid=D%3Dmcorgid&.mcid&.c&cc=USD&ch=www.attorneywalt.com&server=Firmsite&events=event1%2Cevent41%3A1519048323323-59487&aamb=RKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y&c1=D%3Dv1&v1=www.attorneywalt.com&l1=4149883382%2C8442708626&c2=D%3Dv2&v2=www.attorneywalt.com&c3=D%3Dv3&v3=www.attorneywalt.com&c4=D%3Dv4&v4=www.attorneywalt.com&v5=D%3DpageName&c13=D%3Dv13&v13=4865798&c18=D%3Dv18&v18=59487&c20=D%3Dv20&v20=2647491&c21=D%3Dv21&v21=New&c23=D%3Dv23&v23=http%3A%2F%2Fwww.attorneywalt.com%2F&c25=D%3Dv25&v25=1&c26=D%3Dv26&v26=First%20page%20view%20or%20cookies%20not%20supported&c27=D%3Dv27&c28=D%3Dv28&v28=Firmsite%3Ahome&c29=4%3A30AM&v29=4%3A30AM&c30=Monday&v30=Monday&c50=findlaw-36651&c59=D%3Dv59&v59=home&v68=59229272674008141082308931643071758524&c74=VisitorAPI%20Present&s=1366x768&c=24&j=1.6&v=N&k=Y&bw=1366&bh=768&mcorgid=5C64123F5245AF950A490D45%40AdobeOrg&AQE=1"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "203B"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "42%"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "LeverageBrowserCaching": {
+        "localizedRuleName": "Leverage browser caching",
+        "ruleImpact": 0.9166666666666666,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Setting an expiry date or a maximum age in the HTTP headers for static resources instructs the browser to load previously downloaded resources from local disk rather than over the network."
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Leverage browser caching{{END_LINK}} for the following cacheable resources:",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/LeverageBrowserCaching"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/s-code-contents-5bc22ef684bd578a517eb06b7e33bec31529e21c.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/satelliteLib-5ac9f7d6c64aaca0ea4f2c891947b1261d9c0e6e.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "MainResourceServerResponseTime": {
+        "localizedRuleName": "Reduce server response time",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your server responded quickly. Learn more about {{BEGIN_LINK}}server response time optimization{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/Server"
+            }
+          ]
+        }
+      },
+      "MinifyCss": {
+        "localizedRuleName": "Minify CSS",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your CSS is minified. Learn more about {{BEGIN_LINK}}minifying CSS{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinifyHTML": {
+        "localizedRuleName": "Minify HTML",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your HTML is minified. Learn more about {{BEGIN_LINK}}minifying HTML{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinifyJavaScript": {
+        "localizedRuleName": "Minify JavaScript",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your JavaScript content is minified. Learn more about {{BEGIN_LINK}}minifying JavaScript{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinimizeRenderBlockingResources": {
+        "localizedRuleName": "Eliminate render-blocking JavaScript and CSS in above-the-fold content",
+        "ruleImpact": 8,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your page has {{NUM_SCRIPTS}} blocking script resources and {{NUM_CSS}} blocking CSS resources. This causes a delay in rendering your page.",
+          "args": [
+            {
+              "type": "INT_LITERAL",
+              "key": "NUM_SCRIPTS",
+              "value": "1"
+            },
+            {
+              "type": "INT_LITERAL",
+              "key": "NUM_CSS",
+              "value": "2"
+            }
+          ]
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "None of the above-the-fold content on your page could be rendered without waiting for the following resources to load. Try to defer or asynchronously load blocking resources, or inline the critical portions of those resources directly in the HTML."
+            }
+          },
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Remove render-blocking JavaScript{{END_LINK}}:",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/BlockingJS"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "{{URL}}",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/satelliteLib-5ac9f7d6c64aaca0ea4f2c891947b1261d9c0e6e.js"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Optimize CSS Delivery{{END_LINK}} of the following:",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "{{URL}}",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://fonts.googleapis.com/css?family=Source+Sans+Pro:700|Bitter:400|Source+Sans+Pro:400|Bitter:700"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}}",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://www.attorneywalt.com/design/css/navy-green.css"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "OptimizeImages": {
+        "localizedRuleName": "Optimize images",
+        "ruleImpact": 507.2751,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Properly formatting and compressing images can save many bytes of data."
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Optimize the following images{{END_LINK}} to reduce their size by {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/OptimizeImages"
+                },
+                {
+                  "type": "BYTES",
+                  "key": "SIZE_IN_BYTES",
+                  "value": "4.8MiB"
+                },
+                {
+                  "type": "PERCENTAGE",
+                  "key": "PERCENTAGE",
+                  "value": "85%"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://www.attorneywalt.com/content/images/iStock_28961778_LARGE.jpg"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "4.8MiB"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "85%"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://www.attorneywalt.com/content/images/BrummundLawLogo.png"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "2.3KiB"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "19%"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "PrioritizeVisibleContent": {
+        "localizedRuleName": "Prioritize visible content",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have the above-the-fold content properly prioritized. Learn more about {{BEGIN_LINK}}prioritizing visible content{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "version": {
+    "major": 1,
+    "minor": 15
+  }
+}
+{
+  "captchaResult": "CAPTCHA_NOT_NEEDED",
+  "kind": "pagespeedonline#result",
+  "id": "https://www.bankruptcymichaelkoch.com/",
+  "responseCode": 200,
+  "title": "La Mesa Bankruptcy Attorney | San Diego County Tax Law & Estate",
+  "ruleGroups": {
+    "SPEED": {
+      "score": 97
+    }
+  },
+  "loadingExperience": {
+    "initial_url": "https://www.bankruptcymichaelkoch.com/"
+  },
+  "pageStats": {
+    "numberResources": 35,
+    "numberHosts": 12,
+    "totalRequestBytes": "7785",
+    "numberStaticResources": 16,
+    "htmlResponseBytes": "97451",
+    "overTheWireResponseBytes": "378048",
+    "imageResponseBytes": "150827",
+    "javascriptResponseBytes": "465545",
+    "otherResponseBytes": "2600",
+    "numberJsResources": 11,
+    "numTotalRoundTrips": 16,
+    "numRenderBlockingRoundTrips": 0
+  },
+  "formattedResults": {
+    "locale": "en_US",
+    "ruleResults": {
+      "AvoidLandingPageRedirects": {
+        "localizedRuleName": "Avoid landing page redirects",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your page has no redirects. Learn more about {{BEGIN_LINK}}avoiding landing page redirects{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/AvoidRedirects"
+            }
+          ]
+        }
+      },
+      "EnableGzipCompression": {
+        "localizedRuleName": "Enable compression",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have compression enabled. Learn more about {{BEGIN_LINK}}enabling compression{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/EnableCompression"
+            }
+          ]
+        }
+      },
+      "LeverageBrowserCaching": {
+        "localizedRuleName": "Leverage browser caching",
+        "ruleImpact": 2.3472222222222223,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Setting an expiry date or a maximum age in the HTTP headers for static resources instructs the browser to load previously downloaded resources from local disk rather than over the network."
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Leverage browser caching{{END_LINK}} for the following cacheable resources:",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/LeverageBrowserCaching"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://connect.facebook.net/en_US/fbevents.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "20 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://connect.facebook.net/signals/config/442563859276995?v=2.8.12&r=stable"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "20 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/s-code-contents-5bc22ef684bd578a517eb06b7e33bec31529e21c.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/satelliteLib-5ac9f7d6c64aaca0ea4f2c891947b1261d9c0e6e.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/scripts/satellite-599200fd64746d77de001d4a.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "MainResourceServerResponseTime": {
+        "localizedRuleName": "Reduce server response time",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your server responded quickly. Learn more about {{BEGIN_LINK}}server response time optimization{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/Server"
+            }
+          ]
+        }
+      },
+      "MinifyCss": {
+        "localizedRuleName": "Minify CSS",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your CSS is minified. Learn more about {{BEGIN_LINK}}minifying CSS{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinifyHTML": {
+        "localizedRuleName": "Minify HTML",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your HTML is minified. Learn more about {{BEGIN_LINK}}minifying HTML{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinifyJavaScript": {
+        "localizedRuleName": "Minify JavaScript",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your JavaScript content is minified. Learn more about {{BEGIN_LINK}}minifying JavaScript{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinimizeRenderBlockingResources": {
+        "localizedRuleName": "Eliminate render-blocking JavaScript and CSS in above-the-fold content",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have no render-blocking resources. Learn more about {{BEGIN_LINK}}removing render-blocking resources{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/BlockingJS"
+            }
+          ]
+        }
+      },
+      "OptimizeImages": {
+        "localizedRuleName": "Optimize images",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your images are optimized. Learn more about {{BEGIN_LINK}}optimizing images{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/OptimizeImages"
+            }
+          ]
+        }
+      },
+      "PrioritizeVisibleContent": {
+        "localizedRuleName": "Prioritize visible content",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have the above-the-fold content properly prioritized. Learn more about {{BEGIN_LINK}}prioritizing visible content{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "version": {
+    "major": 1,
+    "minor": 15
+  }
+}
+{
+  "captchaResult": "CAPTCHA_NOT_NEEDED",
+  "kind": "pagespeedonline#result",
+  "id": "https://windoor.by/",
+  "responseCode": 200,
+  "title": "????? ? ??????: ???????????? ? ???????, ??????? ? ?????? ? ???? | ?????????????",
+  "ruleGroups": {
+    "SPEED": {
+      "score": 85
+    }
+  },
+  "loadingExperience": {
+    "initial_url": "https://windoor.by/"
+  },
+  "pageStats": {
+    "numberResources": 30,
+    "numberHosts": 3,
+    "totalRequestBytes": "2539",
+    "numberStaticResources": 19,
+    "htmlResponseBytes": "195523",
+    "overTheWireResponseBytes": "972498",
+    "cssResponseBytes": "96114",
+    "imageResponseBytes": "685796",
+    "javascriptResponseBytes": "241613",
+    "otherResponseBytes": "154483",
+    "numberJsResources": 1,
+    "numberCssResources": 2,
+    "numTotalRoundTrips": 27,
+    "numRenderBlockingRoundTrips": 0
+  },
+  "formattedResults": {
+    "locale": "en_US",
+    "ruleResults": {
+      "AvoidLandingPageRedirects": {
+        "localizedRuleName": "Avoid landing page redirects",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your page has no redirects. Learn more about {{BEGIN_LINK}}avoiding landing page redirects{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/AvoidRedirects"
+            }
+          ]
+        }
+      },
+      "EnableGzipCompression": {
+        "localizedRuleName": "Enable compression",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have compression enabled. Learn more about {{BEGIN_LINK}}enabling compression{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/EnableCompression"
+            }
+          ]
+        }
+      },
+      "LeverageBrowserCaching": {
+        "localizedRuleName": "Leverage browser caching",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have enabled browser caching. Learn more about {{BEGIN_LINK}}browser caching recommendations{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/LeverageBrowserCaching"
+            }
+          ]
+        }
+      },
+      "MainResourceServerResponseTime": {
+        "localizedRuleName": "Reduce server response time",
+        "ruleImpact": 6.02,
+        "groups": [
+          "SPEED"
+        ],
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "In our test, your server responded in {{RESPONSE_TIME}}. There are many factors that can slow down your server response time. {{BEGIN_LINK}}Please read our recommendations{{END_LINK}} to learn how you can monitor and measure where your server is spending the most time.",
+              "args": [
+                {
+                  "type": "DURATION",
+                  "key": "RESPONSE_TIME",
+                  "value": "0.80 seconds"
+                },
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/Server"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "MinifyCss": {
+        "localizedRuleName": "Minify CSS",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your CSS is minified. Learn more about {{BEGIN_LINK}}minifying CSS{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinifyHTML": {
+        "localizedRuleName": "Minify HTML",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your HTML is minified. Learn more about {{BEGIN_LINK}}minifying HTML{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinifyJavaScript": {
+        "localizedRuleName": "Minify JavaScript",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your JavaScript content is minified. Learn more about {{BEGIN_LINK}}minifying JavaScript{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinimizeRenderBlockingResources": {
+        "localizedRuleName": "Eliminate render-blocking JavaScript and CSS in above-the-fold content",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have no render-blocking resources. Learn more about {{BEGIN_LINK}}removing render-blocking resources{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/BlockingJS"
+            }
+          ]
+        }
+      },
+      "OptimizeImages": {
+        "localizedRuleName": "Optimize images",
+        "ruleImpact": 10.044,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Properly formatting and compressing images can save many bytes of data."
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Optimize the following images{{END_LINK}} to reduce their size by {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/OptimizeImages"
+                },
+                {
+                  "type": "BYTES",
+                  "key": "SIZE_IN_BYTES",
+                  "value": "98.1KiB"
+                },
+                {
+                  "type": "PERCENTAGE",
+                  "key": "PERCENTAGE",
+                  "value": "20%"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://windoor.by/skins/new_2017/tpl/img/slider/big/slide_00.jpg"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "20.4KiB"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "20%"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://windoor.by/skins/new_2017/tpl/img/slider/big/slide_05.jpg"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "17KiB"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "17%"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://windoor.by/skins/new_2017/tpl/img/slider/slide_00_small.jpg"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "16.6KiB"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "21%"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://windoor.by/skins/new_2017/tpl/img/zameryimg4.jpg"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "12.7KiB"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "37%"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://windoor.by/skins/new_2017/tpl/img/slider/slide_05_small.jpg"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "12.5KiB"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "18%"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://windoor.by/skins/new_2017/tpl/img/slider/big/slide_06.jpg"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "9.7KiB"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "12%"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://windoor.by/skins/new_2017/tpl/img/social-icons.png"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "4.6KiB"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "37%"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://windoor.by/skins/new_2017/tpl/img/sprites.png"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "1.8KiB"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "31%"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://windoor.by/skins/new_2017/tpl/img/sprites.png?gh03"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "1.8KiB"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "31%"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://windoor.by/skins/new_2017/tpl/img/logo_23_small.png"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "456B"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "12%"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://windoor.by/skins/new_2017/tpl/img/slider_arrow_big5.png"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "293B"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "16%"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://windoor.by/skins/new_2017/tpl/img/rating/rating-5.png"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "144B"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "17%"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "PrioritizeVisibleContent": {
+        "localizedRuleName": "Prioritize visible content",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have the above-the-fold content properly prioritized. Learn more about {{BEGIN_LINK}}prioritizing visible content{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "version": {
+    "major": 1,
+    "minor": 15
+  }
+}
+{
+  "captchaResult": "CAPTCHA_NOT_NEEDED",
+  "kind": "pagespeedonline#result",
+  "id": "https://www.garciapa.com/",
+  "responseCode": 200,
+  "title": "Ft. Lauderdale Business Lawyer | Broward County Construction Lien Attorney",
+  "ruleGroups": {
+    "SPEED": {
+      "score": 84
+    }
+  },
+  "loadingExperience": {
+    "initial_url": "https://www.garciapa.com/"
+  },
+  "pageStats": {
+    "numberResources": 40,
+    "numberHosts": 20,
+    "totalRequestBytes": "9315",
+    "numberStaticResources": 16,
+    "htmlResponseBytes": "120049",
+    "overTheWireResponseBytes": "487637",
+    "cssResponseBytes": "20909",
+    "imageResponseBytes": "171107",
+    "javascriptResponseBytes": "629022",
+    "otherResponseBytes": "22284",
+    "numberJsResources": 15,
+    "numberCssResources": 3,
+    "numTotalRoundTrips": 21,
+    "numRenderBlockingRoundTrips": 5
+  },
+  "formattedResults": {
+    "locale": "en_US",
+    "ruleResults": {
+      "AvoidLandingPageRedirects": {
+        "localizedRuleName": "Avoid landing page redirects",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your page has no redirects. Learn more about {{BEGIN_LINK}}avoiding landing page redirects{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/AvoidRedirects"
+            }
+          ]
+        }
+      },
+      "EnableGzipCompression": {
+        "localizedRuleName": "Enable compression",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have compression enabled. Learn more about {{BEGIN_LINK}}enabling compression{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/EnableCompression"
+            }
+          ]
+        }
+      },
+      "LeverageBrowserCaching": {
+        "localizedRuleName": "Leverage browser caching",
+        "ruleImpact": 3.222222222222222,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Setting an expiry date or a maximum age in the HTTP headers for static resources instructs the browser to load previously downloaded resources from local disk rather than over the network."
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Leverage browser caching{{END_LINK}} for the following cacheable resources:",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/LeverageBrowserCaching"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://connect.facebook.net/en_US/fbevents.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "20 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://connect.facebook.net/signals/config/442563859276995?v=2.8.12&r=stable"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "20 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/s-code-contents-5bc22ef684bd578a517eb06b7e33bec31529e21c.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/satelliteLib-5ac9f7d6c64aaca0ea4f2c891947b1261d9c0e6e.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/scripts/satellite-599200fd64746d77de001d4a.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://platform.reviewmgr.com/widgets.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://js-agent.newrelic.com/nr-1071.min.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "2 hours"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "MainResourceServerResponseTime": {
+        "localizedRuleName": "Reduce server response time",
+        "ruleImpact": 4.27,
+        "groups": [
+          "SPEED"
+        ],
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "In our test, your server responded in {{RESPONSE_TIME}}. There are many factors that can slow down your server response time. {{BEGIN_LINK}}Please read our recommendations{{END_LINK}} to learn how you can monitor and measure where your server is spending the most time.",
+              "args": [
+                {
+                  "type": "DURATION",
+                  "key": "RESPONSE_TIME",
+                  "value": "0.63 seconds"
+                },
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/Server"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "MinifyCss": {
+        "localizedRuleName": "Minify CSS",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your CSS is minified. Learn more about {{BEGIN_LINK}}minifying CSS{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinifyHTML": {
+        "localizedRuleName": "Minify HTML",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your HTML is minified. Learn more about {{BEGIN_LINK}}minifying HTML{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinifyJavaScript": {
+        "localizedRuleName": "Minify JavaScript",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your JavaScript content is minified. Learn more about {{BEGIN_LINK}}minifying JavaScript{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinimizeRenderBlockingResources": {
+        "localizedRuleName": "Eliminate render-blocking JavaScript and CSS in above-the-fold content",
+        "ruleImpact": 10,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your page has {{NUM_SCRIPTS}} blocking script resources. This causes a delay in rendering your page.",
+          "args": [
+            {
+              "type": "INT_LITERAL",
+              "key": "NUM_SCRIPTS",
+              "value": "1"
+            }
+          ]
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "None of the above-the-fold content on your page could be rendered without waiting for the following resources to load. Try to defer or asynchronously load blocking resources, or inline the critical portions of those resources directly in the HTML."
+            }
+          },
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Remove render-blocking JavaScript{{END_LINK}}:",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/BlockingJS"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "{{URL}}",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "OptimizeImages": {
+        "localizedRuleName": "Optimize images",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your images are optimized. Learn more about {{BEGIN_LINK}}optimizing images{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/OptimizeImages"
+            }
+          ]
+        }
+      },
+      "PrioritizeVisibleContent": {
+        "localizedRuleName": "Prioritize visible content",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have the above-the-fold content properly prioritized. Learn more about {{BEGIN_LINK}}prioritizing visible content{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "version": {
+    "major": 1,
+    "minor": 15
+  }
+}
+{
+  "captchaResult": "CAPTCHA_NOT_NEEDED",
+  "kind": "pagespeedonline#result",
+  "id": "https://www.mengesfirm.com/",
+  "responseCode": 200,
+  "title": "Menges Law | Belleville Personal Injury Lawyers",
+  "ruleGroups": {
+    "SPEED": {
+      "score": 77
+    }
+  },
+  "loadingExperience": {
+    "initial_url": "https://www.mengesfirm.com/"
+  },
+  "pageStats": {
+    "numberResources": 42,
+    "numberHosts": 19,
+    "totalRequestBytes": "9108",
+    "numberStaticResources": 19,
+    "htmlResponseBytes": "43818",
+    "overTheWireResponseBytes": "1007062",
+    "cssResponseBytes": "98044",
+    "imageResponseBytes": "723087",
+    "javascriptResponseBytes": "535594",
+    "otherResponseBytes": "21586",
+    "numberJsResources": 14,
+    "numberCssResources": 4,
+    "numTotalRoundTrips": 21,
+    "numRenderBlockingRoundTrips": 1
+  },
+  "formattedResults": {
+    "locale": "en_US",
+    "ruleResults": {
+      "AvoidLandingPageRedirects": {
+        "localizedRuleName": "Avoid landing page redirects",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your page has no redirects. Learn more about {{BEGIN_LINK}}avoiding landing page redirects{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/AvoidRedirects"
+            }
+          ]
+        }
+      },
+      "EnableGzipCompression": {
+        "localizedRuleName": "Enable compression",
+        "ruleImpact": 0.0205,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Compressing resources with gzip or deflate can reduce the number of bytes sent over the network."
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Enable compression{{END_LINK}} for the following resources to reduce their transfer size by {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/EnableCompression"
+                },
+                {
+                  "type": "BYTES",
+                  "key": "SIZE_IN_BYTES",
+                  "value": "205B"
+                },
+                {
+                  "type": "PERCENTAGE",
+                  "key": "PERCENTAGE",
+                  "value": "42%"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://attorneys.findlaw.com/b/ss/findlaw-39816,findlaw-global-v1,findlawfirmstaging/10/JS-2.1.0-D7QN/s23428791153710?AQB=1&ndh=1&pf=1&callback=s_c_il[3].doPostbacks&et=1&t=19%2F1%2F2018%205%3A52%3A4%201%20480&d.&nsid=0&jsonv=1&.d&D=D%3D&mid=69023807308697770403297933199110061951&aamlh=9&ce=UTF-8&ns=findlaw&pageName=www.mengesfirm.com&g=https%3A%2F%2Fwww.mengesfirm.com%2F&c.&mcid.&pageDomain=www.mengesfirm.com&version=2.1.0&icsmcvid=server%20side%20mid&mcidcto=successful%20response&aidcto=successful%20response&mcorgid=D%3Dmcorgid&.mcid&.c&cc=USD&ch=www.mengesfirm.com&server=Firmsite&events=event1%2Cevent41%3A1519048324478-60956&aamb=RKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y&c1=D%3Dv1&v1=www.mengesfirm.com&l1=6182776646&c2=D%3Dv2&v2=www.mengesfirm.com&c3=D%3Dv3&v3=www.mengesfirm.com&c4=D%3Dv4&v4=www.mengesfirm.com&v5=D%3DpageName&c13=D%3Dv13&v13=4984500&c18=D%3Dv18&v18=60956&c20=D%3Dv20&v20=2748815&c21=D%3Dv21&v21=New&c23=D%3Dv23&v23=https%3A%2F%2Fwww.mengesfirm.com%2F&c25=D%3Dv25&v25=1&c26=D%3Dv26&v26=First%20page%20view%20or%20cookies%20not%20supported&c27=D%3Dv27&c28=D%3Dv28&v28=Firmsite%3Ahome&c29=4%3A30AM&v29=4%3A30AM&c30=Monday&v30=Monday&c50=findlaw-39816&c59=D%3Dv59&v59=home&c64=lr%2Cfb&v68=69023807308697770403297933199110061951&c74=VisitorAPI%20Present&s=1366x768&c=24&j=1.6&v=N&k=Y&bw=1366&bh=768&mcorgid=5C64123F5245AF950A490D45%40AdobeOrg&AQE=1"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "205B"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "42%"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "LeverageBrowserCaching": {
+        "localizedRuleName": "Leverage browser caching",
+        "ruleImpact": 3.222222222222222,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Setting an expiry date or a maximum age in the HTTP headers for static resources instructs the browser to load previously downloaded resources from local disk rather than over the network."
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Leverage browser caching{{END_LINK}} for the following cacheable resources:",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/LeverageBrowserCaching"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://connect.facebook.net/en_US/fbevents.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "20 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://connect.facebook.net/signals/config/442563859276995?v=2.8.12&r=stable"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "20 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/s-code-contents-5bc22ef684bd578a517eb06b7e33bec31529e21c.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/satelliteLib-5ac9f7d6c64aaca0ea4f2c891947b1261d9c0e6e.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/scripts/satellite-599200fd64746d77de001d4a.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://platform.reviewmgr.com/widgets.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://js-agent.newrelic.com/nr-1071.min.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "2 hours"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "MainResourceServerResponseTime": {
+        "localizedRuleName": "Reduce server response time",
+        "ruleImpact": 5.37,
+        "groups": [
+          "SPEED"
+        ],
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "In our test, your server responded in {{RESPONSE_TIME}}. There are many factors that can slow down your server response time. {{BEGIN_LINK}}Please read our recommendations{{END_LINK}} to learn how you can monitor and measure where your server is spending the most time.",
+              "args": [
+                {
+                  "type": "DURATION",
+                  "key": "RESPONSE_TIME",
+                  "value": "0.74 seconds"
+                },
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/Server"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "MinifyCss": {
+        "localizedRuleName": "Minify CSS",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your CSS is minified. Learn more about {{BEGIN_LINK}}minifying CSS{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinifyHTML": {
+        "localizedRuleName": "Minify HTML",
+        "ruleImpact": 0.0771,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Compacting HTML code, including any inline JavaScript and CSS contained in it, can save many bytes of data and speed up download and parse times."
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Minify HTML{{END_LINK}} for the following resources to reduce their size by {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+                },
+                {
+                  "type": "BYTES",
+                  "key": "SIZE_IN_BYTES",
+                  "value": "771B"
+                },
+                {
+                  "type": "PERCENTAGE",
+                  "key": "PERCENTAGE",
+                  "value": "11%"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "Minifying {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction) after compression.",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://www.mengesfirm.com/"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "771B"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "11%"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "MinifyJavaScript": {
+        "localizedRuleName": "Minify JavaScript",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your JavaScript content is minified. Learn more about {{BEGIN_LINK}}minifying JavaScript{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinimizeRenderBlockingResources": {
+        "localizedRuleName": "Eliminate render-blocking JavaScript and CSS in above-the-fold content",
+        "ruleImpact": 2,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your page has {{NUM_CSS}} blocking CSS resources. This causes a delay in rendering your page.",
+          "args": [
+            {
+              "type": "INT_LITERAL",
+              "key": "NUM_CSS",
+              "value": "1"
+            }
+          ]
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "None of the above-the-fold content on your page could be rendered without waiting for the following resources to load. Try to defer or asynchronously load blocking resources, or inline the critical portions of those resources directly in the HTML."
+            }
+          },
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Optimize CSS Delivery{{END_LINK}} of the following:",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "{{URL}}",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://www.mengesfirm.com/design/css/royal-light-blue.css"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "OptimizeImages": {
+        "localizedRuleName": "Optimize images",
+        "ruleImpact": 18.3956,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Properly formatting and compressing images can save many bytes of data."
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Optimize the following images{{END_LINK}} to reduce their size by {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/OptimizeImages"
+                },
+                {
+                  "type": "BYTES",
+                  "key": "SIZE_IN_BYTES",
+                  "value": "179.6KiB"
+                },
+                {
+                  "type": "PERCENTAGE",
+                  "key": "PERCENTAGE",
+                  "value": "47%"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://www.mengesfirm.com/includes/template-images/home_augusta_general-legal_06.jpg"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "179.6KiB"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "47%"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "PrioritizeVisibleContent": {
+        "localizedRuleName": "Prioritize visible content",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have the above-the-fold content properly prioritized. Learn more about {{BEGIN_LINK}}prioritizing visible content{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "version": {
+    "major": 1,
+    "minor": 15
+  }
+}
+{
+  "captchaResult": "CAPTCHA_NOT_NEEDED",
+  "kind": "pagespeedonline#result",
+  "id": "http://www.robertsonlg.com/",
+  "responseCode": 200,
+  "title": "Construction Lawyers | Commercial & Business Litigation | Franklin, TN",
+  "ruleGroups": {
+    "SPEED": {
+      "score": 93
+    }
+  },
+  "loadingExperience": {
+    "initial_url": "http://www.robertsonlg.com/"
+  },
+  "pageStats": {
+    "numberResources": 50,
+    "numberHosts": 25,
+    "totalRequestBytes": "11285",
+    "numberStaticResources": 21,
+    "htmlResponseBytes": "186851",
+    "overTheWireResponseBytes": "518116",
+    "cssResponseBytes": "20914",
+    "imageResponseBytes": "147238",
+    "javascriptResponseBytes": "745477",
+    "otherResponseBytes": "21332",
+    "numberJsResources": 23,
+    "numberCssResources": 3,
+    "numTotalRoundTrips": 12,
+    "numRenderBlockingRoundTrips": 0
+  },
+  "formattedResults": {
+    "locale": "en_US",
+    "ruleResults": {
+      "AvoidLandingPageRedirects": {
+        "localizedRuleName": "Avoid landing page redirects",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your page has no redirects. Learn more about {{BEGIN_LINK}}avoiding landing page redirects{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/AvoidRedirects"
+            }
+          ]
+        }
+      },
+      "EnableGzipCompression": {
+        "localizedRuleName": "Enable compression",
+        "ruleImpact": 0.0204,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Compressing resources with gzip or deflate can reduce the number of bytes sent over the network."
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Enable compression{{END_LINK}} for the following resources to reduce their transfer size by {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/EnableCompression"
+                },
+                {
+                  "type": "BYTES",
+                  "key": "SIZE_IN_BYTES",
+                  "value": "204B"
+                },
+                {
+                  "type": "PERCENTAGE",
+                  "key": "PERCENTAGE",
+                  "value": "42%"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://attorney.findlaw.com/b/ss/findlaw-39202,findlaw-global-v1,findlawfirmstaging/10/JS-2.1.0-D7QN/s23428791153710?AQB=1&ndh=1&pf=1&callback=s_c_il[3].doPostbacks&et=1&t=19%2F1%2F2018%205%3A52%3A3%201%20480&d.&nsid=0&jsonv=1&.d&D=D%3D&mid=63673913788022471361221843270121686726&aamlh=9&ce=UTF-8&ns=findlaw&pageName=www.robertsonlg.com&g=http%3A%2F%2Fwww.robertsonlg.com%2F&c.&mcid.&pageDomain=www.robertsonlg.com&version=2.1.0&icsmcvid=server%20side%20mid&mcidcto=successful%20response&aidcto=successful%20response&mcorgid=D%3Dmcorgid&.mcid&.c&cc=USD&ch=www.robertsonlg.com&server=Firmsite&events=event1%2Cevent41%3A1519048323613-60273&aamb=RKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y&c1=D%3Dv1&v1=www.robertsonlg.com&l1=6156561729&c2=D%3Dv2&v2=www.robertsonlg.com&c3=D%3Dv3&v3=www.robertsonlg.com&c4=D%3Dv4&v4=www.robertsonlg.com&v5=D%3DpageName&c13=D%3Dv13&v13=4377553&c18=D%3Dv18&v18=60273&c20=D%3Dv20&v20=2707744&c21=D%3Dv21&v21=New&c23=D%3Dv23&v23=http%3A%2F%2Fwww.robertsonlg.com%2F&c25=D%3Dv25&v25=1&c26=D%3Dv26&v26=First%20page%20view%20or%20cookies%20not%20supported&c27=D%3Dv27&c28=D%3Dv28&v28=Firmsite%3Ahome&c29=4%3A30AM&v29=4%3A30AM&c30=Monday&v30=Monday&c50=findlaw-39202&c59=D%3Dv59&v59=home&c64=lr%2Cfb%2Cchat&v68=63673913788022471361221843270121686726&c74=VisitorAPI%20Present&s=1366x768&c=24&j=1.6&v=N&k=Y&bw=1366&bh=768&mcorgid=5C64123F5245AF950A490D45%40AdobeOrg&AQE=1"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "204B"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "42%"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "LeverageBrowserCaching": {
+        "localizedRuleName": "Leverage browser caching",
+        "ruleImpact": 5.706250000000001,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Setting an expiry date or a maximum age in the HTTP headers for static resources instructs the browser to load previously downloaded resources from local disk rather than over the network."
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Leverage browser caching{{END_LINK}} for the following cacheable resources:",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/LeverageBrowserCaching"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "{{URL}} (expiration not specified)",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://fsimages.findlaw.com/liveperson/engbutton2.png"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://accdn.lpsnmedia.net/api/account/67301805/configuration/le-campaigns/campaigns/792269332/engagements/834393832/revision/1043?v=3.0&cb=lp834393832&flavor=dependency"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 seconds"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://accdn.lpsnmedia.net/api/account/67301805/configuration/le-campaigns/zones?fields=id&fields=zoneValue&cb=lpZonesStaticCB"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 seconds"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://lptag.liveperson.net/lptag/api/account/67301805/configuration/applications/taglets/.jsonp?v=2.0&df=0&b=1"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "10.5 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://lptag.liveperson.net/tag/tag.js?site=67301805"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "10.5 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://connect.facebook.net/en_US/fbevents.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "20 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://connect.facebook.net/signals/config/442563859276995?v=2.8.12&r=stable"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "20 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/s-code-contents-5bc22ef684bd578a517eb06b7e33bec31529e21c.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/satelliteLib-5ac9f7d6c64aaca0ea4f2c891947b1261d9c0e6e.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/scripts/satellite-599200fd64746d77de001d4a.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "http://platform.reviewmgr.com/widgets.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://js-agent.newrelic.com/nr-1071.min.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "2 hours"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "MainResourceServerResponseTime": {
+        "localizedRuleName": "Reduce server response time",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your server responded quickly. Learn more about {{BEGIN_LINK}}server response time optimization{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/Server"
+            }
+          ]
+        }
+      },
+      "MinifyCss": {
+        "localizedRuleName": "Minify CSS",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your CSS is minified. Learn more about {{BEGIN_LINK}}minifying CSS{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinifyHTML": {
+        "localizedRuleName": "Minify HTML",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your HTML is minified. Learn more about {{BEGIN_LINK}}minifying HTML{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinifyJavaScript": {
+        "localizedRuleName": "Minify JavaScript",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your JavaScript content is minified. Learn more about {{BEGIN_LINK}}minifying JavaScript{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinimizeRenderBlockingResources": {
+        "localizedRuleName": "Eliminate render-blocking JavaScript and CSS in above-the-fold content",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have no render-blocking resources. Learn more about {{BEGIN_LINK}}removing render-blocking resources{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/BlockingJS"
+            }
+          ]
+        }
+      },
+      "OptimizeImages": {
+        "localizedRuleName": "Optimize images",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your images are optimized. Learn more about {{BEGIN_LINK}}optimizing images{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/OptimizeImages"
+            }
+          ]
+        }
+      },
+      "PrioritizeVisibleContent": {
+        "localizedRuleName": "Prioritize visible content",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have the above-the-fold content properly prioritized. Learn more about {{BEGIN_LINK}}prioritizing visible content{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "version": {
+    "major": 1,
+    "minor": 15
+  }
+}
+{
+  "captchaResult": "CAPTCHA_NOT_NEEDED",
+  "kind": "pagespeedonline#result",
+  "id": "https://www.timhayeslaw.com/",
+  "responseCode": 200,
+  "title": "Terre Haute Personal Injury Attorney | Bankruptcy | Estate Planning",
+  "ruleGroups": {
+    "SPEED": {
+      "score": 88
+    }
+  },
+  "loadingExperience": {
+    "initial_url": "https://www.timhayeslaw.com/"
+  },
+  "pageStats": {
+    "numberResources": 51,
+    "numberHosts": 25,
+    "totalRequestBytes": "11505",
+    "numberStaticResources": 21,
+    "htmlResponseBytes": "163922",
+    "overTheWireResponseBytes": "603002",
+    "cssResponseBytes": "20914",
+    "imageResponseBytes": "234052",
+    "javascriptResponseBytes": "745653",
+    "otherResponseBytes": "21586",
+    "numberJsResources": 23,
+    "numberCssResources": 3,
+    "numTotalRoundTrips": 22,
+    "numRenderBlockingRoundTrips": 0
+  },
+  "formattedResults": {
+    "locale": "en_US",
+    "ruleResults": {
+      "AvoidLandingPageRedirects": {
+        "localizedRuleName": "Avoid landing page redirects",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your page has no redirects. Learn more about {{BEGIN_LINK}}avoiding landing page redirects{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/AvoidRedirects"
+            }
+          ]
+        }
+      },
+      "EnableGzipCompression": {
+        "localizedRuleName": "Enable compression",
+        "ruleImpact": 0.0205,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Compressing resources with gzip or deflate can reduce the number of bytes sent over the network."
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Enable compression{{END_LINK}} for the following resources to reduce their transfer size by {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/EnableCompression"
+                },
+                {
+                  "type": "BYTES",
+                  "key": "SIZE_IN_BYTES",
+                  "value": "205B"
+                },
+                {
+                  "type": "PERCENTAGE",
+                  "key": "PERCENTAGE",
+                  "value": "42%"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "Compressing {{URL}} could save {{SIZE_IN_BYTES}} ({{PERCENTAGE}} reduction).",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://attorneys.findlaw.com/b/ss/findlaw-39745,findlaw-global-v1,findlawfirmstaging/10/JS-2.1.0-D7QN/s23428791153710?AQB=1&ndh=1&pf=1&callback=s_c_il[3].doPostbacks&et=1&t=19%2F1%2F2018%205%3A52%3A4%201%20480&d.&nsid=0&jsonv=1&.d&D=D%3D&mid=48912244062836171573643451986647526638&aamlh=9&ce=UTF-8&ns=findlaw&pageName=www.timhayeslaw.com&g=https%3A%2F%2Fwww.timhayeslaw.com%2F&c.&mcid.&pageDomain=www.timhayeslaw.com&version=2.1.0&icsmcvid=server%20side%20mid&mcidcto=successful%20response&aidcto=successful%20response&mcorgid=D%3Dmcorgid&.mcid&.c&cc=USD&ch=www.timhayeslaw.com&server=Firmsite&events=event1%2Cevent41%3A1519048324451-59740&aamb=RKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y&c1=D%3Dv1&v1=www.timhayeslaw.com&l1=8126457057&c2=D%3Dv2&v2=www.timhayeslaw.com&c3=D%3Dv3&v3=www.timhayeslaw.com&c4=D%3Dv4&v4=www.timhayeslaw.com&v5=D%3DpageName&c13=D%3Dv13&v13=1490334&c18=D%3Dv18&v18=59740&c20=D%3Dv20&v20=2673226&c21=D%3Dv21&v21=New&c23=D%3Dv23&v23=https%3A%2F%2Fwww.timhayeslaw.com%2F&c25=D%3Dv25&v25=1&c26=D%3Dv26&v26=First%20page%20view%20or%20cookies%20not%20supported&c27=D%3Dv27&c28=D%3Dv28&v28=Firmsite%3Ahome&c29=4%3A30AM&v29=4%3A30AM&c30=Monday&v30=Monday&c50=findlaw-39745&c59=D%3Dv59&v59=home&c64=lr%2Cfb%2Cchat&v68=48912244062836171573643451986647526638&c74=VisitorAPI%20Present&s=1366x768&c=24&j=1.6&v=N&k=Y&bw=1366&bh=768&mcorgid=5C64123F5245AF950A490D45%40AdobeOrg&AQE=1"
+                    },
+                    {
+                      "type": "BYTES",
+                      "key": "SIZE_IN_BYTES",
+                      "value": "205B"
+                    },
+                    {
+                      "type": "PERCENTAGE",
+                      "key": "PERCENTAGE",
+                      "value": "42%"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "LeverageBrowserCaching": {
+        "localizedRuleName": "Leverage browser caching",
+        "ruleImpact": 5.706863425925927,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Setting an expiry date or a maximum age in the HTTP headers for static resources instructs the browser to load previously downloaded resources from local disk rather than over the network."
+        },
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "{{BEGIN_LINK}}Leverage browser caching{{END_LINK}} for the following cacheable resources:",
+              "args": [
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/LeverageBrowserCaching"
+                }
+              ]
+            },
+            "urls": [
+              {
+                "result": {
+                  "format": "{{URL}} (expiration not specified)",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://fsimages.findlaw.com/liveperson/engbutton2.png"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://accdn.lpsnmedia.net/api/account/67301805/configuration/le-campaigns/zones?fields=id&fields=zoneValue&cb=lpZonesStaticCB"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "7 seconds"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://accdn.lpsnmedia.net/api/account/67301805/configuration/le-campaigns/campaigns/792269332/engagements/834393832/revision/1043?v=3.0&cb=lp834393832&flavor=dependency"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 seconds"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://lptag.liveperson.net/lptag/api/account/67301805/configuration/applications/taglets/.jsonp?v=2.0&df=0&b=1"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "10.5 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://lptag.liveperson.net/tag/tag.js?site=67301805"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "10.5 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://connect.facebook.net/en_US/fbevents.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "20 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://connect.facebook.net/signals/config/442563859276995?v=2.8.12&r=stable"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "20 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/s-code-contents-5bc22ef684bd578a517eb06b7e33bec31529e21c.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/satelliteLib-5ac9f7d6c64aaca0ea4f2c891947b1261d9c0e6e.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://assets.adobedtm.com/9725f37c2c3899053569bb6afb8a3d51bc224d94/scripts/satellite-599200fd64746d77de001d4a.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://platform.reviewmgr.com/widgets.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "60 minutes"
+                    }
+                  ]
+                }
+              },
+              {
+                "result": {
+                  "format": "{{URL}} ({{LIFETIME}})",
+                  "args": [
+                    {
+                      "type": "URL",
+                      "key": "URL",
+                      "value": "https://js-agent.newrelic.com/nr-1071.min.js"
+                    },
+                    {
+                      "type": "DURATION",
+                      "key": "LIFETIME",
+                      "value": "2 hours"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "MainResourceServerResponseTime": {
+        "localizedRuleName": "Reduce server response time",
+        "ruleImpact": 5.64,
+        "groups": [
+          "SPEED"
+        ],
+        "urlBlocks": [
+          {
+            "header": {
+              "format": "In our test, your server responded in {{RESPONSE_TIME}}. There are many factors that can slow down your server response time. {{BEGIN_LINK}}Please read our recommendations{{END_LINK}} to learn how you can monitor and measure where your server is spending the most time.",
+              "args": [
+                {
+                  "type": "DURATION",
+                  "key": "RESPONSE_TIME",
+                  "value": "0.76 seconds"
+                },
+                {
+                  "type": "HYPERLINK",
+                  "key": "LINK",
+                  "value": "https://developers.google.com/speed/docs/insights/Server"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "MinifyCss": {
+        "localizedRuleName": "Minify CSS",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your CSS is minified. Learn more about {{BEGIN_LINK}}minifying CSS{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinifyHTML": {
+        "localizedRuleName": "Minify HTML",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your HTML is minified. Learn more about {{BEGIN_LINK}}minifying HTML{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinifyJavaScript": {
+        "localizedRuleName": "Minify JavaScript",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your JavaScript content is minified. Learn more about {{BEGIN_LINK}}minifying JavaScript{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/MinifyResources"
+            }
+          ]
+        }
+      },
+      "MinimizeRenderBlockingResources": {
+        "localizedRuleName": "Eliminate render-blocking JavaScript and CSS in above-the-fold content",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have no render-blocking resources. Learn more about {{BEGIN_LINK}}removing render-blocking resources{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/BlockingJS"
+            }
+          ]
+        }
+      },
+      "OptimizeImages": {
+        "localizedRuleName": "Optimize images",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "Your images are optimized. Learn more about {{BEGIN_LINK}}optimizing images{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/OptimizeImages"
+            }
+          ]
+        }
+      },
+      "PrioritizeVisibleContent": {
+        "localizedRuleName": "Prioritize visible content",
+        "ruleImpact": 0,
+        "groups": [
+          "SPEED"
+        ],
+        "summary": {
+          "format": "You have the above-the-fold content properly prioritized. Learn more about {{BEGIN_LINK}}prioritizing visible content{{END_LINK}}.",
+          "args": [
+            {
+              "type": "HYPERLINK",
+              "key": "LINK",
+              "value": "https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "version": {
+    "major": 1,
+    "minor": 15
+  }
+}

@@ -736,3 +736,299 @@
 [ Mon Feb 19 2018 15:15:35 GMT+0300 (FET) ] Url processed well!: http://www.challonerlaw.com
 [ Mon Feb 19 2018 15:15:37 GMT+0300 (FET) ] Url processed well!: http://www.georgehildebrandt.com
 [ Mon Feb 19 2018 15:15:38 GMT+0300 (FET) ] Url processed well!: http://www.joshfinklaw.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.depintolaw.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.timhayeslaw.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.paulidlasbankruptcy.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.pbclaw.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.sanantonio-law.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.lorengreenlaw.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.mcadamslawoffice.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.northcolaw.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.kathleenwallacelaw.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.challonerlaw.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.taylorlawfirmok.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.bernicklaw.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.marinotaxlaw.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.stephentholman.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.weinsteincouture.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.bryanthigby.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.attorneywalt.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.marolalaw.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.ksdaviselderlaw.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.semkelaw.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.girardikeese.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.brucezivley.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.bradshawlawfirm.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.bankruptcymichaelkoch.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.cpwalkerlaw.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.birdlawgroup.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.winwithzimm.net
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.hanifinlaw.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.djdlaw.org
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.garciapa.com
+[ Mon Feb 19 2018 15:20:07 GMT+0300 (FET) ] Url processed well!: http://www.lnhlaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.hughesfirmhouston.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.lwazlaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.wagmanlaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.mengesfirm.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.dcblaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.queensnewyorklawyers.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.jfhumphreys.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.tiddlaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.bjensenlaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.goldsmithlegal.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.milavetzlaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.peircelaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.harrisandliterski.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.birdandvandyke.net
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.duffieldandlovejoy.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.zellerstrulowitz.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.dgattorneys.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.daneshulmanlaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.elgrppc.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.deshonpullenlaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.aaronlawyer.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.injurymedmal.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.lauriemullen.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.coseklaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.reichandbinstock.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.tatumlawoffice.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.restivolaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.tompyleslaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.siplfirm.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.leesebergvalentine.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.krisgreenwood.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.mccoyfatula.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.scslawyer.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.browntax.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.northwestlaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.wbymlaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.coateslaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.ptlawkc.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.americasautofraudattorney.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.dorabonner.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.ltylerlaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.pasconsumerlaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.parishcastleman.net
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.waltercraiglaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.georgialawoffices.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.shamslawfirm.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.harrisandliterski.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.jdlawnyc.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.brannoncanhelp.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.summersfirm.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.keatingfirmlaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.mjblegal.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.sfmslaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.nlsbankruptcy.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.johnadamschristiansenlawoffice.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.dcemploymentattorney.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.tgalaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.lefkovitz.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.greene-broillet.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.psblawfirm.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.usmesotheliomalaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.travisnoble.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.jenningslawoffice.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.weisbergattorneys.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.tremontsheldon.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.lawyerschwartz.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.employment-counsel.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.aabyfamilylaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.sokolfoster.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.cutterlaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.koskoff.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.mayerrosenberg.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.thestidhamlawfirm.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.hartlawofficepc.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.stangelawfirm.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.doremusassociates.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.williamsbkylaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.rheadorsamlaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.wvpersonalinjury.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.perry-young.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.scottsdalecustodyattorney.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.rpdlawfirm.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.lawfirmamb.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.marillaronald.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.nj-bankruptcylaw.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.carbylawfirm.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.unfairtermination.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.broderorland.com
+[ Mon Feb 19 2018 15:20:08 GMT+0300 (FET) ] Url processed well!: http://www.jfairchildlaw.com
+[ Mon Feb 19 2018 15:20:09 GMT+0300 (FET) ] Url processed well!: http://www.eugenefranklin.com
+[ Mon Feb 19 2018 15:20:16 GMT+0300 (FET) ] Url processed well!: http://www.eugenefranklin.com
+[ Mon Feb 19 2018 15:20:16 GMT+0300 (FET) ] Url processed well!: http://www.jfairchildlaw.com
+[ Mon Feb 19 2018 15:20:16 GMT+0300 (FET) ] Url processed well!: http://www.robertsonlg.com
+[ Mon Feb 19 2018 15:20:20 GMT+0300 (FET) ] Url processed well!: http://www.challonerlaw.com
+[ Mon Feb 19 2018 15:20:21 GMT+0300 (FET) ] Url processed well!: http://www.bankruptcymichaelkoch.com
+[ Mon Feb 19 2018 15:20:21 GMT+0300 (FET) ] Url processed well!: http://www.attorneywalt.com
+[ Mon Feb 19 2018 15:20:21 GMT+0300 (FET) ] Url processed well!: http://www.taylorlawfirmok.com
+[ Mon Feb 19 2018 15:20:22 GMT+0300 (FET) ] Url processed well!: http://www.timhayeslaw.com
+[ Mon Feb 19 2018 15:20:22 GMT+0300 (FET) ] Url processed well!: http://www.garciapa.com
+[ Mon Feb 19 2018 15:20:22 GMT+0300 (FET) ] Url processed well!: https://windoor.by
+[ Mon Feb 19 2018 15:20:22 GMT+0300 (FET) ] Url processed well!: http://www.mengesfirm.com
+[ Mon Feb 19 2018 16:49:43 GMT+0300 (FET) ] Url processed well!: http://www.jfairchildlaw.com
+[ Mon Feb 19 2018 16:49:43 GMT+0300 (FET) ] Url processed well!: http://www.eugenefranklin.com
+[ Mon Feb 19 2018 16:49:46 GMT+0300 (FET) ] Url processed well!: http://www.challonerlaw.com
+[ Mon Feb 19 2018 16:49:47 GMT+0300 (FET) ] Url processed well!: http://www.taylorlawfirmok.com
+[ Mon Feb 19 2018 16:49:47 GMT+0300 (FET) ] Url processed well!: http://www.mengesfirm.com
+[ Mon Feb 19 2018 16:49:47 GMT+0300 (FET) ] Url processed well!: https://windoor.by
+[ Mon Feb 19 2018 16:49:47 GMT+0300 (FET) ] Url processed well!: http://www.bankruptcymichaelkoch.com
+[ Mon Feb 19 2018 16:49:47 GMT+0300 (FET) ] Url processed well!: http://www.garciapa.com
+[ Mon Feb 19 2018 16:49:48 GMT+0300 (FET) ] Url processed well!: http://www.attorneywalt.com
+[ Mon Feb 19 2018 16:49:48 GMT+0300 (FET) ] Url processed well!: http://www.robertsonlg.com
+[ Mon Feb 19 2018 16:49:48 GMT+0300 (FET) ] Url processed well!: http://www.timhayeslaw.com
+[ Mon Feb 19 2018 16:50:14 GMT+0300 (FET) ] Url processed well!: http://www.bankruptcymichaelkoch.com
+[ Mon Feb 19 2018 16:50:14 GMT+0300 (FET) ] Url processed well!: https://windoor.by
+[ Mon Feb 19 2018 16:50:14 GMT+0300 (FET) ] Url processed well!: http://www.garciapa.com
+[ Mon Feb 19 2018 16:50:14 GMT+0300 (FET) ] Url processed well!: http://www.robertsonlg.com
+[ Mon Feb 19 2018 16:50:14 GMT+0300 (FET) ] Url processed well!: http://www.attorneywalt.com
+[ Mon Feb 19 2018 16:50:14 GMT+0300 (FET) ] Url processed well!: http://www.timhayeslaw.com
+[ Mon Feb 19 2018 16:50:14 GMT+0300 (FET) ] Url processed well!: http://www.mengesfirm.com
+[ Mon Feb 19 2018 16:50:14 GMT+0300 (FET) ] Url processed well!: http://www.challonerlaw.com
+[ Mon Feb 19 2018 16:50:14 GMT+0300 (FET) ] Url processed well!: http://www.taylorlawfirmok.com
+[ Mon Feb 19 2018 16:50:15 GMT+0300 (FET) ] Url processed well!: http://www.jfairchildlaw.com
+[ Mon Feb 19 2018 16:50:15 GMT+0300 (FET) ] Url processed well!: http://www.eugenefranklin.com
+[ Mon Feb 19 2018 16:52:04 GMT+0300 (FET) ] Url processed well!: http://www.jfairchildlaw.com
+[ Mon Feb 19 2018 16:52:04 GMT+0300 (FET) ] Url processed well!: http://www.eugenefranklin.com
+[ Mon Feb 19 2018 16:52:07 GMT+0300 (FET) ] Url processed well!: http://www.challonerlaw.com
+[ Mon Feb 19 2018 16:52:07 GMT+0300 (FET) ] Url processed well!: http://www.taylorlawfirmok.com
+[ Mon Feb 19 2018 16:52:07 GMT+0300 (FET) ] Url processed well!: http://www.attorneywalt.com
+[ Mon Feb 19 2018 16:52:07 GMT+0300 (FET) ] Url processed well!: http://www.bankruptcymichaelkoch.com
+[ Mon Feb 19 2018 16:52:08 GMT+0300 (FET) ] Url processed well!: https://windoor.by
+[ Mon Feb 19 2018 16:52:08 GMT+0300 (FET) ] Url processed well!: http://www.garciapa.com
+[ Mon Feb 19 2018 16:52:08 GMT+0300 (FET) ] Url processed well!: http://www.mengesfirm.com
+[ Mon Feb 19 2018 16:52:09 GMT+0300 (FET) ] Url processed well!: http://www.robertsonlg.com
+[ Mon Feb 19 2018 16:52:10 GMT+0300 (FET) ] Url processed well!: http://www.timhayeslaw.com
+[ Mon Feb 19 2018 16:52:45 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.eugenefranklin.com    ERROR: res.text is not a function  
+[ Mon Feb 19 2018 16:52:46 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.jfairchildlaw.com    ERROR: res.text is not a function  
+[ Mon Feb 19 2018 16:52:49 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.taylorlawfirmok.com    ERROR: res.text is not a function  
+[ Mon Feb 19 2018 16:52:49 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.bankruptcymichaelkoch.com    ERROR: res.text is not a function  
+[ Mon Feb 19 2018 16:52:49 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.challonerlaw.com    ERROR: res.text is not a function  
+[ Mon Feb 19 2018 16:52:50 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.mengesfirm.com    ERROR: res.text is not a function  
+[ Mon Feb 19 2018 16:52:50 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.attorneywalt.com    ERROR: res.text is not a function  
+[ Mon Feb 19 2018 16:52:50 GMT+0300 (FET) ] Url NOT PROCESSED!: https://windoor.by    ERROR: res.text is not a function  
+[ Mon Feb 19 2018 16:52:51 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.garciapa.com    ERROR: res.text is not a function  
+[ Mon Feb 19 2018 16:52:51 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.robertsonlg.com    ERROR: res.text is not a function  
+[ Mon Feb 19 2018 16:52:52 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.timhayeslaw.com    ERROR: res.text is not a function  
+[ Mon Feb 19 2018 17:11:11 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.eugenefranklin.com    ERROR: Unexpected token o in JSON at position 1  
+[ Mon Feb 19 2018 17:11:11 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.jfairchildlaw.com    ERROR: Unexpected token o in JSON at position 1  
+[ Mon Feb 19 2018 17:11:14 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.taylorlawfirmok.com    ERROR: Unexpected token o in JSON at position 1  
+[ Mon Feb 19 2018 17:11:14 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.challonerlaw.com    ERROR: Unexpected token o in JSON at position 1  
+[ Mon Feb 19 2018 17:11:14 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.bankruptcymichaelkoch.com    ERROR: Unexpected token o in JSON at position 1  
+[ Mon Feb 19 2018 17:11:14 GMT+0300 (FET) ] Url NOT PROCESSED!: https://windoor.by    ERROR: Unexpected token o in JSON at position 1  
+[ Mon Feb 19 2018 17:11:15 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.robertsonlg.com    ERROR: Unexpected token o in JSON at position 1  
+[ Mon Feb 19 2018 17:11:15 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.timhayeslaw.com    ERROR: Unexpected token o in JSON at position 1  
+[ Mon Feb 19 2018 17:11:15 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.garciapa.com    ERROR: Unexpected token o in JSON at position 1  
+[ Mon Feb 19 2018 17:11:15 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.attorneywalt.com    ERROR: Unexpected token o in JSON at position 1  
+[ Mon Feb 19 2018 17:11:16 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.mengesfirm.com    ERROR: Unexpected token o in JSON at position 1  
+[ Mon Feb 19 2018 17:15:18 GMT+0300 (FET) ] Url processed well!: http://www.eugenefranklin.com
+[ Mon Feb 19 2018 17:15:18 GMT+0300 (FET) ] Url processed well!: http://www.jfairchildlaw.com
+[ Mon Feb 19 2018 17:15:21 GMT+0300 (FET) ] Url processed well!: http://www.attorneywalt.com
+[ Mon Feb 19 2018 17:15:21 GMT+0300 (FET) ] Url processed well!: http://www.challonerlaw.com
+[ Mon Feb 19 2018 17:15:21 GMT+0300 (FET) ] Url processed well!: http://www.bankruptcymichaelkoch.com
+[ Mon Feb 19 2018 17:15:21 GMT+0300 (FET) ] Url processed well!: http://www.taylorlawfirmok.com
+[ Mon Feb 19 2018 17:15:22 GMT+0300 (FET) ] Url processed well!: https://windoor.by
+[ Mon Feb 19 2018 17:15:22 GMT+0300 (FET) ] Url processed well!: http://www.robertsonlg.com
+[ Mon Feb 19 2018 17:15:23 GMT+0300 (FET) ] Url processed well!: http://www.garciapa.com
+[ Mon Feb 19 2018 17:15:23 GMT+0300 (FET) ] Url processed well!: http://www.mengesfirm.com
+[ Mon Feb 19 2018 17:15:24 GMT+0300 (FET) ] Url processed well!: http://www.timhayeslaw.com
+[ Mon Feb 19 2018 17:15:56 GMT+0300 (FET) ] Url processed well!: http://www.eugenefranklin.com
+[ Mon Feb 19 2018 17:15:56 GMT+0300 (FET) ] Url processed well!: http://www.jfairchildlaw.com
+[ Mon Feb 19 2018 17:15:59 GMT+0300 (FET) ] Url processed well!: http://www.challonerlaw.com
+[ Mon Feb 19 2018 17:15:59 GMT+0300 (FET) ] Url processed well!: http://www.taylorlawfirmok.com
+[ Mon Feb 19 2018 17:15:59 GMT+0300 (FET) ] Url processed well!: http://www.attorneywalt.com
+[ Mon Feb 19 2018 17:16:00 GMT+0300 (FET) ] Url processed well!: http://www.bankruptcymichaelkoch.com
+[ Mon Feb 19 2018 17:16:00 GMT+0300 (FET) ] Url processed well!: https://windoor.by
+[ Mon Feb 19 2018 17:16:00 GMT+0300 (FET) ] Url processed well!: http://www.mengesfirm.com
+[ Mon Feb 19 2018 17:16:00 GMT+0300 (FET) ] Url processed well!: http://www.garciapa.com
+[ Mon Feb 19 2018 17:16:01 GMT+0300 (FET) ] Url processed well!: http://www.robertsonlg.com
+[ Mon Feb 19 2018 17:16:02 GMT+0300 (FET) ] Url processed well!: http://www.timhayeslaw.com
+[ Mon Feb 19 2018 17:18:23 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.jfairchildlaw.com    ERROR: reject is not defined  
+[ Mon Feb 19 2018 17:18:23 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.eugenefranklin.com    ERROR: reject is not defined  
+[ Mon Feb 19 2018 17:18:27 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.challonerlaw.com    ERROR: reject is not defined  
+[ Mon Feb 19 2018 17:18:27 GMT+0300 (FET) ] Url NOT PROCESSED!: https://windoor.by    ERROR: reject is not defined  
+[ Mon Feb 19 2018 17:18:27 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.taylorlawfirmok.com    ERROR: reject is not defined  
+[ Mon Feb 19 2018 17:18:27 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.bankruptcymichaelkoch.com    ERROR: reject is not defined  
+[ Mon Feb 19 2018 17:18:28 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.attorneywalt.com    ERROR: reject is not defined  
+[ Mon Feb 19 2018 17:18:28 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.robertsonlg.com    ERROR: reject is not defined  
+[ Mon Feb 19 2018 17:18:29 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.mengesfirm.com    ERROR: reject is not defined  
+[ Mon Feb 19 2018 17:18:29 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.garciapa.com    ERROR: reject is not defined  
+[ Mon Feb 19 2018 17:18:30 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.timhayeslaw.com    ERROR: reject is not defined  
+[ Mon Feb 19 2018 17:19:24 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.eugenefranklin.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:19:25 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.jfairchildlaw.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:19:29 GMT+0300 (FET) ] Url NOT PROCESSED!: https://windoor.by    ERROR: lopapa  
+[ Mon Feb 19 2018 17:19:29 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.bankruptcymichaelkoch.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:19:29 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.robertsonlg.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:19:29 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.challonerlaw.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:19:29 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.mengesfirm.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:19:30 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.garciapa.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:19:30 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.timhayeslaw.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:19:31 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.attorneywalt.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:19:31 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.taylorlawfirmok.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:21:28 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.eugenefranklin.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:21:29 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.jfairchildlaw.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:21:32 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.taylorlawfirmok.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:21:32 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.challonerlaw.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:21:32 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.bankruptcymichaelkoch.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:21:33 GMT+0300 (FET) ] Url NOT PROCESSED!: https://windoor.by    ERROR: lopapa  
+[ Mon Feb 19 2018 17:21:33 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.attorneywalt.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:21:33 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.mengesfirm.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:21:33 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.garciapa.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:21:33 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.robertsonlg.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:21:35 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.timhayeslaw.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:22:15 GMT+0300 (FET) ] Url processed well!: http://www.eugenefranklin.com
+[ Mon Feb 19 2018 17:22:16 GMT+0300 (FET) ] Url processed well!: http://www.jfairchildlaw.com
+[ Mon Feb 19 2018 17:22:19 GMT+0300 (FET) ] Url processed well!: http://www.taylorlawfirmok.com
+[ Mon Feb 19 2018 17:22:20 GMT+0300 (FET) ] Url processed well!: http://www.challonerlaw.com
+[ Mon Feb 19 2018 17:22:20 GMT+0300 (FET) ] Url processed well!: http://www.bankruptcymichaelkoch.com
+[ Mon Feb 19 2018 17:22:20 GMT+0300 (FET) ] Url processed well!: https://windoor.by
+[ Mon Feb 19 2018 17:22:20 GMT+0300 (FET) ] Url processed well!: http://www.robertsonlg.com
+[ Mon Feb 19 2018 17:22:20 GMT+0300 (FET) ] Url processed well!: http://www.mengesfirm.com
+[ Mon Feb 19 2018 17:22:21 GMT+0300 (FET) ] Url processed well!: http://www.timhayeslaw.com
+[ Mon Feb 19 2018 17:22:21 GMT+0300 (FET) ] Url processed well!: http://www.attorneywalt.com
+[ Mon Feb 19 2018 17:22:21 GMT+0300 (FET) ] Url processed well!: http://www.garciapa.com
+[ Mon Feb 19 2018 17:22:59 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.eugenefranklin.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:23:00 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.jfairchildlaw.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:23:03 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.taylorlawfirmok.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:23:03 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.challonerlaw.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:23:03 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.mengesfirm.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:23:03 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.bankruptcymichaelkoch.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:23:04 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.attorneywalt.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:23:04 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.robertsonlg.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:23:04 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.timhayeslaw.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:23:05 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.garciapa.com    ERROR: lopapa  
+[ Mon Feb 19 2018 17:23:06 GMT+0300 (FET) ] Url NOT PROCESSED!: https://windoor.by    ERROR: lopapa  
+[ Mon Feb 19 2018 17:57:32 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.eugenefranklin.com    ERROR: Cannot read property 'code' of undefined  
+[ Mon Feb 19 2018 17:57:32 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.jfairchildlaw.com    ERROR: Cannot read property 'code' of undefined  
+[ Mon Feb 19 2018 17:57:36 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.taylorlawfirmok.com    ERROR: Cannot read property 'code' of undefined  
+[ Mon Feb 19 2018 17:57:36 GMT+0300 (FET) ] Url NOT PROCESSED!: https://windoor.by    ERROR: Cannot read property 'code' of undefined  
+[ Mon Feb 19 2018 17:57:37 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.challonerlaw.com    ERROR: Cannot read property 'code' of undefined  
+[ Mon Feb 19 2018 17:57:37 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.mengesfirm.com    ERROR: Cannot read property 'code' of undefined  
+[ Mon Feb 19 2018 17:57:37 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.garciapa.com    ERROR: Cannot read property 'code' of undefined  
+[ Mon Feb 19 2018 17:57:37 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.attorneywalt.com    ERROR: Cannot read property 'code' of undefined  
+[ Mon Feb 19 2018 17:57:37 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.robertsonlg.com    ERROR: Cannot read property 'code' of undefined  
+[ Mon Feb 19 2018 17:57:38 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.timhayeslaw.com    ERROR: Cannot read property 'code' of undefined  
+[ Mon Feb 19 2018 17:57:40 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.bankruptcymichaelkoch.com    ERROR: Cannot read property 'code' of undefined  
+[ Mon Feb 19 2018 17:59:38 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.jfairchildlaw.com    ERROR: Cannot read property 'code' of undefined  
+[ Mon Feb 19 2018 18:02:05 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.jfairchildlaw.com    ERROR: error is not defined  
+[ Mon Feb 19 2018 18:02:18 GMT+0300 (FET) ] Url processed well!: http://www.jfairchildlaw.com
+[ Mon Feb 19 2018 18:03:09 GMT+0300 (FET) ] Url processed well!: http://www.jfairchildlaw.com
+[ Mon Feb 19 2018 18:03:31 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.jfairc    ERROR: DNS error while resolving www.jfairc. Check the spelling of the host, and ensure that the page is accessible from the public Internet.  
+[ Mon Feb 19 2018 18:04:18 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.jfairc    ERROR: DNS error while resolving www.jfairc. Check the spelling of the host, and ensure that the page is accessible from the public Internet.  
+[ Mon Feb 19 2018 18:04:21 GMT+0300 (FET) ] Url processed well!: http://google.com
+[ Mon Feb 19 2018 18:05:56 GMT+0300 (FET) ] Url processed well!: http://www.jfairc
+[ Mon Feb 19 2018 18:05:58 GMT+0300 (FET) ] Url processed well!: http://google.com
+[ Mon Feb 19 2018 18:07:22 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.jfairc    ERROR: DNS error while resolving www.jfairc. Check the spelling of the host, and ensure that the page is accessible from the public Internet.  
+[ Mon Feb 19 2018 18:07:24 GMT+0300 (FET) ] Url processed well!: http://google.com
+[ Mon Feb 19 2018 18:19:23 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.jfairc    ERROR: ENOTFOUND: Can't connect to the current API, maybe internet connection was lost  
+[ Mon Feb 19 2018 18:19:23 GMT+0300 (FET) ] Url NOT PROCESSED!: http://google.com    ERROR: ENOTFOUND: Can't connect to the current API, maybe internet connection was lost  
+[ Mon Feb 19 2018 18:19:42 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.jfairc    ERROR: ENOTFOUND: Can't connect to the current API, maybe internet connection was lost  
+[ Mon Feb 19 2018 18:19:42 GMT+0300 (FET) ] Url NOT PROCESSED!: http://google.com    ERROR: ENOTFOUND: Can't connect to the current API, maybe internet connection was lost  
+[ Mon Feb 19 2018 18:21:15 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.jfairc    ERROR: DNS error while resolving www.jfairc. Check the spelling of the host, and ensure that the page is accessible from the public Internet.  
+[ Mon Feb 19 2018 18:21:18 GMT+0300 (FET) ] Url processed well!: http://google.com
+[ Mon Feb 19 2018 18:22:03 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.jfairc    ERROR: res.has is not a function  
+[ Mon Feb 19 2018 18:22:06 GMT+0300 (FET) ] Url NOT PROCESSED!: http://google.com    ERROR: res.has is not a function  
+[ Mon Feb 19 2018 18:22:13 GMT+0300 (FET) ] Url processed well!: http://google.com
+[ Mon Feb 19 2018 18:22:13 GMT+0300 (FET) ] Url NOT PROCESSED!: http://www.jfairc    ERROR: DNS error while resolving www.jfairc. Check the spelling of the host, and ensure that the page is accessible from the public Internet.  
