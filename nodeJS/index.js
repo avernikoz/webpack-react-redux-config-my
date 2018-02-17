@@ -54,16 +54,7 @@ fs.readFile(inputFilePath, config.input.encoding, (err, data) => {
             setTimeout(() => {
                 fetch(googlePageSpeedUrl, {timeout: config.fetch.timeout})
                     .then(res => res.json())
-                    .then(res => {
-                            // Refactor this or NOT?
-                            if (res.hasOwnProperty('error')) {
-                                return Promise.reject(new Error(`${res.error.message}`));
-                            }
-                            else {
-                                return res;
-                            }
-                        }
-                    )
+                    .then(res => (res.hasOwnProperty('error') ? Promise.reject(new Error(res.error.message)) : res))
                     .then(res => {
                         outputWriteStream.write(`${JSON.stringify(res, null, '\t')} \n`);
                     })
@@ -71,18 +62,14 @@ fs.readFile(inputFilePath, config.input.encoding, (err, data) => {
                         logWriteStream.write(`[ ${new Date().toString()} ] ${config.fetch.completedText}: ${currentUrl}\n`);
                     })
                     .catch(err => {
-                        //Refactor this
                         if (err.code === 'ENOTFOUND') {
-                            console.log(config.error.ENOTFOUND);
-                            logWriteStream.write(`[ ${new Date().toString()} ] ${config.fetch.inCompletedText}: ${currentUrl}    ERROR: ${config.error.ENOTFOUND}  \n`);
+                            logError(config.error.ENOTFOUND, currentUrl);
                         }
                         else if (err.type === 'request-timeout') {
-                            console.log(config.error.TIMEOUT);
-                            logWriteStream.write(`[ ${new Date().toString()} ] ${config.fetch.inCompletedText}: ${currentUrl}    ERROR: ${config.error.TIMEOUT}  \n`);
+                            logError(config.error.TIMEOUT, currentUrl);
                         }
                         else {
-                            console.log(err.message);
-                            logWriteStream.write(`[ ${new Date().toString()} ] ${config.fetch.inCompletedText}: ${currentUrl}    ERROR: ${err.message}  \n`);
+                            logError(err.message, currentUrl);
                         }
                     });
             }, currentUrlIndex * config.fetch.intervalBetweenEachRequest);
@@ -92,20 +79,30 @@ fs.readFile(inputFilePath, config.input.encoding, (err, data) => {
 
 
     }
-    else if (err.code === 'ENOENT') {
-        logWriteStream.write(`[ ${new Date().toString()} ] ${config.error.ENOENT}: '${inputFilePath}'\n`, config.log.encoding, () => {
-            console.error(config.error.ENOENT);
-        });
-        logWriteStream.end();
-    }
     else {
-        logWriteStream.write(`[ ${new Date().toString()} ] ${err.message} \n`, config.log.encoding, () => {
-            console.error(err.message);
-        });
-        logWriteStream.end();
+        if (err.code === 'ENOENT') {
+            logError(config.error.ENOENT);
+            logWriteStream.end();
+        }
+        else {
+            logError(err.message);
+            logWriteStream.end();
+        }
+
     }
+
 
 });
 
 
 
+function logError(errorMessage, currentUrl) {
+    if (currentUrl) {
+        console.log(errorMessage);
+        logWriteStream.write(`[ ${new Date().toString()} ] ${config.fetch.inCompletedText}: ${currentUrl}    ERROR: ${errorMessage}  \n`);
+    }
+    else {
+        console.log(errorMessage);
+        logWriteStream.write(`[ ${new Date().toString()} ] ${errorMessage}: '${inputFilePath}'\n`, config.log.encoding);
+    }
+}
