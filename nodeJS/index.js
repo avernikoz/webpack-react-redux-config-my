@@ -1,50 +1,49 @@
-// 1. Можео ли вызвать функцию без аргумента по середине? func(a,b[empty],c)
+// 1. Можео ли вызвать функцию без аргумента по середине? func(a,b[empty],c) // Да, можно, вызывай как null
 // 2. Почему если использовать // logWriteStream.end(); то происходят ошибки
 // 3. Можно ли как-то реализовать retry(3) по-другому?
+// 4. Как отследить, что файл, в который открыт поток, был удалён?
 
 // Google key
 // AIzaSyBJQ8HoYiJAR3PKDxYkl9MGYD0LcJaTgG4
 
-
 const fs = require('fs');
+const mkdirp = require('mkdirp').sync;
+const getDirName = require('path').dirname;
+
 const fetch = require('node-fetch');
 const googleApiKey = 'AIzaSyBJQ8HoYiJAR3PKDxYkl9MGYD0LcJaTgG4';
 
-// logger
-const logWriteStream = fs.createWriteStream('log.txt', {'flags': 'a', 'encoding': 'utf8'});
-
-// logWriteStream.on('finish', (e) => {
-//     console.error('Input file with urls not found!');
-// });
-logWriteStream.on('error', () => {
-    console.error('Error in writing to log file!');
-});
-// logger
-
-
 const commandArgs = process.argv.slice(2);
-
 
 if (commandArgs < 2) {
     throw new Error('Not all arguments are passed to the script!');
-    // console.error('Not all arguments are passed to the script!');
 }
-// console.log(process.argv);
 
 const inputFilePath = commandArgs[0];
 const outputFilePath = commandArgs[1];
 
 
-const outputWriteStream = fs.createWriteStream(outputFilePath, {'flags': 'a', 'encoding': 'utf8'});
-outputWriteStream.on('error', () => {
-    console.error('Error in writing to output file!');
+
+// logger
+const logWriteStream = fs.createWriteStream('log.txt', {'flags': 'a', 'encoding': 'utf8'}).on('error', (err) => {
+    console.error(`ERROR: + ${err}`);
+});
+
+// output
+if (!fs.existsSync(getDirName(outputFilePath))){
+    mkdirp(getDirName(outputFilePath, (err) => {
+        if (err) throw Error(`${err}`);
+    }));
+}
+const outputWriteStream = fs.createWriteStream(outputFilePath, {'flags': 'a', 'encoding': 'utf8'}).on('error', (err) => {
+    console.error(`ERROR: + ${err}`);
 });
 
 
 fs.readFile(inputFilePath, 'utf8', (err, data) => {
 
     if (!err) {
-        let regexopt = new RegExp(/\n|\r/gi);
+        const regexopt = new RegExp(/\n|\r/gi);
         let urlArray = data.split(regexopt);
 
         urlArray.forEach((currentUrl, currentUrlIndex) => {
@@ -67,12 +66,9 @@ fs.readFile(inputFilePath, 'utf8', (err, data) => {
                     )
                     .then(res => {
                         outputWriteStream.write(`${JSON.stringify(res, null, '\t')} \n`);
-                        // outputWriteStream.end();
                     })
-                    // .then(body => console.log(body))
                     .then(() => {
                         logWriteStream.write(`[ ${new Date().toString()} ] Url processed well!: ${currentUrl}\n`);
-                        // logWriteStream.end();
                     })
                     .catch(err => {
                         // console.error(err);
@@ -89,7 +85,7 @@ fs.readFile(inputFilePath, 'utf8', (err, data) => {
                             logWriteStream.write(`[ ${new Date().toString()} ] Url NOT PROCESSED!: ${currentUrl}    ERROR: ${err.message}  \n`);
                         }
                     });
-            }, currentUrlIndex * 1);
+            }, currentUrlIndex * 3500);
 
 
         });
