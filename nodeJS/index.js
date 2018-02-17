@@ -33,6 +33,12 @@ let inputFilePath = commandArgs[0];
 let outputFilePath = commandArgs[1];
 
 
+let outputWriteStream = fs.createWriteStream(outputFilePath, { 'flags': 'a', 'encoding': 'utf8'});
+outputWriteStream.on('error', () => {
+    console.error('Error in writing to output file!');
+});
+
+
 
 
 
@@ -42,12 +48,15 @@ let inputFile = fs.readFile(inputFilePath, 'utf8', (err, data) => {
         let regexopt = new RegExp(/\n|\r/gi);
         let urlArray = data.split(regexopt);
 
-        let googlePageSpeedUrl = `https://www.googleapis.com/pagespeedonline/v4/runPagespeed?url=${urlArray[12]}&strategy=desktop&key=${googleApiKey}`;
+
+        let googlePageSpeedUrl = `https://www.googleapis.com/pagespeedonline/v4/runPagespeed?url=${urlArray[1]}&strategy=desktop&key=${googleApiKey}`;
 
         fetch(googlePageSpeedUrl, {timeout: 15000})
             .then(res => res.text())
             .then(res => {
-                fs.writeFile(outputFilePath, res, 'utf8');
+                // fs.writeFile(outputFilePath, res, 'utf8');
+                outputWriteStream.write(`${res} \n`);
+                outputWriteStream.end();
             })
             // .then(body => console.log(body))
             .then(() => {

@@ -1,4 +1,4 @@
-[ Sat Feb 17 2018 15:29:45 GMT+0300 (FET) ] File not found at current path: 'b333r/inpu.txt'
+[ Sat Feb 17 2018 15:29:45 GMT+0300 (FET) ] ---- File not found at current path: 'b333r/inpu.txt'
 [ Sat Feb 17 2018 15:29:55 GMT+0300 (FET) ] File not found at current path: 'b333r/inpu.txt'
 [ Sat Feb 17 2018 15:30:02 GMT+0300 (FET) ] File not found at current path: 'b333r/inpu.txt'
 [ Sat Feb 17 2018 15:30:21 GMT+0300 (FET) ] File not found at current path: 'b333r/inpu.txt'
@@ -8,3 +8,7 @@
 [ Sat Feb 17 2018 15:46:35 GMT+0300 (FET) ] Url processed well!: 'files/input.txt'
 [ Sat Feb 17 2018 15:46:57 GMT+0300 (FET) ] Url processed well!: current url
 [ Sat Feb 17 2018 15:47:17 GMT+0300 (FET) ] Url processed well!: {current url}
+[ Sat Feb 17 2018 15:52:58 GMT+0300 (FET) ] Url processed well!: {current url}
+[ Sat Feb 17 2018 15:57:11 GMT+0300 (FET) ] Url processed well!: {current url}
+[ Sat Feb 17 2018 15:57:22 GMT+0300 (FET) ] Url processed well!: {current url}
+[ Sat Feb 17 2018 15:58:28 GMT+0300 (FET) ] Url processed well!: {current url}
