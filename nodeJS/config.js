@@ -5,7 +5,7 @@ const config = {
         strategy: "desktop"
     },
     fetch: {
-        timeout: 15000,
+        timeout: 25000,
         intervalBetweenEachRequest: 3000,
         completedText: "Url processed well!",
         inCompletedText: "Url NOT PROCESSED!"

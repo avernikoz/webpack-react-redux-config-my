@@ -7,102 +7,46 @@
 
 const config = require('./config');
 
-const fs = require('fs');
-const mkdirp = require('mkdirp').sync;
-const getDirName = require('path').dirname;
-
+const readline = require('readline');
 const fetch = require('node-fetch');
-const commandArgs = process.argv.slice(2);
 
-if (commandArgs < 2) {
-    throw new Error('Not all arguments are passed to the script!');
+const [inputFilePath, outputFilePath] = require('./checkArgumentsCount')(process.argv.slice(2));
+const [inputReadStream,outputWriteStream] = require('./io')(inputFilePath,outputFilePath);
+const logWriteStream = require('./logStream');
+const logError = require('./logError');
+
+
+let lineNumber = 0;
+let inputLineReader = readline.createInterface({input: inputReadStream})
+    .on('line', (line) => {
+        lineNumber++;
+        processURL(line,lineNumber);
+    });
+
+function processURL(currentUrl, lineNumber) {
+
+    let googlePageSpeedUrl = `${config.api.url}?url=${currentUrl}&strategy=${config.api.strategy}&key=${config.api.key}`;
+    setTimeout(() => {
+        fetch(googlePageSpeedUrl, {timeout: config.fetch.timeout})
+            .then(res => res.json())
+            .then(res => (res.hasOwnProperty('error') ? Promise.reject(new Error(res.error.message)) : res))
+            .then(res => {
+                outputWriteStream.write(`${JSON.stringify(res, null, '\t')} \n`);
+            })
+            .then(() => {
+                logWriteStream.write(`[ ${new Date().toString()} ] ${config.fetch.completedText}: ${currentUrl}\n`);
+            })
+            .catch(err => {
+                if (err.code === 'ENOTFOUND') {
+                    logError(config.error.ENOTFOUND, currentUrl);
+                }
+                else if (err.type === 'request-timeout') {
+                    logError(config.error.TIMEOUT, currentUrl);
+                }
+                else {
+                    logError(err.message, currentUrl);
+                }
+            });
+    }, lineNumber * config.fetch.intervalBetweenEachRequest);
 }
 
-const inputFilePath = commandArgs[0];
-const outputFilePath = commandArgs[1];
-
-
-
-// logger
-const logWriteStream = fs.createWriteStream(config.log.name, {'flags': 'a', 'encoding': config.log.encoding}).on('error', (err) => {
-    console.error(`ERROR: + ${err}`);
-});
-
-// output
-if (!fs.existsSync(getDirName(outputFilePath))){
-    mkdirp(getDirName(outputFilePath, (err) => {
-        if (err) throw Error(`${err}`);
-    }));
-}
-const outputWriteStream = fs.createWriteStream(outputFilePath, {'flags': 'a', 'encoding': config.output.encoding}).on('error', (err) => {
-    console.error(`ERROR: + ${err}`);
-});
-
-
-fs.readFile(inputFilePath, config.input.encoding, (err, data) => {
-
-    if (!err) {
-        const regexopt = new RegExp(/\n|\r/gi);
-        let urlArray = data.split(regexopt);
-
-        urlArray.forEach((currentUrl, currentUrlIndex) => {
-            let googlePageSpeedUrl = `${config.api.url}?url=${currentUrl}&strategy=${config.api.strategy}&key=${config.api.key}`;
-
-            console.log(googlePageSpeedUrl);
-
-
-            setTimeout(() => {
-                fetch(googlePageSpeedUrl, {timeout: config.fetch.timeout})
-                    .then(res => res.json())
-                    .then(res => (res.hasOwnProperty('error') ? Promise.reject(new Error(res.error.message)) : res))
-                    .then(res => {
-                        outputWriteStream.write(`${JSON.stringify(res, null, '\t')} \n`);
-                    })
-                    .then(() => {
-                        logWriteStream.write(`[ ${new Date().toString()} ] ${config.fetch.completedText}: ${currentUrl}\n`);
-                    })
-                    .catch(err => {
-                        if (err.code === 'ENOTFOUND') {
-                            logError(config.error.ENOTFOUND, currentUrl);
-                        }
-                        else if (err.type === 'request-timeout') {
-                            logError(config.error.TIMEOUT, currentUrl);
-                        }
-                        else {
-                            logError(err.message, currentUrl);
-                        }
-                    });
-            }, currentUrlIndex * config.fetch.intervalBetweenEachRequest);
-
-
-        });
-
-
-    }
-    else {
-        if (err.code === 'ENOENT') {
-            logError(config.error.ENOENT);
-            logWriteStream.end();
-        }
-        else {
-            logError(err.message);
-            logWriteStream.end();
-        }
-
-    }
-
-
-});
-
-
-
-function logError(errorMessage, currentUrl) {
-    if (currentUrl) {
-        console.log(errorMessage);
-        logWriteStream.write(`[ ${new Date().toString()} ] ${config.fetch.inCompletedText}: ${currentUrl}    ERROR: ${errorMessage}  \n`);
-    }
-    else {
-        console.log(errorMessage);
-        logWriteStream.write(`[ ${new Date().toString()} ] ${errorMessage}: '${inputFilePath}'\n`, config.log.encoding);
-    }
-}
