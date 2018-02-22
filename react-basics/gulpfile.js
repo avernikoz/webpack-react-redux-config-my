@@ -39,7 +39,7 @@ gulp.task('apply-prod-environment', function() {
 });
 
 
-gulp.task('default', ['js-bundle', 'watch', 'browserSync']);
+gulp.task('default', ['js-bundle','css-bundle','fonts', 'watch', 'browserSync']);
 
 
 // Собираем все стили в один, минифицируем, добавляем префиксы и переименовываем
@@ -56,6 +56,13 @@ gulp.task('css-bundle', function() {
         .pipe(reload({stream:true}));
 });
 
+// Fonts
+gulp.task('fonts', function() {
+    return gulp.src([
+        'src/webfonts/**/*.*'])
+        .pipe(gulp.dest('build/webfonts/'));
+});
+
 
 gulp.task('js-bundle', () => {
     let testFiles = glob.sync('./src/js/**/*.js');
@@ -68,7 +75,7 @@ gulp.task('js-bundle', () => {
     return b.bundle()
         .pipe(source('bundle.js'))
         .pipe(buffer())
-        .pipe(gulp.dest('build'))
+        .pipe(gulp.dest('build/js'))
         .pipe(reload({stream: true}));
 
 });
@@ -79,26 +86,6 @@ gulp.task('html', function(){
         .pipe(reload({stream:true}));
 });
 
-// gulp.task('css-reload', function(){
-//     gulp.src('index.html')
-//         .pipe(reload({stream:true}));
-// });
-
-
-//Browser sync
-// gulp.task('browserSync', function() {
-//     browserSync({
-//         server: {
-//             baseDir: "./",
-//             index: "index.html"
-//         },
-//         browser: 'Google Chrome Canary',
-//         port: 3000,
-//         open: true,
-//         notify: false
-//
-//     });
-// });
 
 gulp.task('nodemon', function (cb) {
 
