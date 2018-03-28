@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import ToDoListApp from './ToDoListApp';
+import App from './App';
 import {BrowserRouter as Router} from 'react-router-dom';
 
 
 ReactDOM.render(
     <Router>
-        <ToDoListApp/>
+        <App/>
     </Router>,
     document.getElementById('root')
 );
