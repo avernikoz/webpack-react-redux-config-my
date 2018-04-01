@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Contact from './contact';
+import Contact from './Contact';
 
 const propTypes = {
     contactList: PropTypes.array.isRequired,
@@ -14,7 +14,7 @@ const visibilityFilter = {
 
 
 const ContactList = ({contactList, visibilityFilter}) => (
-    <div className="listWrapper">
+    <div className="contact-list">
         {
             contactList.filter(item => (item.name.indexOf(visibilityFilter) !== -1))
                 .map(item => (

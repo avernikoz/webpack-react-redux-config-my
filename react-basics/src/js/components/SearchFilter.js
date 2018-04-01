@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-export default class FilterInput extends Component {
+export default class SearchFilter extends Component {
 
     constructor(props) {
         super(props);
@@ -20,7 +20,7 @@ export default class FilterInput extends Component {
 
     render () {
         return (
-            <input type="text" value={this.state.filterValue} onChange={this.handleChange}/>
+            <input className="search-field" type="text" value={this.state.filterValue} onChange={this.handleChange}/>
         );
     }
 

@@ -10,13 +10,13 @@ const propTypes = {
 };
 
 const Concact = ({name, phoneNumber, imgUrl}) => (
-    <div className="contactWrapper">
-        <div className="image">
-            <img src={imgUrl} alt="image"/>
+    <div className="contact">
+        <div className="contact-image">
+            <img src={imgUrl} alt="image" height="50px" width="50px"/>
         </div>
-        <div className="dataWrapper">
-            <div className="name"> {name} </div>
-            <div className="phoneNumber"> {phoneNumber} </div>
+        <div>
+            <div className="contact-image"> {name} </div>
+            <div className="contact-number"> {phoneNumber} </div>
         </div>
     </div>
 );

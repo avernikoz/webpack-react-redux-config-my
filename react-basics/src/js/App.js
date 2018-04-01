@@ -8,9 +8,9 @@ React.createClass = createReactClass;
 import {Route, Switch} from 'react-router-dom';
 
 import defaultContacts from './defaultContacts';
-import Contact from './components/contact';
-import ContactList from './components/contactList';
-import FilterInput from './components/input';
+import Contact from './components/Contact';
+import ContactList from './components/ContactList';
+import SearchFilter from './components/SearchFilter';
 
 
 // import AnyComponent from './components/AnyComponent';
@@ -34,8 +34,8 @@ class App extends Component {
 
     render() {
         return (
-            <div>
-                <FilterInput handleUpdateVisibilitityFulter={this.handleUpdateVisibilitityFulter}/>
+            <div className="app-container">
+                <SearchFilter handleUpdateVisibilitityFulter={this.handleUpdateVisibilitityFulter}/>
                 <ContactList
                 contactList={defaultContacts}
                 visibilityFilter={this.state.visibilityFilter}
@@ -47,7 +47,7 @@ class App extends Component {
 
 // const App = () => (
 //     <div>
-//         <FilterInput></FilterInput>
+//         <SearchFilter></SearchFilter>
 //         <ContactList contactList={defaultContacts}/>
 //     </div>
 // );
