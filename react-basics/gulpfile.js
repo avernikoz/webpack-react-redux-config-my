@@ -9,6 +9,10 @@ const concatCss = require('gulp-concat-css'); // Сливаем все стил�
 const cleanCSS = require('gulp-clean-css'); // Минифицируем
 const rename = require('gulp-rename');
 
+//SCSS
+const sass = require('gulp-sass');
+const sassLint = require('gulp-sass-lint');
+
 
 // JS
 const concat = require('gulp-concat');
@@ -33,13 +37,17 @@ const reload = browserSync.reload;
 const nodemon = require('gulp-nodemon');
 
 
+
+
 // Устанавливаем сборку для продакшена
 gulp.task('apply-prod-environment', function() {
     process.env.NODE_ENV = 'production';
 });
 
-
-gulp.task('default', ['js-bundle','css-bundle','fonts', 'watch', 'browserSync']);
+//for default css
+// gulp.task('default', ['js-bundle','css-bundle','fonts', 'watch', 'browserSync']);
+//for scss css
+gulp.task('default', ['js-bundle','scss-bundle','fonts', 'watch', 'browserSync']);
 
 
 // Собираем все стили в один, минифицируем, добавляем префиксы и переименовываем
@@ -55,6 +63,26 @@ gulp.task('css-bundle', function() {
         .pipe(gulp.dest('build/css/'))
         .pipe(reload({stream:true}));
 });
+
+
+////////// SCSS
+// Собираем все scss-стили в один, минифицируем, добавляем префиксы и переименовываем
+gulp.task('scss-bundle', function() {
+    return gulp.src([
+        'src/scss/**/*.scss',
+    ])
+        .pipe(sassLint())
+        .pipe(sassLint.format())
+        .pipe(sassLint.failOnError())
+        .pipe(sass().on('error', sass.logError))
+        .pipe(concatCss("bundle.css", { rebaseUrls: false }))
+        .pipe(gulp.dest('build/css/'))
+        .pipe(cleanCSS({ compatibility: 'ie8', level: 2 }))
+        .pipe(rename('bundle.min.css'))
+        .pipe(gulp.dest('build/css/'))
+        .pipe(reload({stream:true}));
+});
+
 
 // Fonts
 gulp.task('fonts', function() {
@@ -105,7 +133,7 @@ gulp.task('nodemon', function (cb) {
 
 gulp.task('browserSync',['nodemon'], function() {
     browserSync.init(null, {
-        proxy: "http://localhost:3001",
+        proxy: "http://localhost:3000",
         browser: "Google Chrome Canary",
         port: 7000,
         baseDir: "./",
@@ -121,6 +149,7 @@ gulp.task('browserSync',['nodemon'], function() {
 //Следим за изменениями:
 gulp.task('watch', function () {
     gulp.watch('src/js/**/*.js', ['js-bundle']);
-    gulp.watch('src/css/**/*.css', ['css-bundle']);
+    // gulp.watch('src/css/**/*.css', ['css-bundle']);
+    gulp.watch('src/scss/**/*.scss', ['scss-bundle']);
     gulp.watch('index.html', ['html']);
 });
