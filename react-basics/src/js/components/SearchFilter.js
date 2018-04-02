@@ -15,7 +15,7 @@ export default class SearchFilter extends Component {
         this.setState({
             filterValue: event.target.value
         });
-        this.props.handleUpdateVisibilitityFulter(event.target.value);
+        this.props.handleUpdateVisibilitityFilter(event.target.value);
     }
 
     render () {
