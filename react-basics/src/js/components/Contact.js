@@ -19,11 +19,11 @@ class Contact extends Component {
 
     handleClickEdit = (event) => {
         event.stopPropagation();
-        this.props.handleShowHideModal('edit');
+        this.props.handleSetModalType('edit');
     };
     handleClickDelete = (event) => {
         event.stopPropagation();
-        this.props.handleShowHideModal('delete');
+        this.props.handleSetModalType('delete');
     };
 
     render() {
@@ -43,6 +43,7 @@ class Contact extends Component {
 }
 
 Contact.propTypes = propTypes;
+
 
 export default Contact;
 

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default class Button extends Component {
 
     handleClick = () => {
-        this.props.handleShowHideModal(this.props.value);
+        this.props.handleSetModalType(this.props.value);
     };
 
     render() {

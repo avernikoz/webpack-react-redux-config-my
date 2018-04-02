@@ -38,16 +38,27 @@ class App extends Component {
         })
     };
 
-    handleShowHideModal = (modalType) => {
+    handleShowHideModal = () => {
         this.setState({
             modalWindowOpened: !this.state.modalWindowOpened,
-            modalType,
         })
     };
+
+    handleSetModalType = (modalType) => {
+        this.setState({
+            modalType,
+        },this.handleShowHideModal())
+    };
+
     handleSelectCurrentContact = (id) => {
         this.setState({
             selectedContact: id === this.state.selectedContact ? null : id
         })
+    };
+
+    //add new contact
+    handleAddNewContact = (newContact) => {
+        this.setState(oldState => ({contacts: [newContact,...oldState.contacts]}));
     };
 
 
@@ -62,15 +73,17 @@ class App extends Component {
                     <ContactList
                         contactList={this.state.contacts}
                         visibilityFilter={this.state.visibilityFilter}
-                        handleShowHideModal={this.handleShowHideModal}
+                        handleSetModalType={this.handleSetModalType}
                         selectedContact={this.state.selectedContact}
                         handleSelectCurrentContact={this.handleSelectCurrentContact}
                     />
-                    <Button handleShowHideModal={this.handleShowHideModal} value={'add'}>Add contact</Button>
+                    <Button handleSetModalType={this.handleSetModalType} value={'add'}>Add contact</Button>
                 </div>
                 <Modal
                     modalWindowOpened={this.state.modalWindowOpened}
                     modalType={this.state.modalType}
+                    handleShowHideModal={this.handleShowHideModal}
+                    handleAddNewContact={this.handleAddNewContact}
                 />
             </div>
         )

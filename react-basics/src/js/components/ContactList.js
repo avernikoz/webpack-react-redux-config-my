@@ -6,7 +6,7 @@ import Contact from './Contact';
 const propTypes = {
     contactList: PropTypes.array.isRequired,
     visibilityFilter: PropTypes.string,
-    handleShowHideModal: PropTypes.func
+    handleSetModalType: PropTypes.func
 };
 
 const visibilityFilter = {
@@ -22,7 +22,7 @@ const ContactList = ({contactList, visibilityFilter, ...rest}) => (
                 <Contact key={item.id}
                          id={item.id}
                          name={item.name}
-                         phoneNumber={item.number}
+                         phoneNumber={item.phoneNumber}
                          imgUrl={item.img}
                          {...rest}
                 />
@@ -37,6 +37,6 @@ ContactList.propTypes = propTypes;
 export default ContactList;
 
 
-// handleShowHideModal={handleShowHideModal}
+// handleSetModalType={handleSetModalType}
 // selectedContact={selectedContact}
 // handleSelectCurrentContact={handleSelectCurrentContact}
