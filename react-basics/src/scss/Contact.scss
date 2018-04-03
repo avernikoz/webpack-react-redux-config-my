@@ -3,11 +3,12 @@ $redcolor: #e02c5c;
 .contact {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   font-family: sans-serif;
   width: 100%;
   padding: 5px;
   border-bottom: 1px dotted grey;
+  overflow: hidden;
 }
 
 .contact.expanded {
@@ -26,11 +27,17 @@ $redcolor: #e02c5c;
 .contact-name {
   font-size: 20px;
   font-weight: bold;
+  margin-left: 15px;
+  margin-right: 5px;
+  overflow: hidden;
 }
 
 .contact-number {
   font-size: 18px;
   color: grey;
+  justify-self: flex-end;
+  margin-left: auto;
+  width: 135px;
 }
 
 
