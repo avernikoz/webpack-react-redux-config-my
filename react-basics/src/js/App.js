@@ -25,7 +25,11 @@ class App extends Component {
         super(props);
         this.state = {
             contacts: defaultContacts,
-            selectedContact: null,
+            selectedContact: {
+                id: null,
+                name: '',
+                phoneNumber: '',
+            },
             visibilityFilter: '',
             modalWindowOpened: false,
             modalType: ''
@@ -50,15 +54,19 @@ class App extends Component {
         },this.handleShowHideModal())
     };
 
-    handleSelectCurrentContact = (id) => {
+    handleSelectCurrentContact = (currentContact) => {
         this.setState({
-            selectedContact: id === this.state.selectedContact ? null : id
+            selectedContact: currentContact.id === this.state.selectedContact.id ? {...this.state.selectedContact, id: null } : {...currentContact}
         })
     };
 
     //add new contact
     handleAddNewContact = (newContact) => {
         this.setState(oldState => ({contacts: [newContact,...oldState.contacts]}));
+    };
+    //add delete contact
+    handleDeleteContact = (idContactToDelete) => {
+        this.setState(oldState => ({contacts: [...oldState.contacts.filter((elem) => elem.id !== idContactToDelete)]}));
     };
 
 
@@ -84,6 +92,8 @@ class App extends Component {
                     modalType={this.state.modalType}
                     handleShowHideModal={this.handleShowHideModal}
                     handleAddNewContact={this.handleAddNewContact}
+                    handleDeleteContact={this.handleDeleteContact}
+                    selectedContact={this.state.selectedContact}
                 />
             </div>
         )

@@ -28,8 +28,14 @@
   transition: opacity 0.3s ease;
 
   color: #9c9c9c;
+  overflow: hidden;
 }
 
+.category-delete-text-container {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
 
 /*buttons*/
@@ -54,12 +60,13 @@
 
 
 .modal-window .add-button, .modal-window-large .add-button{
-  border: 2px solid #9c9c9c;
+  //border: 2px solid #9c9c9c;
   color: black;
 }
 
-.modal-window .add-button:hover, .modal-window-large .add-button:hover{
-  border: 2px solid #9c9c9c;
+.modal-window .add-button:hover:not(:disabled), .modal-window-large .add-button:hover:not(:disabled){
+  border: 2px solid #52b56c;
+  background-color: #52b56c;
   color: white;
 }
 
@@ -67,7 +74,7 @@
   width: 100px;
   background-color: transparent;
   border-radius: 28px;
-  border: 2px solid white;
+  border: 2px solid #52b56c;
   cursor: pointer;
   font-size: 14px;
   padding: 6px 6px;
@@ -99,7 +106,6 @@
 }
 
 .close-button:hover {
-  border: 2px solid #9c9c9c;
   color: white;
   background-color: #9c9c9c;
 }
@@ -117,4 +123,9 @@
   padding: 5px;
   font-size: 1.3rem;
   margin-top: 10px;
+}
+
+.add-button:disabled {
+  border: 2px solid #9c9c9c;
+  cursor: not-allowed;
 }

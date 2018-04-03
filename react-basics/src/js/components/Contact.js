@@ -14,7 +14,7 @@ class Contact extends Component {
         super(props);
     }
     expandContact = (event) => {
-        this.props.handleSelectCurrentContact(this.props.id);
+        this.props.handleSelectCurrentContact({id: this.props.id, name:this.props.name, phoneNumber:this.props.phoneNumber});
     };
 
     handleClickEdit = (event) => {
@@ -28,7 +28,7 @@ class Contact extends Component {
 
     render() {
         return (
-        <div className={this.props.id === this.props.selectedContact ? 'contact expanded' : 'contact'} onClick={this.expandContact}>
+        <div className={this.props.id === this.props.selectedContact.id ? 'contact expanded' : 'contact'} onClick={this.expandContact}>
             <img className="contact-image" src={this.props.imgUrl} alt="image"/>
             <div className="contact-name"> {this.props.name}</div>
             <div className="contact-number"> {this.props.phoneNumber}</div>

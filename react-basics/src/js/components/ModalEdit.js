@@ -6,7 +6,8 @@ class ModalEdit extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            inputText: ''
+            inputName: '',
+            inputPhoneNumber: ''
         }
     }
     componentDidUpdate = () => {

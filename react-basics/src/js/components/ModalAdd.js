@@ -21,7 +21,7 @@ class ModalAdd extends Component {
 
     inputChangePhoneHandler = (event) => {
         this.setState({
-            inputPhoneNumber: event.target.value
+            inputPhoneNumber: (event.target.value.match(/^[0-9+\(\)-]*$/) ? event.target.value : this.state.inputPhoneNumber)
         })
     };
 

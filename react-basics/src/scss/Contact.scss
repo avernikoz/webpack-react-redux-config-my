@@ -1,3 +1,5 @@
+$redcolor: #e02c5c;
+
 .contact {
   display: flex;
   align-items: center;
@@ -76,7 +78,7 @@
 
 .contact-delete-button {
   width: 100px;
-  background-color: #ef641f;
+  background-color: #e02c5c;
   border-radius: 28px;
   cursor: pointer;
   font-size: 14px;
@@ -90,8 +92,8 @@
 
 .contact-delete-button:hover {
   background-color: transparent;
-  color: #ef641f;
-  border: 2px solid #ef641f;
+  color: $redcolor;
+  border: 2px solid $redcolor;
 }
 
 
