@@ -22,15 +22,15 @@ class ModalEdit extends Component {
 
     };
 
-    addCategoryHandler = (event) => {
+    saveCategoryChangesHandler = (event) => {
 
     };
 
 
     render = () => (
         <div className="modal-buttons-container">
-            <input className="category-add-input" type="text" placeholder={this.props.selectedCategoryText}
-                   value={this.state.categoryEditedText}
+            <input className="category-add-input" type="text"
+                   value={this.props.selected}
                    onChange={this.onChangeCategoryEditedText} onKeyPress={this.keyPressHandler}
                    ref={(input) => {
                        this.nameInput = input;
@@ -39,7 +39,7 @@ class ModalEdit extends Component {
             />
             <div className="modal-action-buttons-container">
                 <input className="add-button" type="button" value="Save"
-                       onClick={this.saveCategoryChangesHandler} disabled={saveButtonCondition}/>
+                       onClick={this.saveCategoryChangesHandler} disabled="disabled"/>
                 <input className="close-button" type="button" value="Close"
                        onClick={this.props.handleShowHideModal}/>
             </div>
