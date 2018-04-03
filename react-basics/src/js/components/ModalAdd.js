@@ -21,12 +21,12 @@ class ModalAdd extends Component {
 
     inputChangePhoneHandler = (event) => {
         this.setState({
-            inputPhoneNumber: (event.target.value.match(/^[0-9+\(\)-]*$/) ? event.target.value : this.state.inputPhoneNumber)
+            inputPhoneNumber: (event.target.value.match(/^[0-9+()-]*$/) ? event.target.value : this.state.inputPhoneNumber)
         })
     };
 
     keyPressHandler = (event) => {
-        if (event.which === 13) {
+        if (event.which === 13 && this.validateSubmitButton()) {
             this.addCategoryHandler();
         }
     };
@@ -41,6 +41,8 @@ class ModalAdd extends Component {
 
         this.props.handleShowHideModal();
     };
+    validateSubmitButton = () => (!this.state.inputName || !this.state.inputPhoneNumber);
+
 
     render = () => (
         <div className="modal-buttons-container">
@@ -59,7 +61,7 @@ class ModalAdd extends Component {
             />
             <div className="modal-action-buttons-container">
                 <input className="add-button" type="button" value="Add" onClick={this.addCategoryHandler}
-                       disabled={!this.state.inputName || !this.state.inputPhoneNumber}/>
+                       disabled={this.validateSubmitButton()}/>
                 <input className="close-button" type="button" value="Close"
                        onClick={this.props.handleShowHideModal}/>
             </div>

@@ -68,6 +68,9 @@ class App extends Component {
     handleDeleteContact = (idContactToDelete) => {
         this.setState(oldState => ({contacts: [...oldState.contacts.filter((elem) => elem.id !== idContactToDelete)]}));
     };
+    handleSaveContactChanges = (changedContact) => {
+        this.setState(oldState => ({contacts: [...oldState.contacts.map((elem) => elem.id === changedContact.id ? {...elem, ...changedContact} : elem)]}))
+    };
 
 
 
@@ -93,6 +96,7 @@ class App extends Component {
                     handleShowHideModal={this.handleShowHideModal}
                     handleAddNewContact={this.handleAddNewContact}
                     handleDeleteContact={this.handleDeleteContact}
+                    handleSaveContactChanges={this.handleSaveContactChanges}
                     selectedContact={this.state.selectedContact}
                 />
             </div>
