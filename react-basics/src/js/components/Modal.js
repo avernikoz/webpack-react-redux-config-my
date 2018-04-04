@@ -20,5 +20,13 @@ const Modal = ({modalWindowOpened, modalType, ...props}) => {
     )
 };
 
+// Username.propTypes = {
+//     username: React.PropTypes.string.isRequired,
+// };
+//
+// Username.defaultProps = {
+//     username: 'Jack',
+// };
+
 
 export default Modal;

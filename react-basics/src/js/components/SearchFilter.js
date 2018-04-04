@@ -2,23 +2,18 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 export default class SearchFilter extends Component {
+    state = {
+        filterValue: ''
+    };
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            filterValue: ''
-        };
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(event) {
+    handleChange = (event) => {
         this.setState({
             filterValue: event.target.value
         });
         this.props.handleUpdateVisibilitityFilter(event.target.value);
-    }
+    };
 
-    render () {
+    render() {
         return (
             <input className="search-field" type="text" value={this.state.filterValue} onChange={this.handleChange}/>
         );

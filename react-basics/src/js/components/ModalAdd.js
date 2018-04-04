@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
 
 class ModalAdd extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+    state = {
             inputName: '',
             inputPhoneNumber: ''
-        }
-    }
+    };
 
     componentDidMount = () => {
         this.nameInput.focus();

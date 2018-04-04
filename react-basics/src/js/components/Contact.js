@@ -10,9 +10,6 @@ const propTypes = {
 };
 
 class Contact extends Component {
-    constructor(props) {
-        super(props);
-    }
     expandContact = (event) => {
         this.props.handleSelectCurrentContact({id: this.props.id, name:this.props.name, phoneNumber:this.props.phoneNumber});
     };

@@ -17,7 +17,8 @@ const visibilityFilter = {
 const ContactList = ({contactList, visibilityFilter, ...rest}) => (
     <div className="contact-list">
         {
-            contactList.filter(item => (item.name.indexOf(visibilityFilter) !== -1))
+            contactList.filter(item => (item.name.toLowerCase().indexOf(visibilityFilter) !== -1 || item.name.indexOf(visibilityFilter) !== -1))
+            // contactList.filter(item => ([item.name.toLowerCase(),item.name].find(str => str.includes(visibilityFilter))))
                 .map(item => (
                 <Contact key={item.id}
                          id={item.id}

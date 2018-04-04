@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import createReactClass from 'create-react-class';
 
-React.createClass = createReactClass;
 
 import {Route, Switch} from 'react-router-dom';
 
@@ -15,26 +13,22 @@ import Modal from './components/Modal';
 import Button from './components/Button';
 
 
-
 // import AnyComponent from './components/AnyComponent';
 
 //App
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            contacts: defaultContacts,
-            selectedContact: {
-                id: null,
-                name: '',
-                phoneNumber: '',
-            },
-            visibilityFilter: '',
-            modalWindowOpened: false,
-            modalType: ''
-        };
-    }
+    state = {
+        contacts: defaultContacts,
+        selectedContact: {
+            id: null,
+            name: '',
+            phoneNumber: '',
+        },
+        visibilityFilter: '',
+        modalWindowOpened: false,
+        modalType: ''
+    };
 
     handleUpdateVisibilitityFilter = (visibilityFilter) => {
         this.setState({
@@ -51,18 +45,21 @@ class App extends Component {
     handleSetModalType = (modalType) => {
         this.setState({
             modalType,
-        },this.handleShowHideModal())
+        }, this.handleShowHideModal())
     };
 
     handleSelectCurrentContact = (currentContact) => {
         this.setState({
-            selectedContact: currentContact.id === this.state.selectedContact.id ? {...this.state.selectedContact, id: null } : {...currentContact}
+            selectedContact: currentContact.id === this.state.selectedContact.id ? {
+                ...this.state.selectedContact,
+                id: null
+            } : {...currentContact}
         })
     };
 
     //add new contact
     handleAddNewContact = (newContact) => {
-        this.setState(oldState => ({contacts: [newContact,...oldState.contacts]}));
+        this.setState(oldState => ({contacts: [newContact, ...oldState.contacts]}));
     };
     //add delete contact
     handleDeleteContact = (idContactToDelete) => {
@@ -71,7 +68,6 @@ class App extends Component {
     handleSaveContactChanges = (changedContact) => {
         this.setState(oldState => ({contacts: [...oldState.contacts.map((elem) => elem.id === changedContact.id ? {...elem, ...changedContact} : elem)]}))
     };
-
 
 
     render() {
@@ -104,12 +100,6 @@ class App extends Component {
     }
 }
 
-// const App = () => (
-//     <div>
-//         <SearchFilter></SearchFilter>
-//         <ContactList contactList={defaultContacts}/>
-//     </div>
-// );
 
 
 export default App;

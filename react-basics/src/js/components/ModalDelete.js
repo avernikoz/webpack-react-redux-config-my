@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 class ModalDelete extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     deleteCategoryHandler = (event) => {
         this.props.handleDeleteContact(this.props.selectedContact.id);
         this.props.handleShowHideModal();

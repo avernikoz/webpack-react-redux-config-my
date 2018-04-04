@@ -3,13 +3,10 @@ import PropTypes from 'prop-types';
 
 
 class ModalEdit extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            inputName: this.props.selectedContact.name,
-            inputPhoneNumber: this.props.selectedContact.phoneNumber
-        }
-    }
+    state = {
+        inputName: this.props.selectedContact.name,
+        inputPhoneNumber: this.props.selectedContact.phoneNumber
+    };
 
     componentWillReceiveProps = (nextProps) => {
         const {name: inputName, phoneNumber: inputPhoneNumber} = nextProps.selectedContact;
@@ -43,11 +40,13 @@ class ModalEdit extends Component {
     };
 
     saveContactChangesHandler = () => {
-        this.props.handleSaveContactChanges({id: this.props.selectedContact.id, name: this.state.inputName, phoneNumber: this.state.inputPhoneNumber});
+        this.props.handleSaveContactChanges({
+            id: this.props.selectedContact.id,
+            name: this.state.inputName,
+            phoneNumber: this.state.inputPhoneNumber
+        });
         this.props.handleShowHideModal();
     };
-
-
 
 
     render = () => (
