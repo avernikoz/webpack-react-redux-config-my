@@ -5,6 +5,25 @@ import ModalAdd from './ModalAdd';
 import ModalEdit from './ModalEdit';
 import ModalDelete from './ModalDelete';
 
+const propTypes = {
+    modalWindowOpened: PropTypes.bool.isRequired,
+    modalType: PropTypes.string.isRequired,
+    selectedContact: PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.oneOf([null]), PropTypes.number]),
+        name: PropTypes.string.isRequired,
+        phoneNumber: PropTypes.string.isRequired
+    }),
+    handleShowHideModal: PropTypes.func.isRequired,
+    handleAddNewContact: PropTypes.func.isRequired,
+    handleDeleteContact: PropTypes.func.isRequired,
+    handleSaveContactChanges: PropTypes.func.isRequired
+};
+
+const defaultProps = {
+    selectedContact: {
+        id: null
+    }
+};
 
 const Modal = ({modalWindowOpened, modalType, ...props}) => {
     let modalWindowWrapperClassName = modalWindowOpened ? 'modal-window-wrapper' : 'modal-window-wrapper disabled';
@@ -20,13 +39,7 @@ const Modal = ({modalWindowOpened, modalType, ...props}) => {
     )
 };
 
-// Username.propTypes = {
-//     username: React.PropTypes.string.isRequired,
-// };
-//
-// Username.defaultProps = {
-//     username: 'Jack',
-// };
-
+Modal.propTypes = propTypes;
+Modal.defaultProps = defaultProps;
 
 export default Modal;

@@ -1,6 +1,21 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
+const propTypes = {
+    selectedContact: PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.oneOf([null]), PropTypes.number]),
+        name: PropTypes.string.isRequired,
+    }),
+    handleDeleteContact: PropTypes.func.isRequired,
+    handleShowHideModal: PropTypes.func.isRequired
+};
+
+const defaultProps = {
+    selectedContact: {
+        id: null
+    }
+};
+
 class ModalDelete extends Component {
     deleteCategoryHandler = (event) => {
         this.props.handleDeleteContact(this.props.selectedContact.id);
@@ -22,4 +37,6 @@ class ModalDelete extends Component {
     )
 }
 
+ModalDelete.propTypes = propTypes;
+ModalDelete.defaultProps = defaultProps;
 export default ModalDelete;

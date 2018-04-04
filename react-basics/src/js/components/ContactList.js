@@ -6,11 +6,20 @@ import Contact from './Contact';
 const propTypes = {
     contactList: PropTypes.array.isRequired,
     visibilityFilter: PropTypes.string,
-    handleSetModalType: PropTypes.func
+    selectedContact: PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.oneOf([null]), PropTypes.number]),
+        name: PropTypes.string.isRequired,
+        phoneNumber: PropTypes.string.isRequired
+    }),
+    handleSetModalType: PropTypes.func.isRequired,
+    handleSelectCurrentContact: PropTypes.func.isRequired
 };
 
-const visibilityFilter = {
+const defaultProps = {
     visibilityFilter: '',
+    selectedContact: {
+        id: null
+    }
 };
 
 
@@ -24,7 +33,7 @@ const ContactList = ({contactList, visibilityFilter, ...rest}) => (
                          id={item.id}
                          name={item.name}
                          phoneNumber={item.phoneNumber}
-                         imgUrl={item.img}
+                         img={item.img}
                          {...rest}
                 />
             ))
@@ -33,11 +42,6 @@ const ContactList = ({contactList, visibilityFilter, ...rest}) => (
 );
 
 ContactList.propTypes = propTypes;
-// ContactList.defaultProps = defaultProps;
+ContactList.defaultProps = defaultProps;
 
 export default ContactList;
-
-
-// handleSetModalType={handleSetModalType}
-// selectedContact={selectedContact}
-// handleSelectCurrentContact={handleSelectCurrentContact}

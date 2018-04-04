@@ -1,6 +1,21 @@
-import React, {Component, ReactPropTypes} from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
+const propTypes = {
+    selectedContact: PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.oneOf([null]), PropTypes.number]),
+        name: PropTypes.string.isRequired,
+        phoneNumber: PropTypes.string.isRequired
+    }),
+    handleSaveContactChanges: PropTypes.func.isRequired,
+    handleShowHideModal: PropTypes.func.isRequired,
+};
+
+const defaultProps = {
+    selectedContact: {
+        id: null
+    }
+};
 
 class ModalEdit extends Component {
     state = {
@@ -74,5 +89,8 @@ class ModalEdit extends Component {
         </div>
     )
 }
+
+ModalEdit.propTypes = propTypes;
+ModalEdit.defaultProps = defaultProps;
 
 export default ModalEdit;

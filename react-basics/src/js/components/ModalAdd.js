@@ -1,4 +1,10 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+
+const propTypes = {
+    handleAddNewContact: PropTypes.func.isRequired,
+    handleShowHideModal: PropTypes.func.isRequired
+};
 
 class ModalAdd extends Component {
     state = {
@@ -65,5 +71,7 @@ class ModalAdd extends Component {
         </div>
     )
 }
+
+ModalAdd.propTypes = propTypes;
 
 export default ModalAdd;

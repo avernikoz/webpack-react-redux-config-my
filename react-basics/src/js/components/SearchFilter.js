@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-export default class SearchFilter extends Component {
+const propTypes = {
+    handleUpdateVisibilitityFilter: PropTypes.func.isRequired
+};
+
+class SearchFilter extends Component {
     state = {
         filterValue: ''
     };
@@ -18,8 +22,9 @@ export default class SearchFilter extends Component {
             <input className="search-field" type="text" value={this.state.filterValue} onChange={this.handleChange}/>
         );
     }
-
-
 }
 
+SearchFilter.propTypes = propTypes;
 
+
+export default SearchFilter;

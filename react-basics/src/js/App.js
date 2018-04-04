@@ -1,12 +1,16 @@
+// Нужно ли использовать key в propTypes?
+// Можно ли прописывать propTypes внутри функций?
+// Где лучше прописывать propTypes — для statless компонентов родительских, или для дочерних /// по-моему, это круто
+// Должен ли быть isRequired там, где нет isRequaired?
+// https://www.npmjs.com/package/airbnb-prop-types
+
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 
 
 import {Route, Switch} from 'react-router-dom';
 
 import defaultContacts from './defaultContacts';
-import Contact from './components/Contact';
 import ContactList from './components/ContactList';
 import SearchFilter from './components/SearchFilter';
 import Modal from './components/Modal';

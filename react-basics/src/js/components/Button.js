@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-export default class Button extends Component {
+const propTypes = {
+    handleSetModalType: PropTypes.func.isRequired
+};
+
+class Button extends Component {
 
     handleClick = () => {
         this.props.handleSetModalType(this.props.value);
@@ -15,3 +19,7 @@ export default class Button extends Component {
         );
     }
 }
+
+Button.propTypes = propTypes;
+
+export default Button
