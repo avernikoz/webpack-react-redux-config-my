@@ -5,9 +5,8 @@ import {connect} from 'react-redux';
 
 import {EDIT_BUTTON_TAG_TYPE, DELETE_BUTTON_TAG_TYPE} from '../constants/controlButtonsTagTypes'
 import {MODAL_TYPE_EDIT, MODAL_TYPE_DELETE} from '../constants/modalTypes';
-import {setModalType, setSelectedContact, toggleModal} from '../store/actionCreators';
 
-//TODO: REWRITE stop.Propagation to something else
+//TODO: REWRITE stop.Propagation to something else ++++
 
 const propTypes = {
     id: PropTypes.number.isRequired,
@@ -29,32 +28,22 @@ const defaultProps = {
     }
 };
 
-const mapStateToProps = (state) => ({
-    selectedContact: state.selectedContact
-});
-
-const mapDispatchToProps = (dispatch) => (
-    bindActionCreators({setModalType, setSelectedContact, toggleModal}, dispatch)
-);
-
 
 class Contact extends Component {
-    expandContact = () => {
-        const {id, name, phoneNumber} = this.props;
-        this.props.setSelectedContact({id, name, phoneNumber });
+    expandContact = (event) => {
+        if (event.target === event.currentTarget) {
+            const {id, name, phoneNumber} = this.props;
+            this.props.setSelectedContact({id, name, phoneNumber });
+        }
     };
 
     handleClickEdit = (event) => {
-        if (event.target.tagName.toUpperCase() === EDIT_BUTTON_TAG_TYPE) {
             this.props.setModalType(MODAL_TYPE_EDIT);
             this.props.toggleModal();
-        }
     };
     handleClickDelete = (event) => {
-        if (event.target.tagName.toUpperCase() === DELETE_BUTTON_TAG_TYPE) {
             this.props.setModalType(MODAL_TYPE_DELETE);
             this.props.toggleModal();
-        }
     };
 
     render() {
@@ -77,4 +66,4 @@ Contact.propTypes = propTypes;
 Contact.defaultProps = defaultProps;
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(Contact);
+export default Contact;

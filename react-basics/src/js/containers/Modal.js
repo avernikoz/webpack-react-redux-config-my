@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import ModalAdd from './ModalAdd';
-import ModalEdit from './ModalEdit';
-import ModalDelete from './ModalDelete';
+import ModalAdd from '../components/ModalAdd';
+import ModalEdit from '../components/ModalEdit';
+import ModalDelete from '../components/ModalDelete';
 import {MODAL_TYPE_ADD, MODAL_TYPE_EDIT} from '../constants/modalTypes';
 
 import {connect} from 'react-redux';
@@ -41,8 +41,6 @@ const mapDispatchToProps = (dispatch) => (
 );
 
 const Modal = ({modalWindowOpened, modalType, ...props}) => {
-    console.log(props);
-
     let modalWindowWrapperClassName = modalWindowOpened ? 'modal-window-wrapper' : 'modal-window-wrapper disabled';
     let modal = modalType === MODAL_TYPE_ADD ? (<ModalAdd {...props}/>) :
         modalType === MODAL_TYPE_EDIT ? (<ModalEdit {...props}/>) : (<ModalDelete {...props}/>);

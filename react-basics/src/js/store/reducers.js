@@ -1,5 +1,5 @@
 import {FILTER_CONTACTS, SET_MODAL_TYPE, TOGGLE_MODAL, SET_SELECTED_CONTACT, ADD_CONTACT, DELETE_CONTACT, SAVE_EDITED_CONTACT} from '../constants/actionTypes';
-import defaultContacts from '../defaultContacts';
+import defaultContacts from '../constants/defaultContacts';
 
 
 export const initialState = {
@@ -42,6 +42,8 @@ export function rootReducer(state = initialState, action) {
                 contacts: [action.newContact,...state.contacts]
             };
         case DELETE_CONTACT:
+            console.log('sdasdas');
+
             return {
                 ...state,
                 contacts: [...state.contacts.filter((elem) => elem.id !== action.idContactToDelete)]
