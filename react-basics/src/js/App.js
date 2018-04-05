@@ -9,6 +9,7 @@ import ReactDOM from 'react-dom';
 
 
 import {Route, Switch} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 import defaultContacts from './defaultContacts';
 import ContactList from './components/ContactList';
@@ -16,8 +17,6 @@ import SearchFilter from './components/SearchFilter';
 import Modal from './components/Modal';
 import Button from './components/Button';
 
-
-// import AnyComponent from './components/AnyComponent';
 
 //App
 
@@ -88,7 +87,7 @@ class App extends Component {
                         selectedContact={this.state.selectedContact}
                         handleSelectCurrentContact={this.handleSelectCurrentContact}
                     />
-                    <Button handleSetModalType={this.handleSetModalType} value={'add'}>Add contact</Button>
+                    <Button handleSetModalType={this.handleSetModalType} value={'add'} store={this.props.store}>Add contact</Button>
                 </div>
                 <Modal
                     modalWindowOpened={this.state.modalWindowOpened}
