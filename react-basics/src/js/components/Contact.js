@@ -1,5 +1,13 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+
+import {EDIT_BUTTON_TAG_TYPE, DELETE_BUTTON_TAG_TYPE} from '../constants/controlButtonsTagTypes'
+import {MODAL_TYPE_EDIT, MODAL_TYPE_DELETE} from '../constants/modalTypes';
+import {setModalType, setSelectedContact, toggleModal} from '../store/actionCreators';
+
+//TODO: REWRITE stop.Propagation to something else
 
 const propTypes = {
     id: PropTypes.number.isRequired,
@@ -11,8 +19,8 @@ const propTypes = {
         name: PropTypes.string.isRequired,
         phoneNumber: PropTypes.string.isRequired
     }),
-    handleSetModalType: PropTypes.func.isRequired,
-    handleSelectCurrentContact: PropTypes.func.isRequired
+    setModalType: PropTypes.func.isRequired,
+    setSelectedContact: PropTypes.func.isRequired
 };
 
 const defaultProps = {
@@ -21,18 +29,32 @@ const defaultProps = {
     }
 };
 
+const mapStateToProps = (state) => ({
+    selectedContact: state.selectedContact
+});
+
+const mapDispatchToProps = (dispatch) => (
+    bindActionCreators({setModalType, setSelectedContact, toggleModal}, dispatch)
+);
+
+
 class Contact extends Component {
-    expandContact = (event) => {
-        this.props.handleSelectCurrentContact({id: this.props.id, name: this.props.name, phoneNumber: this.props.phoneNumber});
+    expandContact = () => {
+        const {id, name, phoneNumber} = this.props;
+        this.props.setSelectedContact({id, name, phoneNumber });
     };
 
     handleClickEdit = (event) => {
-        event.stopPropagation();
-        this.props.handleSetModalType('edit');
+        if (event.target.tagName.toUpperCase() === EDIT_BUTTON_TAG_TYPE) {
+            this.props.setModalType(MODAL_TYPE_EDIT);
+            this.props.toggleModal();
+        }
     };
     handleClickDelete = (event) => {
-        event.stopPropagation();
-        this.props.handleSetModalType('delete');
+        if (event.target.tagName.toUpperCase() === DELETE_BUTTON_TAG_TYPE) {
+            this.props.setModalType(MODAL_TYPE_DELETE);
+            this.props.toggleModal();
+        }
     };
 
     render() {
@@ -55,4 +77,4 @@ Contact.propTypes = propTypes;
 Contact.defaultProps = defaultProps;
 
 
-export default Contact;
+export default connect(mapStateToProps,mapDispatchToProps)(Contact);

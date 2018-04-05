@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-    handleAddNewContact: PropTypes.func.isRequired,
-    handleShowHideModal: PropTypes.func.isRequired
+    addContact: PropTypes.func.isRequired,
+    toggleModal: PropTypes.func.isRequired
 };
 
 class ModalAdd extends Component {
@@ -35,14 +35,14 @@ class ModalAdd extends Component {
     };
 
     addCategoryHandler = () => {
-        this.props.handleAddNewContact({
+        this.props.addContact({
             id: Date.now(),
             name: this.state.inputName,
             phoneNumber: this.state.inputPhoneNumber,
             img: './src/img/contact.jpeg'
         });
 
-        this.props.handleShowHideModal();
+        this.props.toggleModal();
     };
     validateSubmitButton = () => (!this.state.inputName || !this.state.inputPhoneNumber);
 
@@ -66,7 +66,7 @@ class ModalAdd extends Component {
                 <input className="add-button" type="button" value="Add" onClick={this.addCategoryHandler}
                        disabled={this.validateSubmitButton()}/>
                 <input className="close-button" type="button" value="Close"
-                       onClick={this.props.handleShowHideModal}/>
+                       onClick={this.props.toggleModal}/>
             </div>
         </div>
     )

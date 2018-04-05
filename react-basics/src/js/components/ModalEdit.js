@@ -7,8 +7,8 @@ const propTypes = {
         name: PropTypes.string.isRequired,
         phoneNumber: PropTypes.string.isRequired
     }),
-    handleSaveContactChanges: PropTypes.func.isRequired,
-    handleShowHideModal: PropTypes.func.isRequired,
+    saveContactChanges: PropTypes.func.isRequired,
+    toggleModal: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -55,12 +55,12 @@ class ModalEdit extends Component {
     };
 
     saveContactChangesHandler = () => {
-        this.props.handleSaveContactChanges({
+        this.props.saveContactChanges({
             id: this.props.selectedContact.id,
             name: this.state.inputName,
             phoneNumber: this.state.inputPhoneNumber
         });
-        this.props.handleShowHideModal();
+        this.props.toggleModal();
     };
 
 
@@ -83,7 +83,7 @@ class ModalEdit extends Component {
                        onClick={this.saveContactChangesHandler}
                        disabled={this.validateSubmitButton()}/>
                 <input className="close-button" type="button" value="Close"
-                       onClick={this.props.handleShowHideModal}/>
+                       onClick={this.props.toggleModal}/>
             </div>
 
         </div>

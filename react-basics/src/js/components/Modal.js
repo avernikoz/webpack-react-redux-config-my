@@ -4,6 +4,11 @@ import PropTypes from 'prop-types';
 import ModalAdd from './ModalAdd';
 import ModalEdit from './ModalEdit';
 import ModalDelete from './ModalDelete';
+import {MODAL_TYPE_ADD, MODAL_TYPE_EDIT} from '../constants/modalTypes';
+
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {addContact, deleteContact, saveContactChanges, toggleModal} from '../store/actionCreators'
 
 const propTypes = {
     modalWindowOpened: PropTypes.bool.isRequired,
@@ -13,10 +18,10 @@ const propTypes = {
         name: PropTypes.string.isRequired,
         phoneNumber: PropTypes.string.isRequired
     }),
-    handleShowHideModal: PropTypes.func.isRequired,
-    handleAddNewContact: PropTypes.func.isRequired,
-    handleDeleteContact: PropTypes.func.isRequired,
-    handleSaveContactChanges: PropTypes.func.isRequired
+    addContact: PropTypes.func.isRequired,
+    toggleModal: PropTypes.func.isRequired,
+    deleteContact: PropTypes.func.isRequired,
+    saveContactChanges: PropTypes.func.isRequired
 };
 
 const defaultProps = {
@@ -25,10 +30,22 @@ const defaultProps = {
     }
 };
 
+const mapStateToProps = (state) => ({
+    modalWindowOpened: state.modalWindowOpened,
+    modalType: state.modalType,
+    selectedContact: state.selectedContact
+});
+
+const mapDispatchToProps = (dispatch) => (
+    bindActionCreators({addContact, deleteContact, saveContactChanges, toggleModal}, dispatch)
+);
+
 const Modal = ({modalWindowOpened, modalType, ...props}) => {
+    console.log(props);
+
     let modalWindowWrapperClassName = modalWindowOpened ? 'modal-window-wrapper' : 'modal-window-wrapper disabled';
-    let modal = modalType === 'add' ? (<ModalAdd {...props}/>) :
-        modalType === 'edit' ? (<ModalEdit {...props}/>) : (<ModalDelete {...props}/>);
+    let modal = modalType === MODAL_TYPE_ADD ? (<ModalAdd {...props}/>) :
+        modalType === MODAL_TYPE_EDIT ? (<ModalEdit {...props}/>) : (<ModalDelete {...props}/>);
 
     return (
         <div className={modalWindowWrapperClassName}>
@@ -42,4 +59,4 @@ const Modal = ({modalWindowOpened, modalType, ...props}) => {
 Modal.propTypes = propTypes;
 Modal.defaultProps = defaultProps;
 
-export default Modal;
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);

@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {deleteContact} from "../store/actionCreators";
 
 const propTypes = {
     selectedContact: PropTypes.shape({
         id: PropTypes.oneOfType([PropTypes.oneOf([null]), PropTypes.number]),
         name: PropTypes.string.isRequired,
     }),
-    handleDeleteContact: PropTypes.func.isRequired,
-    handleShowHideModal: PropTypes.func.isRequired
+    deleteContact: PropTypes.func.isRequired,
+    toggleModal: PropTypes.func.isRequired
 };
 
 const defaultProps = {
@@ -18,8 +19,8 @@ const defaultProps = {
 
 class ModalDelete extends Component {
     deleteCategoryHandler = (event) => {
-        this.props.handleDeleteContact(this.props.selectedContact.id);
-        this.props.handleShowHideModal();
+        this.props.deleteContact(this.props.selectedContact.id);
+        this.props.toggleModal();
     };
 
     render = () => (
@@ -31,7 +32,7 @@ class ModalDelete extends Component {
                 <input className="add-button" type="button" value="Delete"
                        onClick={this.deleteCategoryHandler}/>
                 <input className="close-button" type="button" value="Close"
-                       onClick={this.props.handleShowHideModal}/>
+                       onClick={this.props.toggleModal}/>
             </div>
         </div>
     )
