@@ -70,11 +70,11 @@ class Contact extends Component {
 
     handleClickEdit = (event) => {
         this.props.setModalType(MODAL_TYPE_EDIT);
-        this.props.toggleModal();
+        // this.props.toggleModal();
     };
     handleClickDelete = (event) => {
         this.props.setModalType(MODAL_TYPE_DELETE);
-        this.props.toggleModal();
+        // this.props.toggleModal();
     };
 
     render() {

@@ -36,7 +36,9 @@ const App = ({modalWindowOpened}) => {
                     <Footer/>
                 </div>
             </Route>
-            <Modal/>
+            <Route path='/contact/:contactId/:modalType'>
+                <Modal/>
+            </Route>
         </div>
     )
 };

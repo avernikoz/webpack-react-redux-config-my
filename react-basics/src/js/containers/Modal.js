@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {withRouter} from 'react-router-dom';
 
 import ModalAdd from '../components/ModalAdd';
 import ModalEdit from '../components/ModalEdit';
 import ModalDelete from '../components/ModalDelete';
-import {MODAL_TYPE_ADD, MODAL_TYPE_EDIT} from '../constants/modalTypes';
+import {MODAL_TYPE_ADD, MODAL_TYPE_EDIT, MODAL_TYPE_DELETE} from '../constants/modalTypes';
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -31,8 +32,8 @@ const defaultProps = {
 };
 
 const mapStateToProps = (state) => ({
-    modalWindowOpened: state.modalWindowOpened,
-    modalType: state.modalType,
+    // modalWindowOpened: state.modalWindowOpened,
+    // modalType: state.modalType,
     selectedContact: state.selectedContact
 });
 
@@ -40,21 +41,59 @@ const mapDispatchToProps = (dispatch) => (
     bindActionCreators({addContact, deleteContact, saveContactChanges, toggleModal}, dispatch)
 );
 
-const Modal = ({modalWindowOpened, modalType, ...props}) => {
-    let modalWindowWrapperClassName = modalWindowOpened ? 'modal-window-wrapper' : 'modal-window-wrapper disabled';
-    let modal = modalType === MODAL_TYPE_ADD ? (<ModalAdd {...props}/>) :
-        modalType === MODAL_TYPE_EDIT ? (<ModalEdit {...props}/>) : (<ModalDelete {...props}/>);
+class Modal extends Component {
+    componentWillMount = () => {
+        if ([MODAL_TYPE_ADD, MODAL_TYPE_EDIT, MODAL_TYPE_DELETE].includes(this.props.match.params.modalType)) {
+            this.props.toggleModal();
+        }
+    };
 
-    return (
-        <div className={modalWindowWrapperClassName}>
-            <div className="modal-window">
-                {modal}
+    render() {
+        const {props} = this;
+
+        console.log(props.match.params);
+
+        let modalType = props.match.params.modalType;
+
+        let modalWindowOpened = modalType ? true : false;
+
+        let modalWindowWrapperClassName = modalWindowOpened ? 'modal-window-wrapper' : 'modal-window-wrapper disabled';
+        let modal = modalType === MODAL_TYPE_ADD ? (<ModalAdd {...props}/>) :
+            modalType === MODAL_TYPE_EDIT ? (<ModalEdit {...props}/>) : (<ModalDelete {...props}/>);
+
+        return (
+            <div className={modalWindowWrapperClassName}>
+                <div className="modal-window">
+                    {modal}
+                </div>
             </div>
-        </div>
-    )
-};
+        )
+    }
+}
+
 
 Modal.propTypes = propTypes;
 Modal.defaultProps = defaultProps;
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Modal));
+
+
+// const Modal = ({...props}) => {
+//     console.log(props.match.params);
+//
+//     let modalType = props.match.params.modalType;
+//
+//     let modalWindowOpened = modalType ? true : false;
+//
+//     let modalWindowWrapperClassName = modalWindowOpened ? 'modal-window-wrapper' : 'modal-window-wrapper disabled';
+//     let modal = modalType === MODAL_TYPE_ADD ? (<ModalAdd {...props}/>) :
+//         modalType === MODAL_TYPE_EDIT ? (<ModalEdit {...props}/>) : (<ModalDelete {...props}/>);
+//
+//     return (
+//         <div className={modalWindowWrapperClassName}>
+//             <div className="modal-window">
+//                 {modal}
+//             </div>
+//         </div>
+//     )
+// };
