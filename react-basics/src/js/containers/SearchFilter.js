@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
+import {withRouter, Link} from 'react-router-dom'
 import {bindActionCreators} from 'redux';
 import {filterContacts} from '../store/actionCreators';
 
@@ -17,12 +18,31 @@ class SearchFilter extends Component {
     state = {
         filterValue: ''
     };
+    componentWillMount = () => {
+        if (this.props.location.search) {
+            const searchParams = new URLSearchParams(this.props.location.search);
+            const filterValueFromUrl = searchParams.get('search');
+
+            this.setState({filterValue: filterValueFromUrl});
+            this.updateFilterValueForAllComponents(filterValueFromUrl);
+        }
+    };
 
     handleChange = (event) => {
         this.setState({
             filterValue: event.target.value
-        });
-        this.props.filterContacts(event.target.value);
+        },this.searchValuesToUrl);
+        this.updateFilterValueForAllComponents(event.target.value);
+    };
+
+    updateFilterValueForAllComponents = (filterValue) => {
+        this.props.filterContacts(filterValue);
+    };
+
+    searchValuesToUrl = () => {
+        const params = new URLSearchParams();
+        params.set('search', this.state.filterValue);
+        this.props.history.push(`?${params}`);
     };
 
     render() {
@@ -35,4 +55,4 @@ class SearchFilter extends Component {
 SearchFilter.propTypes = propTypes;
 
 
-export default connect(null, mapDispatchToProps)(SearchFilter);
+export default withRouter(connect(null, mapDispatchToProps)(SearchFilter));
