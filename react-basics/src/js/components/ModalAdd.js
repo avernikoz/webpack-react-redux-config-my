@@ -39,7 +39,7 @@ class ModalAdd extends Component {
             id: Date.now(),
             name: this.state.inputName,
             phoneNumber: this.state.inputPhoneNumber,
-            img: './src/img/contact.jpeg'
+            img: '/src/img/contact.jpeg'
         });
 
         this.props.toggleModal();

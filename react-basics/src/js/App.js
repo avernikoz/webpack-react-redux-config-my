@@ -9,10 +9,12 @@ import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import {connect} from 'react-redux';
 
+import Header from './components/Header';
 import ContactsList from './containers/ContactsList';
 import SearchFilter from './containers/SearchFilter';
 import Modal from './containers/Modal';
 import AddContactButton from './containers/AddContactButton';
+import {withRouter} from 'react-router-dom'
 
 
 const mapStateToProps = (state) => ({
@@ -24,15 +26,18 @@ const App = ({modalWindowOpened}) => {
 
     return (
         <div className="app-container">
-            <div className={mainContentWrapperClassName}>
-                <SearchFilter/>
-                <ContactsList/>
-                <AddContactButton/>
-            </div>
+            <Route path='/contact/:contactId'>
+                <div className={mainContentWrapperClassName}>
+                    <Header/>
+                    <SearchFilter/>
+                    <ContactsList/>
+                    <AddContactButton/>
+                </div>
+            </Route>
             <Modal/>
         </div>
     )
 };
 
-export default connect(mapStateToProps)(App);
+export default withRouter(connect(mapStateToProps)(App));
 

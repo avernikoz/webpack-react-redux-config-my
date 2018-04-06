@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import {withRouter, Link} from 'react-router-dom'
+import {withRouter} from 'react-router-dom';
 import {bindActionCreators} from 'redux';
 import {filterContacts} from '../store/actionCreators';
 
@@ -18,6 +18,7 @@ class SearchFilter extends Component {
     state = {
         filterValue: ''
     };
+
     componentWillMount = () => {
         if (this.props.location.search) {
             const searchParams = new URLSearchParams(this.props.location.search);

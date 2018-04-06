@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.mylink, .mylink:active {
+  font-size: 40px;
+  text-decoration: none;
+  color: #9c9c9c;
+}

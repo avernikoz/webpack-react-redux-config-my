@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import {withRouter} from 'react-router-dom'
 
 import {setModalType, setSelectedContact, toggleModal} from '../store/actionCreators';
 import Contact from '../components/Contact';
@@ -29,7 +30,9 @@ const mapDispatchToProps = (dispatch) => (
     bindActionCreators({setModalType, setSelectedContact, toggleModal}, dispatch)
 );
 
-const ContactsList = ({arrayOfContacts, inputFilterText, ...props}) => (
+const ContactsList = ({arrayOfContacts, inputFilterText, ...props}) => {
+    console.log(props);
+return (
     <div className="contact-list">
         {
             // arrayOfContacts.filter(item => ([item.name.toLowerCase(),item.name].find(str => str.includes(visibilityFilter))))
@@ -38,12 +41,13 @@ const ContactsList = ({arrayOfContacts, inputFilterText, ...props}) => (
                 <Contact key={item.id}
                          {...item}
                          {...props}
+                        contactIdInUrl={+props.match.params.contactId}
                 />
             ))
         }
     </div>
-);
+)};
 
 ContactsList.propTypes = propTypes;
 
-export default connect(mapStateToProps,mapDispatchToProps)(ContactsList);
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(ContactsList));
