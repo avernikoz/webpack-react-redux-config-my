@@ -9,6 +9,7 @@ import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import {connect} from 'react-redux';
 
+import Footer from './components/Footer';
 import Header from './components/Header';
 import ContactsList from './containers/ContactsList';
 import SearchFilter from './containers/SearchFilter';
@@ -32,6 +33,7 @@ const App = ({modalWindowOpened}) => {
                     <SearchFilter/>
                     <ContactsList/>
                     <AddContactButton/>
+                    <Footer/>
                 </div>
             </Route>
             <Modal/>
