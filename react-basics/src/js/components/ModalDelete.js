@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {deleteContact} from "../store/actionCreators";
 
 const propTypes = {
     selectedContact: PropTypes.shape({

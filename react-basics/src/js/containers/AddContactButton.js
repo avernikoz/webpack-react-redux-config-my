@@ -17,7 +17,7 @@ const mapDispatchToProps = dispatch => (
 //     filterContacts: inputText => dispatch(filterContacts(inputText))
 // });
 
-class Button extends Component {
+class AddContactButton extends Component {
 
     handleClick = () => {
         this.props.setModalType(MODAL_TYPE_ADD);
@@ -33,6 +33,6 @@ class Button extends Component {
     }
 }
 
-Button.propTypes = propTypes;
+AddContactButton.propTypes = propTypes;
 
-export default connect(null, mapDispatchToProps)(Button);
+export default connect(null, mapDispatchToProps)(AddContactButton);

@@ -8,6 +8,11 @@ export function setModalType(modalType) {
     return {type: types.SET_MODAL_TYPE, modalType}
 }
 
+
+
+
+
+
 export function filterContacts(inputFilterText) {
     return {
         type: types.FILTER_CONTACTS,
@@ -21,9 +26,6 @@ export function setSelectedContact(selectedContact) {
         selectedContact
     }
 }
-
-
-//other stuff
 
 export function addContact(newContact) {
     return {

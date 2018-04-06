@@ -4,9 +4,7 @@
 // Должен ли быть isRequired там, где нет isRequaired?
 // https://www.npmjs.com/package/airbnb-prop-types
 
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-
+import React from 'react';
 
 import {Route, Switch} from 'react-router-dom';
 import {connect} from 'react-redux';
@@ -14,33 +12,27 @@ import {connect} from 'react-redux';
 import ContactsList from './containers/ContactsList';
 import SearchFilter from './containers/SearchFilter';
 import Modal from './containers/Modal';
-import Button from './containers/Button';
-import defaultContacts from './constants/defaultContacts';
-
-
-//App
+import AddContactButton from './containers/AddContactButton';
 
 
 const mapStateToProps = (state) => ({
     modalWindowOpened: state.modalWindowOpened
 });
 
-class App extends Component {
-    render() {
-        let mainContentWrapperClassName = this.props.modalWindowOpened ? 'main-content-wrapper blurred' : 'app-main-content-wrapper';
+const App = ({modalWindowOpened}) => {
+    let mainContentWrapperClassName = modalWindowOpened ? 'main-content-wrapper blurred' : 'app-main-content-wrapper';
 
-        return (
-            <div className="app-container">
-                <div className={mainContentWrapperClassName}>
-                    <SearchFilter/>
-                    <ContactsList/>
-                    <Button/>
-                </div>
-                <Modal/>
+    return (
+        <div className="app-container">
+            <div className={mainContentWrapperClassName}>
+                <SearchFilter/>
+                <ContactsList/>
+                <AddContactButton/>
             </div>
-        )
-    }
-}
+            <Modal/>
+        </div>
+    )
+};
 
 export default connect(mapStateToProps)(App);
 
