@@ -38,6 +38,8 @@ class Contact extends Component {
         if (+this.props.match.params.contactId === this.props.id) {
             const {id, name, phoneNumber} = this.props;
             this.props.setSelectedContact({id, name, phoneNumber});
+            console.log('sadsad');
+
         }
     };
 

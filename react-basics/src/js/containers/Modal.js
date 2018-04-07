@@ -9,11 +9,11 @@ import {MODAL_TYPE_ADD, MODAL_TYPE_EDIT, MODAL_TYPE_DELETE} from '../constants/m
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {addContact, deleteContact, saveContactChanges, toggleModal} from '../store/actionCreators'
+import {addContact, deleteContact, saveContactChanges, setSelectedContact, toggleModal} from '../store/actionCreators'
 
 const propTypes = {
-    modalWindowOpened: PropTypes.bool.isRequired,
-    modalType: PropTypes.string.isRequired,
+    // modalWindowOpened: PropTypes.bool.isRequired,
+    // modalType: PropTypes.string.isRequired,
     selectedContact: PropTypes.shape({
         id: PropTypes.oneOfType([PropTypes.oneOf([null]), PropTypes.number]),
         name: PropTypes.string.isRequired,
@@ -33,7 +33,7 @@ const defaultProps = {
 
 const mapStateToProps = (state) => ({
     modalWindowOpened: state.modalWindowOpened,
-    modalType: state.modalType,
+    // modalType: state.modalType,
     selectedContact: state.selectedContact
 });
 
@@ -42,11 +42,12 @@ const mapDispatchToProps = (dispatch) => (
 );
 
 class Modal extends Component {
-    componentWillMount = () => {
+    componentDidMount = () => {
         if ([MODAL_TYPE_ADD, MODAL_TYPE_EDIT, MODAL_TYPE_DELETE].includes(this.props.match.params.modalType)) {
-            this.props.toggleModal();
+            // this.props.toggleModal();
         }
     };
+
 
     render() {
         const {props} = this;
@@ -54,7 +55,8 @@ class Modal extends Component {
         console.log(props.match.params);
 
         let modalType = props.match.params.modalType;
-        let modalWindowOpened = modalType ? true : false;
+        //TODO: FIX WHEN selectedContac.id may be zero
+        let modalWindowOpened = modalType && props.selectedContact.id ? true : false;
 
         // let modalType = props.modalType;
         // let modalWindowOpened = props.modalWindowOpened;

@@ -13,7 +13,7 @@ const propTypes = {
 const mapDispatchToProps = (dispatch) => (
     bindActionCreators({filterContacts},dispatch)
 );
-
+//TODO: Need to fix autofocus
 class SearchFilter extends Component {
     state = {
         filterValue: ''
