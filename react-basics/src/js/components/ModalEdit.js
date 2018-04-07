@@ -55,12 +55,26 @@ class ModalEdit extends Component {
     };
 
     saveContactChangesHandler = () => {
+
         this.props.saveContactChanges({
             id: this.props.selectedContact.id,
             name: this.state.inputName,
             phoneNumber: this.state.inputPhoneNumber
         });
+
+        this.props.saveSelectedContactChanges({
+            id: this.props.selectedContact.id,
+            name: this.state.inputName,
+            phoneNumber: this.state.inputPhoneNumber
+        });
+
         this.props.toggleModal();
+        this.props.history.replace(`/contact/${this.props.selectedContact.id}`);
+    };
+
+    closeContactHandler = () => {
+        this.props.toggleModal();
+        this.props.history.replace(`/contact/${this.props.selectedContact.id}`);
     };
 
 
@@ -83,7 +97,7 @@ class ModalEdit extends Component {
                        onClick={this.saveContactChangesHandler}
                        disabled={this.validateSubmitButton()}/>
                 <input className="close-button" type="button" value="Close"
-                       onClick={this.props.toggleModal}/>
+                       onClick={this.closeContactHandler}/>
             </div>
 
         </div>

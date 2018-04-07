@@ -5,11 +5,11 @@ import {withRouter} from 'react-router-dom';
 import ModalAdd from '../components/ModalAdd';
 import ModalEdit from '../components/ModalEdit';
 import ModalDelete from '../components/ModalDelete';
-import {MODAL_TYPE_ADD, MODAL_TYPE_EDIT, MODAL_TYPE_DELETE} from '../constants/modalTypes';
+import {MODAL_TYPE_ADD, MODAL_TYPE_EDIT} from '../constants/modalTypes';
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {addContact, deleteContact, saveContactChanges, setSelectedContact, toggleModal} from '../store/actionCreators'
+import {addContact, deleteContact, saveContactChanges, toggleModal, saveSelectedContactChanges} from '../store/actionCreators'
 
 const propTypes = {
     // modalWindowOpened: PropTypes.bool.isRequired,
@@ -32,75 +32,46 @@ const defaultProps = {
 };
 
 const mapStateToProps = (state) => ({
-    modalWindowOpened: state.modalWindowOpened,
-    // modalType: state.modalType,
     selectedContact: state.selectedContact
 });
 
 const mapDispatchToProps = (dispatch) => (
-    bindActionCreators({addContact, deleteContact, saveContactChanges, toggleModal}, dispatch)
+    bindActionCreators({addContact, deleteContact, saveContactChanges, saveSelectedContactChanges, toggleModal}, dispatch)
 );
 
-class Modal extends Component {
-    componentDidMount = () => {
-        if ([MODAL_TYPE_ADD, MODAL_TYPE_EDIT, MODAL_TYPE_DELETE].includes(this.props.match.params.modalType)) {
-            // this.props.toggleModal();
-        }
-    };
+const Modal = ({...props}) => {
+
+    // console.log('sadasd');
 
 
-    render() {
-        const {props} = this;
+    let modalType = props.match.params.modalType;
 
-        console.log(props.match.params);
-
-        let modalType = props.match.params.modalType;
-        //TODO: FIX WHEN selectedContac.id may be zero
-        let modalWindowOpened = modalType && props.selectedContact.id ? true : false;
-
-        // let modalType = props.modalType;
-        // let modalWindowOpened = props.modalWindowOpened;
-
-        console.log(modalType, modalWindowOpened);
-
-
-        let modalWindowWrapperClassName = modalWindowOpened ? 'modal-window-wrapper' : 'modal-window-wrapper disabled';
-        let modal = modalType === MODAL_TYPE_ADD ? (<ModalAdd {...props}/>) :
-            modalType === MODAL_TYPE_EDIT ? (<ModalEdit {...props}/>) : (<ModalDelete {...props}/>);
-
-        return (
-            <div className={modalWindowWrapperClassName}>
-                <div className="modal-window">
-                    {modal}
-                </div>
-            </div>
-        )
+    let modalWindowOpened;
+    if (modalType === 'add') {
+        modalWindowOpened = true;
     }
-}
+    else {
+        modalWindowOpened = modalType && props.selectedContact.id ? true : false;
+    }
+
+    console.log(modalType, modalWindowOpened);
+
+
+    let modalWindowWrapperClassName = modalWindowOpened ? 'modal-window-wrapper' : 'modal-window-wrapper disabled';
+    let modal = modalType === MODAL_TYPE_ADD ? (<ModalAdd {...props}/>) :
+        modalType === MODAL_TYPE_EDIT ? (<ModalEdit {...props}/>) : (<ModalDelete {...props}/>);
+
+    return (
+        <div className={modalWindowWrapperClassName}>
+            <div className="modal-window">
+                {modal}
+            </div>
+        </div>
+    )
+};
 
 
 Modal.propTypes = propTypes;
 Modal.defaultProps = defaultProps;
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Modal));
-
-
-// const Modal = ({...props}) => {
-//     console.log(props.match.params);
-//
-//     let modalType = props.match.params.modalType;
-//
-//     let modalWindowOpened = modalType ? true : false;
-//
-//     let modalWindowWrapperClassName = modalWindowOpened ? 'modal-window-wrapper' : 'modal-window-wrapper disabled';
-//     let modal = modalType === MODAL_TYPE_ADD ? (<ModalAdd {...props}/>) :
-//         modalType === MODAL_TYPE_EDIT ? (<ModalEdit {...props}/>) : (<ModalDelete {...props}/>);
-//
-//     return (
-//         <div className={modalWindowWrapperClassName}>
-//             <div className="modal-window">
-//                 {modal}
-//             </div>
-//         </div>
-//     )
-// };

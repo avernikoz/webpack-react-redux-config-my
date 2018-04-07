@@ -30,11 +30,11 @@ class ModalAdd extends Component {
 
     keyPressHandler = (event) => {
         if (event.which === 13 && this.validateSubmitButton()) {
-            this.addCategoryHandler();
+            this.addContactHandler();
         }
     };
 
-    addCategoryHandler = () => {
+    addContactHandler = () => {
         this.props.addContact({
             id: Date.now(),
             name: this.state.inputName,
@@ -43,7 +43,15 @@ class ModalAdd extends Component {
         });
 
         this.props.toggleModal();
+        this.props.history.replace(`/contact/${this.props.selectedContact.id}`);
+
     };
+
+    closeContactHandler = () => {
+        this.props.toggleModal();
+        this.props.history.replace(`/contact/${this.props.selectedContact.id}`);
+    };
+
     validateSubmitButton = () => (!this.state.inputName || !this.state.inputPhoneNumber);
 
 
@@ -63,10 +71,10 @@ class ModalAdd extends Component {
                    onChange={this.inputChangePhoneHandler} onKeyPress={this.keyPressHandler}
             />
             <div className="modal-action-buttons-container">
-                <input className="add-button" type="button" value="Add" onClick={this.addCategoryHandler}
+                <input className="add-button" type="button" value="Add" onClick={this.addContactHandler}
                        disabled={this.validateSubmitButton()}/>
                 <input className="close-button" type="button" value="Close"
-                       onClick={this.props.toggleModal}/>
+                       onClick={this.closeContactHandler}/>
             </div>
         </div>
     )

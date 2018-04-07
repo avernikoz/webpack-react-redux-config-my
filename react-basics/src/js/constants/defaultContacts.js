@@ -1,28 +1,28 @@
 const contacts = [
     {
-        id: 0,
-        name: 'Darth Vader',
-        phoneNumber: '+250966666666',
-        img: '/src/img/contact.jpeg'
-    },
-    {
         id: 1,
-        name: 'Princess Leia',
-        phoneNumber: '+250966666666',
+        name: 'Darth Vader',
+        phoneNumber: '+123456789000',
         img: '/src/img/contact.jpeg'
-
     },
     {
         id: 2,
-        name: 'Luke Skywalker',
-        phoneNumber: '+250966666666',
+        name: 'Princess Leia',
+        phoneNumber: '+182347283612',
         img: '/src/img/contact.jpeg'
 
     },
     {
         id: 3,
+        name: 'Luke Skywalker',
+        phoneNumber: '+375263294743',
+        img: '/src/img/contact.jpeg'
+
+    },
+    {
+        id: 4,
         name: 'Chewbacca',
-        phoneNumber: '+250966666666',
+        phoneNumber: '+2938273632651',
         img: '/src/img/contact.jpeg'
 
     }

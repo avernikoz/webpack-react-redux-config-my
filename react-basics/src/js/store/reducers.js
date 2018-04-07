@@ -1,4 +1,4 @@
-import {FILTER_CONTACTS, SET_MODAL_TYPE, TOGGLE_MODAL, SET_SELECTED_CONTACT, ADD_CONTACT, DELETE_CONTACT, SAVE_EDITED_CONTACT} from '../constants/actionTypes';
+import {FILTER_CONTACTS, SET_MODAL_TYPE, TOGGLE_MODAL, SET_SELECTED_CONTACT, ADD_CONTACT, DELETE_CONTACT, SAVE_EDITED_CONTACT, SAVE_SELECTED_CONTACT} from '../constants/actionTypes';
 import defaultContacts from '../constants/defaultContacts';
 
 
@@ -34,7 +34,7 @@ export function rootReducer(state = initialState, action) {
         case SET_SELECTED_CONTACT:
             return {
                 ...state,
-                selectedContact: action.selectedContact.id === state.selectedContact.id ? {...state.selectedContact, id: null} : action.selectedContact
+                selectedContact: action.selectedContact
             };
         case ADD_CONTACT:
             return {
@@ -49,33 +49,14 @@ export function rootReducer(state = initialState, action) {
         case SAVE_EDITED_CONTACT:
             return {
                 ...state,
-                contacts: [...state.contacts.map((elem) => elem.id === action.changedContact.id ? {...elem, ...action.changedContact} : elem)]
+                contacts: [...state.contacts.map((elem) => elem.id === action.changedContact.id ? {...elem, ...action.changedContact} : elem)],
+            };
+        case SAVE_SELECTED_CONTACT:
+            return {
+                ...state,
+                selectedContact: action.changedContact
             };
         default:
             return state;
-    }
-}
-
-function todos(state = [], action) {
-    switch (action.type) {
-        case 'ADD_TODO':
-            return [
-                ...state,
-                {
-                    text: action.text,
-                    completed: false
-                }
-            ];
-        case 'COMPLETE_TODO':
-            return state.map((todo, index) => {
-                if (index === action.index) {
-                    return Object.assign({}, todo, {
-                        completed: true
-                    })
-                }
-                return todo
-            });
-        default:
-            return state
     }
 }

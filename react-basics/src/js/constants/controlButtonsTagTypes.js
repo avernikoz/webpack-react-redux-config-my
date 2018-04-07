@@ -1,3 +1,0 @@
-export const EDIT_BUTTON_TAG_TYPE = 'BUTTON';
-export const DELETE_BUTTON_TAG_TYPE = 'BUTTON';
-

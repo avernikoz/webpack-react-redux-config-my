@@ -17,7 +17,7 @@ const defaultProps = {
 };
 
 class ModalDelete extends Component {
-    deleteCategoryHandler = (event) => {
+    deleteContactHandler = () => {
         this.props.deleteContact(this.props.selectedContact.id);
         this.props.toggleModal();
         this.props.history.replace(`/contact/${this.props.selectedContact.id}`);
@@ -34,7 +34,7 @@ class ModalDelete extends Component {
             </div>
             <div className="modal-action-buttons-container">
                 <input className="add-button" type="button" value="Delete"
-                       onClick={this.deleteCategoryHandler}/>
+                       onClick={this.deleteContactHandler}/>
                 <input className="close-button" type="button" value="Close"
                        onClick={this.closeContactHandler}/>
             </div>

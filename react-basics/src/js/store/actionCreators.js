@@ -48,5 +48,10 @@ export function saveContactChanges(changedContact) {
     }
 }
 
-
+export function saveSelectedContactChanges(changedContact) {
+    return {
+        type: types.SAVE_SELECTED_CONTACT,
+        changedContact,
+    }
+}
 

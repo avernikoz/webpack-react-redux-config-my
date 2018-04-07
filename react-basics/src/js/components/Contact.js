@@ -2,11 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
-
-import {EDIT_BUTTON_TAG_TYPE, DELETE_BUTTON_TAG_TYPE} from '../constants/controlButtonsTagTypes'
 import {MODAL_TYPE_EDIT, MODAL_TYPE_DELETE} from '../constants/modalTypes';
 
-//TODO: REWRITE stop.Propagation to something else ++++
 
 const propTypes = {
     id: PropTypes.number.isRequired,
@@ -33,35 +30,11 @@ const defaultProps = {
 class Contact extends Component {
 
     componentWillMount = () => {
-        // console.log(this.props.match.params.contactId);
-
         if (+this.props.match.params.contactId === this.props.id) {
             const {id, name, phoneNumber} = this.props;
             this.props.setSelectedContact({id, name, phoneNumber});
-            console.log('sadsad');
-
         }
     };
-
-    componentWillReceiveProps = (nextProps) => {
-
-        // const contactIdFromUrl = +nextProps.history.location.pathname.match(/(?<=contact\/)\d*$/g)[0];
-        // console.log(contactIdFromUrl);
-
-
-        // if (contactIdFromUrl === this.props.id) {
-        //     console.log('true');
-        // console.log('nextprop:  '+nextProps.match.params.contactId);
-        // console.log('from parent:  '+nextProps.contactIdInUrl);
-        //
-
-        // if (+nextProps.contactIdInUrl  === this.props.id) {
-        //
-        //     const {id, name, phoneNumber} = this.props;
-        //     this.props.setSelectedContact({id, name, phoneNumber});
-        // }
-    };
-
     expandContact = (event) => {
         if (event.target === event.currentTarget) {
             const {id, name, phoneNumber} = this.props;
@@ -70,13 +43,11 @@ class Contact extends Component {
         }
     };
 
-    handleClickEdit = (event) => {
+    handleClickEdit = () => {
         this.props.setModalType(MODAL_TYPE_EDIT);
-        // this.props.toggleModal();
     };
-    handleClickDelete = (event) => {
+    handleClickDelete = () => {
         this.props.setModalType(MODAL_TYPE_DELETE);
-        // this.props.toggleModal();
     };
 
     render() {

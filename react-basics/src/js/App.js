@@ -19,21 +19,28 @@ import {withRouter} from 'react-router-dom'
 
 
 const mapStateToProps = (state) => ({
-    // modalWindowOpened: state.modalWindowOpened
+    selectedContact: state.selectedContact
 });
 
 class App extends Component {
 
 
     render() {
-        let mainContentWrapperClassName = false ? 'main-content-wrapper blurred' : 'app-main-content-wrapper';
-        // console.log(props);
+        console.log('rerender');
 
+        const path = this.props.location.pathname;
+        const checkIfModalOpened = /^\/contact\/\d+\/(delete|edit|add)$/.test(path);
+        const selectedContactId = this.props.selectedContact.id;
+
+        // const selectedContactId = false;
+
+
+        const mainContentWrapperClassName = (checkIfModalOpened && selectedContactId) ? 'main-content-wrapper blurred' : 'app-main-content-wrapper';
 
         return (
             <div className="app-container">
                 <Switch>
-                    <Route exact path='/' component={props =>
+                    <Route exact path='/' render={props =>
                         <div className={mainContentWrapperClassName}>
                             <Header/>
                             <SearchFilter/>
@@ -42,7 +49,7 @@ class App extends Component {
                             <Footer/>
                         </div>
                     }/>
-                    <Route path='/contact/:contactId' component={props =>
+                    <Route path='/contact/:contactId' render={props =>
                         <div className={mainContentWrapperClassName}>
                             <Header/>
                             <SearchFilter/>
@@ -51,19 +58,20 @@ class App extends Component {
                             <Footer/>
                         </div>
                     }/>
-                    <Route component={() =>
+                    <Route render={() =>
                         <div>
                             <Header/>
                             <NoMatch/>
                             <Footer/>
                         </div>
                     }/>
-
                 </Switch>
-
-                <Route path='/contact/:contactId/:modalType(edit|add|delete)'>
-                    <Modal/>
-                </Route>
+                    <Route path='/contact/:contactId/:modalType(edit|add|delete)'>
+                        <Modal/>
+                    </Route>
+                    <Route path='/:modalType(add)'>
+                        <Modal/>
+                    </Route>
             </div>
 
         )
@@ -72,47 +80,3 @@ class App extends Component {
 
 export default withRouter(connect(mapStateToProps)(App));
 
-
-// const App = ({modalWindowOpened = true, ...props}) => {
-//     let mainContentWrapperClassName = modalWindowOpened ? 'main-content-wrapper blurred' : 'app-main-content-wrapper';
-//     console.log(props);
-//
-//
-//     return (
-//         <div className="app-container">
-//             <Switch>
-//                 <Route path='/:contact?/:contactId?/:option?' component={props =>
-//                     <div className={mainContentWrapperClassName}>
-//                         <Header/>
-//                         <SearchFilter/>
-//                         <ContactsList/>
-//                         <AddContactButton/>
-//                         <Footer/>
-//                     </div>
-//                 }/>
-//                 <Route path='/contact/:contactId' component={props =>
-//                     <div className={mainContentWrapperClassName}>
-//                         <Header/>
-//                         <SearchFilter/>
-//                         <ContactsList/>
-//                         <AddContactButton/>
-//                         <Footer/>
-//                     </div>
-//                 }/>
-//                 <Route component={() =>
-//                     <div>
-//                         <Header/>
-//                         <NoMatch/>
-//                         <Footer/>
-//                     </div>
-//                 }/>
-//
-//             </Switch>
-//
-//             <Route path='/contact/:contactId/:modalType(edit|add|delete)'>
-//                 <Modal/>
-//             </Route>
-//         </div>
-//
-//     )
-// };

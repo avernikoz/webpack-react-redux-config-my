@@ -30,12 +30,9 @@ const mapDispatchToProps = (dispatch) => (
     bindActionCreators({setModalType, setSelectedContact, toggleModal}, dispatch)
 );
 
-const ContactsList = ({arrayOfContacts, inputFilterText, ...props}) => {
-    // console.log(props);
-return (
+const ContactsList = ({arrayOfContacts, inputFilterText, ...props}) => (
     <div className="contact-list">
         {
-            // arrayOfContacts.filter(item => ([item.name.toLowerCase(),item.name].find(str => str.includes(visibilityFilter))))
             arrayOfContacts.filter(item => (item.name.toLowerCase().indexOf(inputFilterText) !== -1 || item.name.indexOf(inputFilterText) !== -1))
                 .map(item => (
                 <Contact key={item.id}
@@ -46,7 +43,7 @@ return (
             ))
         }
     </div>
-)};
+);
 
 ContactsList.propTypes = propTypes;
 

@@ -13,7 +13,7 @@ const propTypes = {
 const mapDispatchToProps = (dispatch) => (
     bindActionCreators({filterContacts},dispatch)
 );
-//TODO: Need to fix autofocus
+
 class SearchFilter extends Component {
     state = {
         filterValue: ''
@@ -21,11 +21,15 @@ class SearchFilter extends Component {
 
     componentWillMount = () => {
         if (this.props.location.search) {
+            console.log(this.props.location);
+
             const searchParams = new URLSearchParams(this.props.location.search);
             const filterValueFromUrl = searchParams.get('search');
 
             this.setState({filterValue: filterValueFromUrl});
             this.updateFilterValueForAllComponents(filterValueFromUrl);
+            console.log('will mount event');
+
         }
     };
 

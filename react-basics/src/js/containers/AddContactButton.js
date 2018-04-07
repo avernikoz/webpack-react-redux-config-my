@@ -5,6 +5,7 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {setModalType, toggleModal} from '../store/actionCreators';
 import {MODAL_TYPE_ADD} from "../constants/modalTypes";
+import {Link} from 'react-router-dom';
 
 const propTypes = {
     setModalType: PropTypes.func.isRequired
@@ -13,21 +14,19 @@ const propTypes = {
 const mapDispatchToProps = dispatch => (
     bindActionCreators({setModalType, toggleModal}, dispatch)
 );
-// const mapDispatchToProps = dispatch => ({
-//     filterContacts: inputText => dispatch(filterContacts(inputText))
-// });
 
 class AddContactButton extends Component {
 
     handleClick = () => {
         this.props.setModalType(MODAL_TYPE_ADD);
-        this.props.toggleModal();
     };
 
     render() {
         return (
             <div className="add-button-new-contact-container">
-                <button className="add-button-new-contact" onClick={this.handleClick}>new conctact</button>
+                <Link to={`/add`}>
+                    <button className="add-button-new-contact" onClick={this.handleClick}>new contact</button>
+                </Link>
             </div>
         );
     }
