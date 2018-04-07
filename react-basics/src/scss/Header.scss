@@ -1,3 +1,5 @@
+@import 'variables';
+
 .header {
   display: flex;
   justify-content: center;
@@ -8,5 +10,5 @@
 .mylink, .mylink:active {
   font-size: 40px;
   text-decoration: none;
-  color: #9c9c9c;
+  color: $gray-color;
 }

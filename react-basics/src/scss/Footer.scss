@@ -1,3 +1,5 @@
+@import "variables";
+
 .footer {
   display: flex;
   justify-content: center;
@@ -6,5 +8,5 @@
   margin-top: 40px;
   font-size: 13px;
   border-top: 1px solid;
-  color: #9c9c9c;
+  color: $gray-color;
 }

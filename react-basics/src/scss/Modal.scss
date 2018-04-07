@@ -1,3 +1,5 @@
+@import "variables";
+
 .modal-window-wrapper {
   position: absolute;
   width: 100%;
@@ -27,7 +29,7 @@
   opacity: 1;
   transition: opacity 0.3s ease;
 
-  color: #9c9c9c;
+  color: $gray-color;
   overflow: hidden;
 }
 
@@ -65,8 +67,8 @@
 }
 
 .modal-window .add-button:hover:not(:disabled), .modal-window-large .add-button:hover:not(:disabled){
-  border: 2px solid #52b56c;
-  background-color: #52b56c;
+  border: 2px solid $green-color;
+  background-color: $green-color;
   color: white;
 }
 
@@ -74,7 +76,7 @@
   width: 100px;
   background-color: transparent;
   border-radius: 28px;
-  border: 2px solid #52b56c;
+  border: 2px solid $green-color;
   cursor: pointer;
   font-size: 14px;
   padding: 6px 6px;
@@ -85,7 +87,7 @@
 }
 
 .add-button:hover {
-  background-color: #9c9c9c;
+  background-color: $gray-color;
 }
 
 .add-button:focus, .close-button:focus {
@@ -102,12 +104,12 @@
   text-transform: uppercase;
   text-decoration: none;
   box-sizing: border-box;
-  border: 2px solid #9c9c9c;
+  border: 2px solid $gray-color;
 }
 
 .close-button:hover {
   color: white;
-  background-color: #9c9c9c;
+  background-color: $gray-color;
 }
 
 .task-textarea {
@@ -126,6 +128,6 @@
 }
 
 .add-button:disabled {
-  border: 2px solid #9c9c9c;
+  border: 2px solid $gray-color;
   cursor: not-allowed;
 }
