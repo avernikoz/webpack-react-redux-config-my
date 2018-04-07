@@ -31,7 +31,7 @@ const mapDispatchToProps = (dispatch) => (
 );
 
 const ContactsList = ({arrayOfContacts, inputFilterText, ...props}) => {
-    console.log(props);
+    // console.log(props);
 return (
     <div className="contact-list">
         {

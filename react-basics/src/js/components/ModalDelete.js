@@ -20,6 +20,11 @@ class ModalDelete extends Component {
     deleteCategoryHandler = (event) => {
         this.props.deleteContact(this.props.selectedContact.id);
         this.props.toggleModal();
+        this.props.history.replace(`/contact/${this.props.selectedContact.id}`);
+    };
+    closeContactHandler = () => {
+        this.props.toggleModal();
+        this.props.history.replace(`/contact/${this.props.selectedContact.id}`);
     };
 
     render = () => (
@@ -31,7 +36,7 @@ class ModalDelete extends Component {
                 <input className="add-button" type="button" value="Delete"
                        onClick={this.deleteCategoryHandler}/>
                 <input className="close-button" type="button" value="Close"
-                       onClick={this.props.toggleModal}/>
+                       onClick={this.closeContactHandler}/>
             </div>
         </div>
     )

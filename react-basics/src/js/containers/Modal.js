@@ -32,8 +32,8 @@ const defaultProps = {
 };
 
 const mapStateToProps = (state) => ({
-    // modalWindowOpened: state.modalWindowOpened,
-    // modalType: state.modalType,
+    modalWindowOpened: state.modalWindowOpened,
+    modalType: state.modalType,
     selectedContact: state.selectedContact
 });
 
@@ -54,8 +54,13 @@ class Modal extends Component {
         console.log(props.match.params);
 
         let modalType = props.match.params.modalType;
-
         let modalWindowOpened = modalType ? true : false;
+
+        // let modalType = props.modalType;
+        // let modalWindowOpened = props.modalWindowOpened;
+
+        console.log(modalType, modalWindowOpened);
+
 
         let modalWindowWrapperClassName = modalWindowOpened ? 'modal-window-wrapper' : 'modal-window-wrapper disabled';
         let modal = modalType === MODAL_TYPE_ADD ? (<ModalAdd {...props}/>) :

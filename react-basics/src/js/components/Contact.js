@@ -49,8 +49,8 @@ class Contact extends Component {
 
         // if (contactIdFromUrl === this.props.id) {
         //     console.log('true');
-        console.log('nextprop:  '+nextProps.match.params.contactId);
-        console.log('from parent:  '+nextProps.contactIdInUrl);
+        // console.log('nextprop:  '+nextProps.match.params.contactId);
+        // console.log('from parent:  '+nextProps.contactIdInUrl);
         //
 
         // if (+nextProps.contactIdInUrl  === this.props.id) {

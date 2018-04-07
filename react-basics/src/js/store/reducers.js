@@ -42,8 +42,6 @@ export function rootReducer(state = initialState, action) {
                 contacts: [action.newContact,...state.contacts]
             };
         case DELETE_CONTACT:
-            console.log('sdasdas');
-
             return {
                 ...state,
                 contacts: [...state.contacts.filter((elem) => elem.id !== action.idContactToDelete)]

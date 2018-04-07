@@ -27,7 +27,7 @@ const App = ({modalWindowOpened}) => {
 
     return (
         <div className="app-container">
-            <Route path='/contact/:contactId'>
+            <Route path='/contact/:contactId' component={props =>
                 <div className={mainContentWrapperClassName}>
                     <Header/>
                     <SearchFilter/>
@@ -35,11 +35,15 @@ const App = ({modalWindowOpened}) => {
                     <AddContactButton/>
                     <Footer/>
                 </div>
-            </Route>
-            <Route path='/contact/:contactId/:modalType'>
+            } />
+            {/*</Route>*/}
+
+
+            <Route path='/contact/:contactId/:modalType(edit|add|delete)'>
                 <Modal/>
             </Route>
         </div>
+
     )
 };
 
