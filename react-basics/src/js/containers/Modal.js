@@ -5,15 +5,19 @@ import {withRouter} from 'react-router-dom';
 import ModalAdd from '../components/ModalAdd';
 import ModalEdit from '../components/ModalEdit';
 import ModalDelete from '../components/ModalDelete';
-import {MODAL_TYPE_ADD, MODAL_TYPE_EDIT} from '../constants/modalTypes';
+import {MODAL_TYPE_ADD, MODAL_TYPE_EDIT, MODAL_TYPE_DELETE} from '../constants/modalTypes';
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {addContact, deleteContact, saveContactChanges, toggleModal, saveSelectedContactChanges} from '../store/actionCreators'
+import {
+    addContact,
+    deleteContact,
+    saveContactChanges,
+    toggleModal,
+    saveSelectedContactChanges
+} from '../store/actionCreators'
 
 const propTypes = {
-    // modalWindowOpened: PropTypes.bool.isRequired,
-    // modalType: PropTypes.string.isRequired,
     selectedContact: PropTypes.shape({
         id: PropTypes.oneOfType([PropTypes.oneOf([null]), PropTypes.number]),
         name: PropTypes.string.isRequired,
@@ -36,38 +40,51 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => (
-    bindActionCreators({addContact, deleteContact, saveContactChanges, saveSelectedContactChanges, toggleModal}, dispatch)
+    bindActionCreators({
+        addContact,
+        deleteContact,
+        saveContactChanges,
+        saveSelectedContactChanges,
+        toggleModal
+    }, dispatch)
 );
 
-const Modal = ({...props}) => {
+class Modal extends Component {
+    componentWillMount = () => {
+        if ([MODAL_TYPE_ADD, MODAL_TYPE_EDIT, MODAL_TYPE_DELETE].includes(this.props.match.params.modalType)) {
+            this.props.toggleModal();
+        }
+    };
 
-    // console.log('sadasd');
+    render() {
 
+        const {props} = this;
+        let modalType = props.match.params.modalType;
 
-    let modalType = props.match.params.modalType;
+        let modalWindowOpened;
+        if (modalType === 'add') {
+            modalWindowOpened = true;
+        }
+        else {
+            modalWindowOpened = modalType && props.selectedContact.id ? true : false;
 
-    let modalWindowOpened;
-    if (modalType === 'add') {
-        modalWindowOpened = true;
-    }
-    else {
-        modalWindowOpened = modalType && props.selectedContact.id ? true : false;
-    }
+            if (modalWindowOpened) {
+                // props.toggleModal();
+            }
+        }
 
-    console.log(modalType, modalWindowOpened);
+        let modalWindowWrapperClassName = modalWindowOpened ? 'modal-window-wrapper' : 'modal-window-wrapper disabled';
+        let modal = modalType === MODAL_TYPE_ADD ? (<ModalAdd {...props}/>) :
+            modalType === MODAL_TYPE_EDIT ? (<ModalEdit {...props}/>) : (<ModalDelete {...props}/>);
 
-
-    let modalWindowWrapperClassName = modalWindowOpened ? 'modal-window-wrapper' : 'modal-window-wrapper disabled';
-    let modal = modalType === MODAL_TYPE_ADD ? (<ModalAdd {...props}/>) :
-        modalType === MODAL_TYPE_EDIT ? (<ModalEdit {...props}/>) : (<ModalDelete {...props}/>);
-
-    return (
-        <div className={modalWindowWrapperClassName}>
-            <div className="modal-window">
-                {modal}
+        return (
+            <div className={modalWindowWrapperClassName}>
+                <div className="modal-window">
+                    {modal}
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 };
 
 

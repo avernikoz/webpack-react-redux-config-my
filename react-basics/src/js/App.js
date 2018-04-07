@@ -19,23 +19,16 @@ import {withRouter} from 'react-router-dom'
 
 
 const mapStateToProps = (state) => ({
-    selectedContact: state.selectedContact
+    modalWindowOpened: state.modalWindowOpened
 });
 
 class App extends Component {
 
-
     render() {
-        console.log('rerender');
 
-        const path = this.props.location.pathname;
-        const checkIfModalOpened = /^\/contact\/\d+\/(delete|edit|add)$/.test(path);
-        const selectedContactId = this.props.selectedContact.id;
+        // console.log('rerender');
 
-        // const selectedContactId = false;
-
-
-        const mainContentWrapperClassName = (checkIfModalOpened && selectedContactId) ? 'main-content-wrapper blurred' : 'app-main-content-wrapper';
+        const mainContentWrapperClassName = this.props.modalWindowOpened ? 'main-content-wrapper blurred' : 'app-main-content-wrapper';
 
         return (
             <div className="app-container">

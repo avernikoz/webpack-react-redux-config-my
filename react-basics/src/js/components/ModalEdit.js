@@ -69,12 +69,12 @@ class ModalEdit extends Component {
         });
 
         this.props.toggleModal();
-        this.props.history.replace(`/contact/${this.props.selectedContact.id}`);
+        this.props.history.push(`/contact/${this.props.selectedContact.id}`);
     };
 
     closeContactHandler = () => {
         this.props.toggleModal();
-        this.props.history.replace(`/contact/${this.props.selectedContact.id}`);
+        this.props.history.push(`/contact/${this.props.selectedContact.id}`);
     };
 
 
