@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 const propTypes = {
@@ -8,7 +8,9 @@ const propTypes = {
         phoneNumber: PropTypes.string.isRequired
     }),
     saveContactChanges: PropTypes.func.isRequired,
+    saveSelectedContactChanges: PropTypes.func.isRequired,
     toggleModal: PropTypes.func.isRequired,
+    history: PropTypes.object.isRequired
 };
 
 const defaultProps = {
@@ -24,11 +26,11 @@ class ModalEdit extends Component {
     };
 
     componentWillReceiveProps = (nextProps) => {
-        const {name: inputName, phoneNumber: inputPhoneNumber} = nextProps.selectedContact;
-        this.setState({inputName, inputPhoneNumber});
+        const { name: inputName, phoneNumber: inputPhoneNumber } = nextProps.selectedContact;
+        this.setState({ inputName, inputPhoneNumber });
     };
 
-    componentDidUpdate = (prevProps, prevState) => {
+    componentDidUpdate = (prevProps) => {
         if (prevProps !== this.props) {
             this.nameInput.focus();
         }
@@ -37,13 +39,13 @@ class ModalEdit extends Component {
     inputChangeNameHandler = (event) => {
         this.setState({
             inputName: event.target.value
-        })
+        });
     };
 
     inputChangePhoneHandler = (event) => {
         this.setState({
             inputPhoneNumber: (event.target.value.match(/^[0-9+()-]*$/) ? event.target.value : this.state.inputPhoneNumber)
-        })
+        });
     };
 
     validateSubmitButton = () => (!this.state.inputName || !this.state.inputPhoneNumber);
@@ -53,15 +55,12 @@ class ModalEdit extends Component {
             this.saveContactChangesHandler();
         }
     };
-
     saveContactChangesHandler = () => {
-
         this.props.saveContactChanges({
             id: this.props.selectedContact.id,
             name: this.state.inputName,
             phoneNumber: this.state.inputPhoneNumber
         });
-
         this.props.saveSelectedContactChanges({
             id: this.props.selectedContact.id,
             name: this.state.inputName,
@@ -77,31 +76,45 @@ class ModalEdit extends Component {
         this.props.history.push(`/contact/${this.props.selectedContact.id}`);
     };
 
-
     render = () => (
         <div className="modal-buttons-container">
-            <input autoFocus className="category-add-input" type="text" placeholder="Contact name"
-                   value={this.state.inputName}
-                   onChange={this.inputChangeNameHandler} onKeyPress={this.keyPressHandler}
-                   ref={(input) => {
-                       this.nameInput = input;
-                   }}
+            <input
+                className="category-add-input"
+                type="text"
+                placeholder="Contact name"
+                value={this.state.inputName}
+                onChange={this.inputChangeNameHandler}
+                onKeyPress={this.keyPressHandler}
+                ref={(input) => {
+                    this.nameInput = input;
+                }}
             />
-            <input className="category-add-input"
-                   type="text" placeholder="Phone number"
-                   value={this.state.inputPhoneNumber}
-                   onChange={this.inputChangePhoneHandler} onKeyPress={this.keyPressHandler}
+            <input
+                className="category-add-input"
+                type="text"
+                placeholder="Phone number"
+                value={this.state.inputPhoneNumber}
+                onChange={this.inputChangePhoneHandler}
+                onKeyPress={this.keyPressHandler}
             />
             <div className="modal-action-buttons-container">
-                <input className="add-button" type="button" value="Save"
-                       onClick={this.saveContactChangesHandler}
-                       disabled={this.validateSubmitButton()}/>
-                <input className="close-button" type="button" value="Close"
-                       onClick={this.closeContactHandler}/>
+                <input
+                    className="add-button"
+                    type="button"
+                    value="Save"
+                    onClick={this.saveContactChangesHandler}
+                    disabled={this.validateSubmitButton()}
+                />
+                <input
+                    className="close-button"
+                    type="button"
+                    value="Close"
+                    onClick={this.closeContactHandler}
+                />
             </div>
 
         </div>
-    )
+    );
 }
 
 ModalEdit.propTypes = propTypes;

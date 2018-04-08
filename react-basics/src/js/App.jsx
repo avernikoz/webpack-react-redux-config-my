@@ -1,12 +1,12 @@
-// Один из вопросов — всё-таки, как лучше заюзать коннект — использовать его во всех компонентах, или же иногда спускать пропсы сверху?
+// 1. Один из вопросов — всё-таки, как лучше заюзать коннект — использовать его во всех компонентах,
+// или же иногда спускать пропсы сверху?
 // https://github.com/reactjs/redux/issues/419
-// Где лучше прописывать propTypes — для statless компонентов родительских, или для дочерних /// по-моему, это круто
-// Должен ли быть isRequired там, где нет isRequired?
+// 2. Где лучше прописывать propTypes — для statless компонентов родительских, или для дочерних ///
+// 3. Как избежать ререндера родительского компонента при измененни пропсов, которые он использует?
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-import {Route, Switch} from 'react-router-dom';
-import {connect} from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
 
 import NoMatch from './components/NoMatch';
 import Footer from './components/Footer';

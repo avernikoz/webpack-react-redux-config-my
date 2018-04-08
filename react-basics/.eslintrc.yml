@@ -1,0 +1,56 @@
+env:
+  browser: true
+  es6: true
+  node: true
+extends: 'airbnb'
+parser: 'babel-eslint'
+parserOptions:
+  ecmaVersion: 7
+  ecmaFeatures:
+    experimentalObjectRestSpread: true
+    jsx: true
+  sourceType: module
+plugins:
+  - react
+rules:
+  react/jsx-indent:
+  - error
+  - 4
+  react/jsx-indent-props:
+  - error
+  - 4
+  comma-dangle:
+  - error
+  - never
+  indent:
+  - error
+  - 4
+  - SwitchCase: 1
+  react/forbid-prop-types: off
+  react/no-unused-prop-types: off
+  jsx-a11y/anchor-is-valid:
+    - error
+    - components:
+      - Link
+      specialLink:
+      - to
+  no-nested-ternary: off
+  no-confusing-arrow: off
+
+
+#  max-len:
+#  - error
+#  - 100
+#rules:
+#  indent:
+#    - error
+#    - space
+#  linebreak-style:
+#    - error
+#    - unix
+#  quotes:
+#    - error
+#    - single
+#  semi:
+#    - error
+#    - always

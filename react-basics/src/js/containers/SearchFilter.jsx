@@ -1,17 +1,19 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
-import {withRouter} from 'react-router-dom';
-import {bindActionCreators} from 'redux';
-import {filterContacts} from '../store/actionCreators';
+import { withRouter } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { filterContacts } from '../store/actionCreators';
 
 const propTypes = {
-    filterContacts: PropTypes.func.isRequired
+    filterContacts: PropTypes.func.isRequired,
+    history: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired
 };
 
-const mapDispatchToProps = (dispatch) => (
-    bindActionCreators({filterContacts},dispatch)
+const mapDispatchToProps = dispatch => (
+    bindActionCreators({ filterContacts }, dispatch)
 );
 
 class SearchFilter extends Component {
@@ -24,7 +26,7 @@ class SearchFilter extends Component {
             const searchParams = new URLSearchParams(this.props.location.search);
             const filterValueFromUrl = searchParams.get('search');
 
-            this.setState({filterValue: filterValueFromUrl});
+            this.setState({ filterValue: filterValueFromUrl });
             this.updateFilterValueForAllComponents(filterValueFromUrl);
         }
     };
@@ -32,7 +34,7 @@ class SearchFilter extends Component {
     handleChange = (event) => {
         this.setState({
             filterValue: event.target.value
-        },this.searchValuesToUrl);
+        }, this.searchValuesToUrl);
         this.updateFilterValueForAllComponents(event.target.value);
     };
 
@@ -48,7 +50,7 @@ class SearchFilter extends Component {
 
     render() {
         return (
-            <input className="search-field" type="text" value={this.state.filterValue} onChange={this.handleChange}/>
+            <input className="search-field" type="text" value={this.state.filterValue} onChange={this.handleChange} />
         );
     }
 }

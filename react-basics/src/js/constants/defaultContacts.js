@@ -22,7 +22,7 @@ const contacts = [
     {
         id: 4,
         name: 'Chewbacca',
-        phoneNumber: '+2938273632651',
+        phoneNumber: '+2938273632653',
         img: '/src/img/contact.jpeg'
 
     }

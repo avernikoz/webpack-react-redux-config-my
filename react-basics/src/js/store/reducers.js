@@ -1,4 +1,13 @@
-import {FILTER_CONTACTS, SET_MODAL_TYPE, TOGGLE_MODAL, SET_SELECTED_CONTACT, ADD_CONTACT, DELETE_CONTACT, SAVE_EDITED_CONTACT, SAVE_SELECTED_CONTACT} from '../constants/actionTypes';
+import {
+    FILTER_CONTACTS,
+    SET_MODAL_TYPE,
+    TOGGLE_MODAL,
+    SET_SELECTED_CONTACT,
+    ADD_CONTACT,
+    DELETE_CONTACT,
+    SAVE_EDITED_CONTACT,
+    SAVE_SELECTED_CONTACT
+} from '../constants/actionTypes';
 import defaultContacts from '../constants/defaultContacts';
 
 
@@ -8,7 +17,7 @@ export const initialState = {
     selectedContact: {
         id: null,
         name: '',
-        phoneNumber: '',
+        phoneNumber: ''
     },
     modalWindowOpened: false,
     modalType: ''
@@ -39,17 +48,20 @@ export function rootReducer(state = initialState, action) {
         case ADD_CONTACT:
             return {
                 ...state,
-                contacts: [action.newContact,...state.contacts]
+                contacts: [action.newContact, ...state.contacts]
             };
         case DELETE_CONTACT:
             return {
                 ...state,
-                contacts: [...state.contacts.filter((elem) => elem.id !== action.idContactToDelete)]
+                contacts: [...state.contacts.filter(elem => elem.id !== action.idContactToDelete)]
             };
         case SAVE_EDITED_CONTACT:
             return {
                 ...state,
-                contacts: [...state.contacts.map((elem) => elem.id === action.changedContact.id ? {...elem, ...action.changedContact} : elem)],
+                contacts: [...state.contacts
+                    .map(elem =>
+                        elem.id === action.changedContact.id ? { ...elem, ...action.changedContact }
+                            : elem)]
             };
         case SAVE_SELECTED_CONTACT:
             return {

@@ -1,13 +1,14 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 const propTypes = {
     selectedContact: PropTypes.shape({
         id: PropTypes.oneOfType([PropTypes.oneOf([null]), PropTypes.number]),
-        name: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired
     }),
     deleteContact: PropTypes.func.isRequired,
-    toggleModal: PropTypes.func.isRequired
+    toggleModal: PropTypes.func.isRequired,
+    history: PropTypes.object.isRequired
 };
 
 const defaultProps = {
@@ -33,13 +34,11 @@ class ModalDelete extends Component {
                 Delete <b>{this.props.selectedContact.name}</b> contact?
             </div>
             <div className="modal-action-buttons-container">
-                <input className="add-button" type="button" value="Delete"
-                       onClick={this.deleteContactHandler}/>
-                <input className="close-button" type="button" value="Close"
-                       onClick={this.closeContactHandler}/>
+                <input className="add-button" type="button" value="Delete" onClick={this.deleteContactHandler} />
+                <input className="close-button" type="button" value="Close" onClick={this.closeContactHandler} />
             </div>
         </div>
-    )
+    );
 }
 
 ModalDelete.propTypes = propTypes;
