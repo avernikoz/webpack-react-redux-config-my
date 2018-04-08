@@ -16,7 +16,7 @@ import {
     saveContactChanges,
     toggleModal,
     saveSelectedContactChanges
-} from '../store/actionCreators';
+} from '../actions/actionCreators';
 
 const propTypes = {
     selectedContact: PropTypes.shape({

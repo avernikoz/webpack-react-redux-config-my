@@ -16,10 +16,7 @@ import SearchFilter from './containers/SearchFilter';
 import Modal from './containers/Modal';
 import AddContactButton from './containers/AddContactButton';
 
-
-// const mapStateToProps = (state) => ({
-//     modalWindowOpened: state.modalWindowOpened
-// });
+// import '../scss/style.scss';
 
 const App = () => (
     <div className="app-container">

@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { setModalType, toggleModal } from '../store/actionCreators';
+import { setModalType, toggleModal } from '../actions/actionCreators';
 import { MODAL_TYPE_ADD } from '../constants/modalTypes';
 
 const propTypes = {

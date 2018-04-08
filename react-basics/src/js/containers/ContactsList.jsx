@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
-import { setModalType, setSelectedContact, toggleModal } from '../store/actionCreators';
+import { setModalType, setSelectedContact, toggleModal } from '../actions/actionCreators';
 import Contact from '../components/Contact';
 
 

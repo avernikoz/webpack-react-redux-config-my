@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
-import { filterContacts } from '../store/actionCreators';
+import { filterContacts } from '../actions/actionCreators';
 
 const propTypes = {
     filterContacts: PropTypes.func.isRequired,
