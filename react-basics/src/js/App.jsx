@@ -4,9 +4,9 @@
 // 2. Где лучше прописывать propTypes — для statless компонентов родительских, или для дочерних ///
 // 3. Как избежать ререндера родительского компонента при измененни пропсов, которые он использует?
 
-import React, { Component } from 'react';
+import React from 'react';
 
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 
 import NoMatch from './components/NoMatch';
 import Footer from './components/Footer';
@@ -15,60 +15,58 @@ import ContactsList from './containers/ContactsList';
 import SearchFilter from './containers/SearchFilter';
 import Modal from './containers/Modal';
 import AddContactButton from './containers/AddContactButton';
-import {withRouter} from 'react-router-dom'
 
 
 // const mapStateToProps = (state) => ({
 //     modalWindowOpened: state.modalWindowOpened
 // });
 
-class App extends Component {
+const App = () => (
+    <div className="app-container">
+        <Switch>
+            <Route
+                exact
+                path="/"
+                render={() => (
+                    <div className="app-main-content-wrapper">
+                        <Header />
+                        <SearchFilter />
+                        <ContactsList />
+                        <AddContactButton />
+                        <Footer />
+                    </div>
+                )}
+            />
+            <Route
+                path="/contact/:contactId"
+                render={() => (
+                    <div className="app-main-content-wrapper">
+                        <Header />
+                        <SearchFilter />
+                        <ContactsList />
+                        <AddContactButton />
+                        <Footer />
+                    </div>
+                )}
+            />
+            <Route render={() => (
+                <div>
+                    <Header />
+                    <NoMatch />
+                    <Footer />
+                </div>
+            )}
+            />
+        </Switch>
+        <Route path="/contact/:contactId/:modalType(edit|delete)">
+            <Modal />
+        </Route>
+        <Route path="/:modalType(add)">
+            <Modal />
+        </Route>
+    </div>
 
-    render() {
+);
 
-        // console.log('rerender');
-        // const mainContentWrapperClassName = this.props.modalWindowOpened ? 'main-content-wrapper blurred' : 'app-main-content-wrapper';
-
-        return (
-            <div className="app-container">
-                <Switch>
-                    <Route exact path='/' render={props =>
-                        <div className={'app-main-content-wrapper'}>
-                            <Header/>
-                            <SearchFilter/>
-                            <ContactsList/>
-                            <AddContactButton/>
-                            <Footer/>
-                        </div>
-                    }/>
-                    <Route path='/contact/:contactId' render={props =>
-                        <div className={'app-main-content-wrapper'}>
-                            <Header/>
-                            <SearchFilter/>
-                            <ContactsList/>
-                            <AddContactButton/>
-                            <Footer/>
-                        </div>
-                    }/>
-                    <Route render={() =>
-                        <div>
-                            <Header/>
-                            <NoMatch/>
-                            <Footer/>
-                        </div>
-                    }/>
-                </Switch>
-                    <Route path='/contact/:contactId/:modalType(edit|delete)'>
-                        <Modal/>
-                    </Route>
-                    <Route path='/:modalType(add)'>
-                        <Modal/>
-                    </Route>
-            </div>
-
-        )
-    }
-}
 
 export default withRouter(App);
-
