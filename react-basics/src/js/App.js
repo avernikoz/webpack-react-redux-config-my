@@ -18,23 +18,22 @@ import AddContactButton from './containers/AddContactButton';
 import {withRouter} from 'react-router-dom'
 
 
-const mapStateToProps = (state) => ({
-    modalWindowOpened: state.modalWindowOpened
-});
+// const mapStateToProps = (state) => ({
+//     modalWindowOpened: state.modalWindowOpened
+// });
 
 class App extends Component {
 
     render() {
 
         // console.log('rerender');
-
-        const mainContentWrapperClassName = this.props.modalWindowOpened ? 'main-content-wrapper blurred' : 'app-main-content-wrapper';
+        // const mainContentWrapperClassName = this.props.modalWindowOpened ? 'main-content-wrapper blurred' : 'app-main-content-wrapper';
 
         return (
             <div className="app-container">
                 <Switch>
                     <Route exact path='/' render={props =>
-                        <div className={mainContentWrapperClassName}>
+                        <div className={'app-main-content-wrapper'}>
                             <Header/>
                             <SearchFilter/>
                             <ContactsList/>
@@ -43,7 +42,7 @@ class App extends Component {
                         </div>
                     }/>
                     <Route path='/contact/:contactId' render={props =>
-                        <div className={mainContentWrapperClassName}>
+                        <div className={'app-main-content-wrapper'}>
                             <Header/>
                             <SearchFilter/>
                             <ContactsList/>
@@ -59,7 +58,7 @@ class App extends Component {
                         </div>
                     }/>
                 </Switch>
-                    <Route path='/contact/:contactId/:modalType(edit|add|delete)'>
+                    <Route path='/contact/:contactId/:modalType(edit|delete)'>
                         <Modal/>
                     </Route>
                     <Route path='/:modalType(add)'>
@@ -71,5 +70,5 @@ class App extends Component {
     }
 }
 
-export default withRouter(connect(mapStateToProps)(App));
+export default withRouter(App);
 

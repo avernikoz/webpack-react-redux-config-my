@@ -45,16 +45,11 @@ const mapDispatchToProps = (dispatch) => (
         deleteContact,
         saveContactChanges,
         saveSelectedContactChanges,
-        toggleModal
+        toggleModal,
     }, dispatch)
 );
 
 class Modal extends Component {
-    componentWillMount = () => {
-        if ([MODAL_TYPE_ADD, MODAL_TYPE_EDIT, MODAL_TYPE_DELETE].includes(this.props.match.params.modalType)) {
-            this.props.toggleModal();
-        }
-    };
 
     render() {
 
@@ -62,15 +57,11 @@ class Modal extends Component {
         let modalType = props.match.params.modalType;
 
         let modalWindowOpened;
-        if (modalType === 'add') {
+        if (modalType === MODAL_TYPE_ADD) {
             modalWindowOpened = true;
         }
         else {
             modalWindowOpened = modalType && props.selectedContact.id ? true : false;
-
-            if (modalWindowOpened) {
-                // props.toggleModal();
-            }
         }
 
         let modalWindowWrapperClassName = modalWindowOpened ? 'modal-window-wrapper' : 'modal-window-wrapper disabled';
@@ -85,7 +76,7 @@ class Modal extends Component {
             </div>
         )
     }
-};
+}
 
 
 Modal.propTypes = propTypes;
