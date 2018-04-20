@@ -1,7 +1,7 @@
 {
     "name": "react-basics",
     "version": "1.0.0",
-    "description": "First React + Redux project",
+    "description": "Webpack React config by Anton Razgulyaev",
     "main": "index.js",
     "scripts": {
         "start": "echo \"Server have started at 3000 port\";node server.js",
@@ -66,5 +66,3 @@
         "webpack-dev-server": "3.1.3"
     }
 }
-
-

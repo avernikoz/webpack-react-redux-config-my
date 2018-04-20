@@ -20,50 +20,10 @@ import AddContactButton from './containers/AddContactButton';
 
 const App = () => (
     <div className="app-container">
-        <Switch>
-            <Route
-                exact
-                path="/"
-                render={() => (
-                    <div className="app-main-content-wrapper">
-                        <Header />
-                        <SearchFilter />
-                        <ContactsList />
-                        <AddContactButton />
-                        <Footer />
-                    </div>
-                )}
-            />
-            <Route
-                path="/contact/:contactId"
-                render={() => (
-                    <div className="app-main-content-wrapper">
-                        <Header />
-                        <SearchFilter />
-                        <ContactsList />
-                        <AddContactButton />
-                        <Footer />
-                    </div>
-                )}
-            />
-            <Route render={() => (
-                <div>
-                    <Header />
-                    <NoMatch />
-                    <Footer />
-                </div>
-            )}
-            />
-        </Switch>
-        <Route path="/contact/:contactId/:modalType(edit|delete)">
-            <Modal />
-        </Route>
-        <Route path="/:modalType(add)">
-            <Modal />
-        </Route>
+        Hello World with React/Redux!
     </div>
 
 );
 
 
-export default withRouter(App);
+export default App;
